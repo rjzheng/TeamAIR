@@ -38,6 +38,13 @@
       padding: 20px 0;
       font-size: 300%;
       font-weight: 200;
+      letter-spacing: 3px;
+      word-spacing: 5px;
+    }
+
+    h1::first-letter {
+      color: #EA9215;
+      font-weight: 300;
     }
 
     footer {
@@ -65,7 +72,7 @@
     li a {
       float: left;
       display: block;
-      color: #FFF;
+      color: #3A4750;
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
@@ -75,6 +82,7 @@
     /* Change the link color to #111 (black) on hover */
     li a:hover {
       background-color: #3A4750;
+      color: #FFF;
     }
 
     #login-item {
@@ -113,6 +121,10 @@
       float: right;
     }
 
+    strong {
+      font-size: 120%;
+    }
+
 
   </style>
 
@@ -129,9 +141,9 @@
       members[0].description = "Aracely is a super senior at UCSD. She was born and raised in Southern california and has a passionate love for ceviche. Her favorite ceviche restaurant in San Diego is Oscars in PB and her favorite alcoholic beverage is a moscow mule. She enjoys spending time with friends and hopes to learn some proper front end development with this class.";
       members[1] = new Image;
       members[1].name = "Isa Noui";
-      members[1].src = "img/elephant.jpeg";
-      members[1].email = "inoui@ucsd.edu";
-      members[1].description = "Isa is ...";
+      members[1].src = "img/isa.jpg";
+      members[1].email = "anoui@ucsd.edu";
+      members[1].description = "Isa is a senior at UCSD majoring in math-CS planning to become a full stack developer somewhere in SoCal. Isa was born in San Francisco and raised in Roseville, CA. He enjoys a free lifestyle and loves to snowboard and skydive.";
       members[2] = new Image;
       members[2].name = "Richard Zheng";
       members[2].src = "img/richard.jpg";
@@ -178,7 +190,7 @@
 <body onload="startup()">
   <nav>
     <ul>
-      <li><a href="index.html">Team AIR</a></li>
+      <li><a id="team-name" href="index.html">Team AIR</a></li>
       <li><a href="soundboard-part1a.html">Part 1A</a></li>
       <li><a href="soundboard-part1b.html">Part 1B</a></li>
       <li><a href="tagtest.html">Part 2</a></li>
@@ -193,17 +205,15 @@
       <div>
         <img id="photo" alt="" width="500" height="300" src="img/cheetah.jpg">
       </div>
-      <section>
-          <div>
-            Email: <p id="email"></p>
-            <br />
-            Description: <p id="description"></p>
-            <br />
-          </div>
+      <div>
+        <strong>Email:</strong> <p id="email"></p>
+        <br />
+        <strong>Description:</strong> <p id="description"></p>
+        <br />
+      </div>
 
-          <button onclick="prev()">previous</button>
-          <button onclick="next()">next</button>
-      </section>
+      <button onclick="prev()">previous</button>
+      <button onclick="next()">next</button>
     </main>
 
     <footer>
