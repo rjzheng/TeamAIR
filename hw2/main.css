@@ -24,8 +24,12 @@ main {
   height: 100%;
   margin: 0 auto;
 }
+
 header {
+  display: inline;
 }
+
+
 section {
 	/* color rgb(243,234,95) is used */
   background-color: rgb(243, 234, 95);
@@ -76,6 +80,11 @@ svg {
 
 footer {
   text-align: center;
+  background-color: rgb(230,95,191);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
 }
 
 img {
