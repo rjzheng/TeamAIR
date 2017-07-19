@@ -1,11 +1,6 @@
 /* Hint: use relative measurements you'll find them useful! */
 
-@import url(monoton-regular.ttf);  /* Set this for Monton...figure out their syntax */
-
-@font-face {
-    font-family: monotonFont;
-    src: url(monoton-regular.ttf);
-}
+@import url('https://fonts.googleapis.com/css?family=Monoton');
 
 * {
     box-sizing: border-box;
@@ -92,7 +87,7 @@ aside {
 .logo{
 	background-color: rgb(230,95,191);
 	box-shadow: .1rem .2rem .1rem #888888;
-	font-family: monotonFont;
+	font-family: 'Monoton';
 	font-weight: bold;
 	padding: 0.5rem 1rem;
 	border-radius:50%;
@@ -157,20 +152,8 @@ svg {
   fill: white;
 }
 
-p > svg:hover{
-   fill: black;
 
-   -ms-transform: scale(5, 5) rotateY(540deg); /* IE 9 */
-    -webkit-transform: scale(5, 5) rotateY(540deg); /* Safari */
-    transform: scale(5, 5) rotateY(540deg);
-
-    animation-duration: 2s;
-    -webkit-transition: all 1.5s ease-in-out;
-    -moz-transition:all 1.5s ease-in-out;
-    -ms-transition:all 1.5s ease-in-out;
-}
-
-svg:hover{ /*Grow*/
+p > svg:hover{ /*Grow*/
 
   -webkit-transform: scale(2);
   -ms-transform: scale(2);
@@ -183,6 +166,28 @@ svg:hover{ /*Grow*/
   animation: example 4s linear 0s 3 reverse;
   fill: #000;
 
+}
+
+@-webkit-keyframes example{
+    25%{-webkit-transform: rotateZ(90deg);
+         -ms-transform: rotateZ(90deg);
+         transform: rotateZ(90deg);
+     }
+    50%{
+         -webkit-transform: rotateZ(180deg);
+         -ms-transform: rotateZ(180deg);
+         transform: rotateZ(180deg);
+    }
+    75%{
+        -webkit-transform: rotateZ(270deg);
+         -ms-transform: rotateZ(270deg);
+         transform: rotateZ(270deg);
+    }
+    100%{
+        -webkit-transform: rotateZ(360deg);
+         -ms-transform: rotateZ(360deg);
+         transform: rotateZ(360deg);
+    }
 }
 
 footer {
@@ -211,9 +216,14 @@ footer .wrapper span{
   margin-left: 1rem;
 }
 
+footer .wrapper span::before {
+  width: 0;
+  height: 0;
+  border: 3px solid #000;
+}
+
 footer img:hover ~span{
   visibility:visible;
-
 }
 
 
