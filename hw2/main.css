@@ -45,15 +45,28 @@ section {
 section > div {
     /* font is 'Comic Sans MS, text is automatically adjusted to lowercase do not mod the HTML */
     font-family: 'Comic Sans MS';
+    
 
 }
-section > aNastyNthChildSelectorToWrite {
+section > div:nth-child(1) {
 	/* ANastNthChildSelectorToWrite means what it says it isn't an indetifier */
 	/* background color is  rgb(192,77,249) */
   background-color: rgb(192, 77, 249);
 
 }
-section > aNastyNthChildSelectorToWrite {
+section > div:nth-child(2) {
+	/* ANastNthChildSelectorToWrite means what it says it isn't an indetifier */
+    /* background color is  rgb(43,209,252) */
+  background-color: rgb(43,209,252);
+
+}
+section > div:nth-child(3) {
+	/* ANastNthChildSelectorToWrite means what it says it isn't an indetifier */
+	/* background color is  rgb(192,77,249) */
+  background-color: rgb(192, 77, 249);
+
+}
+section > div:nth-child(4) {
 	/* ANastNthChildSelectorToWrite means what it says it isn't an indetifier */
     /* background color is  rgb(43,209,252) */
   background-color: rgb(43,209,252);
