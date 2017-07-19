@@ -59,7 +59,7 @@ section > div:nth-child(odd) {
 	/* background color is  rgb(192,77,249) */
   background-color: rgb(192, 77, 249);
   width: 50%;
-  align-items: flex-start;
+  padding-left: 10px;
 
 }
 section > div:nth-child(even) {
@@ -67,7 +67,9 @@ section > div:nth-child(even) {
     /* background color is  rgb(43,209,252) */
   background-color: rgb(43,209,252);
   width: 50%;
-  align-items: flex-end;
+  text-align: right;
+  padding-right: 10px;
+  
 }
 
 section > div:nth-child(3):after {
