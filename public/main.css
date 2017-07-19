@@ -50,8 +50,7 @@ section > div {
     /* font is 'Comic Sans MS, text is automatically adjusted to lowercase do not mod the HTML */
     font-family: 'Comic Sans MS';
     color: white; 
-    text-transform: lowercase;
-    
+    text-transform: lowercase;    
 
 }
 section > div:nth-child(odd) {
@@ -60,6 +59,7 @@ section > div:nth-child(odd) {
   background-color: rgb(192, 77, 249);
   width: 50%;
   padding-left: 10px;
+  margin-left: auto;
 
 }
 section > div:nth-child(even) {
