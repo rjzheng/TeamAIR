@@ -45,13 +45,14 @@ section {
 section > div {
     /* font is 'Comic Sans MS, text is automatically adjusted to lowercase do not mod the HTML */
     font-family: 'Comic Sans MS';
-    
+    color: white; 
 
 }
 section > div:nth-child(1) {
 	/* ANastNthChildSelectorToWrite means what it says it isn't an indetifier */
 	/* background color is  rgb(192,77,249) */
   background-color: rgb(192, 77, 249);
+  
 
 }
 section > div:nth-child(2) {
