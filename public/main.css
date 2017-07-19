@@ -45,12 +45,14 @@ section {
     display: flex;
     -webkit-flex-direction: column-reverse;
     flex-direction: column-reverse;
+    height: 33%;
 }
 section > div {
     /* font is 'Comic Sans MS, text is automatically adjusted to lowercase do not mod the HTML */
     font-family: 'Comic Sans MS';
     color: white; 
-    text-transform: lowercase;    
+    text-transform: lowercase;  
+    height: 33%;  
 
 }
 section > div:nth-child(odd) {
@@ -127,6 +129,22 @@ a{
     .fun {
     	-webkit-box-reflect: inherit;
     	float: none;
+    }
+    
+    section > div:nth-child(odd) {
+	/* ANastNthChildSelectorToWrite means what it says it isn't an indetifier */
+	/* background color is  rgb(192,77,249) */
+  background-color: rgb(192, 77, 249);
+  width: 100%;
+  text-align: center;
+    }
+
+    section > div:nth-child(even) {
+	/* ANastNthChildSelectorToWrite means what it says it isn't an indetifier */
+        /* background color is  rgb(43,209,252) */
+  background-color: rgb(43,209,252);
+  width: 100%;
+  text-align: center;
     }
 }
 
