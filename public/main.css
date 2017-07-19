@@ -113,7 +113,7 @@ a{
 .fun{
 	font-size: 4rem;
 	float: right;
-	font-family: Courier, new monospace;
+	font-family: Courier, "new monospace";
 	text-transform: uppercase;
 	color: red;
     -webkit-text-fill-color: white;
