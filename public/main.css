@@ -164,7 +164,14 @@ svg {
 }
 
 svg:hover{
-   fill: black; 
+   fill: black;   
+   -ms-transform: scale(5, 5) rotateY(540deg); /* IE 9 */
+    -webkit-transform: scale(5, 5) rotateY(540deg); /* Safari */
+    transform: scale(5, 5) rotateY(540deg);
+    
+    -webkit-transition: transform 2s ease-in-out;
+    -moz-transition:transform 2s ease-in-out;
+    -ms-transition:transform 2s ease-in-out;
 }
 
 footer {
