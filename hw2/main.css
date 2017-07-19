@@ -76,6 +76,7 @@ section > div:nth-child(4) {
 section > div:nth-child(3):after {
 	/* gave you the nth child after selector for free to inspire you */
 	/* generated content in here ... a property can do that */
+        content: " \2665\2665\2665";
 }
 
 	/* a freebie for fun */
