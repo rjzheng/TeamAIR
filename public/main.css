@@ -118,14 +118,18 @@ a{
 	text-transform: uppercase;
 	color: red;
    -webkit-text-fill-color: white;
-   -webkit-text-stroke-width: .1rem;
-   -webkit-text-stroke-color: red;
+   -webkit-text-stroke-width: .05rem;
+   -webkit-box-reflect: below -1.5rem -webkit-linear-gradient(bottom,rgba(255,0,0,0),rgba(255,0,0,1));
+   text-shadow: .1rem .1rem .3rem #ff5252;
 }
 
-.fun #kern2, #kern3{
-	   -webkit-text-fill-color: black;
+.fun #kern2{
+	margin-left: -0.5rem;
+	letter-spacing: -1rem;
+}
 
-  margin-right:-.5em;
+.fun #kern3{
+	letter-spacing: -0.5rem;
 }
 
 svg {
