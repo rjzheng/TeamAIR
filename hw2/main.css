@@ -46,6 +46,7 @@ section > div {
     /* font is 'Comic Sans MS, text is automatically adjusted to lowercase do not mod the HTML */
     font-family: 'Comic Sans MS';
     color: white; 
+    text-transform: lowercase;
 
 }
 section > div:nth-child(1) {
