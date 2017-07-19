@@ -42,6 +42,8 @@ section > div {
     text-transform: lowercase;
     padding-top: 0.5rem;
     height: 100%;
+    text-align: center;
+    
 }
 section > div:nth-child(odd) {
 	/* ANastNthChildSelectorToWrite means what it says it isn't an indetifier */
