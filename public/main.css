@@ -152,7 +152,7 @@ svg {
   fill: white;
 }
 
- svg:hover{
+p > svg:hover{
    fill: black;
 
    -ms-transform: scale(5, 5) rotateY(540deg); /* IE 9 */
@@ -165,42 +165,6 @@ svg {
     -ms-transition:all 1.5s ease-in-out;
 }
 
-p > svg:hover{ /*Grow*/
-
-  -webkit-transform: scale(2);
-  -ms-transform: scale(2);
-  transform: scale(2);
-
-  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-  -webkit-animation-iteration-count: 3; /* Safari 4.0 - 8.0 */
-
-  animation: example 4s linear 0s 3 reverse;
-  fill: #000;
-
-}
-
-@-webkit-keyframes example{
-    25%{-webkit-transform: rotateZ(90deg);
-         -ms-transform: rotateZ(90deg);
-         transform: rotateZ(90deg);
-     }
-    50%{
-         -webkit-transform: rotateZ(180deg);
-         -ms-transform: rotateZ(180deg);
-         transform: rotateZ(180deg);
-    }
-    75%{
-        -webkit-transform: rotateZ(270deg);
-         -ms-transform: rotateZ(270deg);
-         transform: rotateZ(270deg);
-    }
-    100%{
-        -webkit-transform: rotateZ(360deg);
-         -ms-transform: rotateZ(360deg);
-         transform: rotateZ(360deg);
-    }
-}
 
 footer {
   text-align: center;
