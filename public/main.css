@@ -160,7 +160,18 @@ a{
 aside svg {
   width: 25px;
   height: 25px;
-  fill: #FFF;
+  fill: white;
+}
+
+svg:hover{
+   fill: black;   
+   -ms-transform: scale(5, 5) rotateY(540deg); /* IE 9 */
+    -webkit-transform: scale(5, 5) rotateY(540deg); /* Safari */
+    transform: scale(5, 5) rotateY(540deg);
+    
+    -webkit-transition: all 1.5s ease-in-out;
+    -moz-transition:all 1.5s ease-in-out;
+    -ms-transition:all 1.5s ease-in-out;
 }
 
 aside svg:hover{ /*Grow*/
