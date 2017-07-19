@@ -113,7 +113,7 @@ a{
 
 }
 
-@media screen and (max-width: 699px) {
+@media screen and (max-width: 55rem) {
     .fun {
     	-webkit-box-reflect: inherit;
     	float: none;
@@ -152,6 +152,18 @@ svg {
   fill: white;
 }
 
+ svg:hover{
+   fill: black;
+
+   -ms-transform: scale(5, 5) rotateY(540deg); /* IE 9 */
+    -webkit-transform: scale(5, 5) rotateY(540deg); /* Safari */
+    transform: scale(5, 5) rotateY(540deg);
+
+    animation-duration: 2s;
+    -webkit-transition: all 1.5s ease-in-out;
+    -moz-transition:all 1.5s ease-in-out;
+    -ms-transition:all 1.5s ease-in-out;
+}
 
 p > svg:hover{ /*Grow*/
 
