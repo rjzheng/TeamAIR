@@ -113,7 +113,7 @@ a{
 
 }
 
-@media screen and (max-width: 699px) {
+@media screen and (max-width: 55rem) {
     .fun {
     	-webkit-box-reflect: inherit;
     	float: none;
@@ -166,6 +166,7 @@ svg:hover > use{
 	fill: black;
 }
 
+
 footer {
   text-align: center;
   background-color: rgb(230,95,191);
@@ -181,21 +182,24 @@ footer img {
 
 footer .wrapper span{
   visibility: hidden;
-  border: 3px solid black;
+  border: 3px solid #000;
   background-color:white;
-  font:bold;
-  font-family: serif;
   border-radius: 10%;
-  padding: 5px 5px 5px 5px;
-  box-shadow: .1rem .2rem .1rem rgba(0, 0, 0, 0.8);
+  padding: 3px;
+  box-shadow: .1rem .2rem .1rem rgba(0, 0, 0, 0.3);
   position: absolute;
   margin-left: 1rem;
 }
 
 footer .wrapper span::before {
+  content: ' ';
+  position: absolute;
   width: 0;
   height: 0;
-  border: 3px solid #000;
+  border: 15px solid;
+  border-color: transparent #000 transparent transparent;
+  top: 0.5px;
+  left: -33px;
 }
 
 footer img:hover ~span{
