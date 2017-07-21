@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AIR SoundBoard</title>
+    </head>
+    <body>
+
+        <table cellspacing="0" width="100%" cellpadding="20" bgcolor="#f4f5f7">
+            <tr>
+                <td bgcolor="#EA9215" align="left">
+                    <font face="verdana" color="white" size="3">SoundBoard 3000</font>
+                </td>
+                <td bgcolor="#EA9215" align="right">
+                    <a href="login.html"><font face="verdana" color="white" size="3">Login</font></a>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#FFFFFF" align="center" valign="center" height="200" colspan="2">
+                    <p>
+                        <em>
+                            <font face="verdana" color="#DEDEDE" size="2">Welcome to the SoundBoard 3000
+                                <br>where all your musical wishes become
+                                <br>a reality
+                            </font>
+                        </em>
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <table width="100%" cellpadding="20" cellspacing="0" align="center">
+                        <tr bgcolor="#FFFFFF">
+                            <td align="center" valign="bottom" height="100" width="150">
+                                <img height="100" width="150" src="img/bird.jpeg" alt="image of bird">
+                                    <audio controls>
+                                        <source src="mp3/beat1.mp3" type="audio/mpeg">
+                                    </audio>
+                            </td>
+                            <td align="center" valign="bottom" height="100" width="150">
+                                <img height="100" width="150" src="img/cheetah.jpg" alt="image of cheetah">
+                                    <audio controls>
+                                        <source src="mp3/beat2.mp3" type="audio/mpeg">
+                                    </audio>
+                            </td>
+                            <td align="center" valign="bottom" height="100" width="150">
+                                <img height="100" width="150" src="img/elephant.jpeg" alt="image of elephant">
+                                    <audio controls>
+                                        <source src="mp3/beat3.mp3" type="audio/mpeg">
+                                    </audio>
+                            </td>
+                            <td align="center" valign="bottom" height="100" width="150">
+                                <img height="100" width="150" src="img/fish.jpeg" alt="image of fish">
+                                    <audio controls>
+                                        <source src="mp3/beat4.mp3" type="audio/mpeg">
+                                    </audio>
+                            </td>
+                        </tr>
+                        <tr bgcolor="#FFFFFF">
+                            <td align="center" valign="bottom" height="100" width="150">
+                                <img height="100" width="150" src="img/flamingo.jpeg" alt="image of flamingo">
+                                    <audio controls>
+                                        <source src="mp3/beat5.mp3" type="audio/mpeg">
+                                    </audio>
+                            </td>
+                            <td align="center" valign="bottom" height="100" width="150">
+                                <img height="100" width="150" src="img/gecco.jpeg" alt="image of gecco">
+                                    <audio controls>
+                                        <source src="mp3/beat6.mp3" type="audio/mpeg">
+                                    </audio>
+                            </td>
+                            <td align="center" valign="bottom" height="100" width="150">
+                                <img height="100" width="150" src="img/orangutan.jpg" alt="image of orangutan">
+                                    <audio controls>
+                                        <source src="mp3/night-time.mp3" type="audio/mpeg">
+                                    </audio>
+                            </td>
+                            <td align="center" valign="bottom" height="100" width="150">
+                                <img height="100" width="150" src="img/parakeet.jpeg" alt="image of parakeet">
+                                    <audio controls>
+                                        <source src="mp3/beat8.mp3" type="audio/mpeg">
+                                    </audio>
+                            </td>
+                        </tr>
+                        <tr bgcolor="#FFFFFF">
+                            <td align="center" valign="bottom" height="100" width="150">
+                                <img height="100" width="150" src="img/pug.jpg" alt="image of pug">
+                                    <audio controls>
+                                        <source src="mp3/no-mercy.mp3" type="audio/mpeg">
+                                    </audio>
+                            </td>
+                            <td align="center" valign="bottom" height="100" width="150">
+                                <img height="100" width="150" src="img/sloth.jpeg" alt="image of sloth">
+                                    <audio controls>
+                                        <source src="mp3/waves.mp3" type="audio/mpeg">
+                                    </audio>
+                            </td>
+                            <td align="center" valign="bottom" height="100" width="150">
+                                <img height="100" width="150" src="img/spider.jpeg" alt="image of spider">
+                                    <audio controls>
+                                        <source src="mp3/red-alert.mp3" type="audio/mpeg">
+                                    </audio>
+                            </td>
+                            <td align="center" valign="bottom" height="100" width="150">
+                                <img height="100" width="150" src="img/tiger.jpeg" alt="image of tiger">
+                                    <audio controls>
+                                        <source src="mp3/evil-laugh-cackle.mp3" type="audio/mpeg">
+                                    </audio>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#FFC300" align="left" valign="center" colspan="2">
+                    <em>
+                        <font face="verdana" color="#FFFFFF" size="2">&copy;TeamAir</font>
+                    </em>
+                </td>
+            </tr>
+        </table>
+
+        <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyA92zxaHJW_M66wHtp-NG0W_t4HyK6dcSA",
+            authDomain: "teamair-d90e1.firebaseapp.com",
+            databaseURL: "https://teamair-d90e1.firebaseio.com",
+            projectId: "teamair-d90e1",
+            storageBucket: "teamair-d90e1.appspot.com",
+            messagingSenderId: "125033295806"
+          };
+          firebase.initializeApp(config);
+        </script>
+    </body>
+</html>
