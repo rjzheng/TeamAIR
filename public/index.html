@@ -1,224 +1,133 @@
-<!DOCTYPE html>
-<html>
+<DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>AIR SoundBoard</title>
 
-<head>
-  <meta charset="utf-8">
-  <title>Team AIR Home page</title>
+    <!-- Bootstrap -->
+    
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+   <header>
+    <h1>SoundBoard Game</h1>   
+    
+    <nav>
+     <form action="https://www.google.com" method="get">
+   	  <input type="text" placeholder="Username">
+   	  <input type="password" placeholder="Password">
+      <button>Login</button>
+     </form>
+    </nav>
+   
+   </header>
 
-  <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
+   <main>
+     <section class="container album">
+      <h2> Click a button for sound </h2>
+      	
+      	<div class="card">
+        <img height="100" width="150" src="assets/img/bird.jpeg" alt="sound 1">
+        <audio controls id="audio1">
+          <source src="assets/mp3/beat1.mp3" type="audio/mpeg">
+        </audio>
+      	</div>
+      
+     
+		<div class="card">
+        <img height="100" width="150" src="assets/img/cheetah.jpg" alt="sound 2">
+        <audio controls id="audio2">
+          <source src="assets/mp3/beat2.mp3" type="audio/mpeg">
+        </audio>
+		</div>
+      
+		
+		<div class="card">
+        <img height="100" width="150" src="assets/img/elephant.jpeg" alt="sound 3">
+        <audio controls id="audio3">
+          <source src="assets/mp3/beat3.mp3" type="audio/mpeg">
+        </audio>
+		</div>
+      
 
-  <style>
+		<div class="card">
+        <img height="100" width="150" src="assets/img/fish.jpeg" alt="sound 4">
+        <audio controls id="audio4">
+          <source src="assets/mp3/beat4.mp3" type="audio/mpeg">
+        </audio>
+		</div>
+      
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-    }
+		<div class="card">
+        <img height="100" width="150" src="assets/img/flamingo.jpeg" alt="sound 5">
+        <audio controls id="audio5">
+          <source src="assets/mp3/beat5.mp3" type="audio/mpeg">
+        </audio>
+		</div>
+      
 
-    html {
-      background-color: #EEEEEE;
-      color: #3A4750;
-    }
+		<div class="card">
+        <img height="100" width="150" src="assets/img/gecco.jpeg" alt="sound 6">
+        <audio controls id="audio6">
+          <source src="assets/mp3/beat6.mp3" type="audio/mpeg">
+        </audio>
+		</div>
+      
 
-    nav {
-      background-color: #EA9215;
-    }
+		<div class="card">
+        <img height="100" width="150" src="assets/img/orangutan.jpg" alt="sound 7">
+        <audio controls id="audio7">
+          <source src="assets/mp3/night-time.mp3" type="audio/mpeg">
+        </audio>
+		</div>
+      
 
-    main,
-    footer {
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%,0);
-    }
+		<div class="card">
+        <img height="100" width="150" src="assets/img/parakeet.jpeg" alt="sound 8">
+        <audio controls id="audio8">
+          <source src="assets/mp3/beat8.mp3" type="audio/mpeg">
+        </audio>
+		</div>
+      
 
-    h1 {
-      text-align: center;
-      padding: 20px 0;
-      font-size: 300%;
-      font-weight: 200;
-      letter-spacing: 3px;
-      word-spacing: 5px;
-    }
+		<div class="card">
+        <img height="100" width="150" src="assets/img/pug.jpg" alt="sound 9">
+        <audio controls id="audio9">
+          <source src="assets/mp3/no-mercy.mp3" type="audio/mpeg">
+        </audio>
+		</div>
+      
 
-    h1::first-letter {
-      color: #EA9215;
-      font-weight: 300;
-    }
+		<div class="card">
+        <img height="100" width="150" src="assets/img/sloth.jpeg" alt="sound 10">
+        <audio controls id="audio10">
+          <source src="assets/mp3/waves.mp3" type="audio/mpeg">
+        </audio>
+		</div>
+      
 
-    footer {
-      position: absolute;
-      bottom: 0;
-      padding: 1rem;
-      background-color: #3A4750;
-      color: #FFF;
-      width: 100%;
-      text-align: center;
-    }
+		<div class="card">
+        <img height="100" width="150" src="assets/img/spider.jpeg" alt="sound 11">
+        <audio controls id="audio11">
+          <source src="assets/mp3/red-alert.mp3" type="audio/mpeg">
+        </audio>
+		</div>
+      
 
-    div {
-      text-align: center;
-      padding-top: 20px;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-
-    li a {
-      float: left;
-      display: block;
-      color: #3A4750;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-
-    /* Change the link color to #111 (black) on hover */
-    li a:hover {
-      background-color: #3A4750;
-      color: #FFF;
-    }
-
-    #login-item {
-      float: right;
-    }
-
-    img {
-      border: 2px solid #3A4750;
-      border-radius: 15px;
-      width: 300px;
-      height: 200px;
-    }
-
-    button {
-      display: inline-block;
-      padding: 10px 30px;
-      font-size: 20px;
-      font-weight: 300;
-      text-decoration: none;
-      border-radius: 200px;
-      transition: background-color 0.2s, border 0.2s, color 0.2s;
-      border: 1px solid #3A4750;
-      color: #3A4750;
-      background-color: rgba(255, 255, 255, 0.8);
-      width: 150px;
-      text-transform: uppercase;
-    }
-
-    button:hover {
-      background-color: #3A4750;
-      border: 1px solid #3A4750;
-      color: #FFF;
-    }
-
-    button:last-of-type {
-      float: right;
-    }
-
-    strong {
-      font-size: 120%;
-    }
-
-
-  </style>
-
-  <script>
-  var members = new Array() ;
-  var index = 0;
-
-  function startup()
-  {
-      members[0] = new Image;
-      members[0].name = "Aracely Payan";
-      members[0].src = "img/aracely.jpg";
-      members[0].email = "apayan@ucsd.edu";
-      members[0].description = "Aracely is a super senior at UCSD. She was born and raised in Southern california and has a passionate love for ceviche. Her favorite ceviche restaurant in San Diego is Oscars in PB and her favorite alcoholic beverage is a moscow mule. She enjoys spending time with friends and hopes to learn some proper front end development with this class.";
-      members[1] = new Image;
-      members[1].name = "Isa Noui";
-      members[1].src = "img/isa.jpg";
-      members[1].email = "anoui@ucsd.edu";
-      members[1].description = "Isa is a senior at UCSD majoring in math-CS planning to become a full stack developer somewhere in SoCal. Isa was born in San Francisco and raised in Roseville, CA. He enjoys a free lifestyle and loves to snowboard and skydive.";
-      members[2] = new Image;
-      members[2].name = "Richard Zheng";
-      members[2].src = "img/richard.jpg";
-      members[2].email = "rjzheng@ucsd.edu";
-      members[2].description = "Richard is currently a senior studying Computer Engineering. He is interested in full-stack developer with a backend focus. He is currently a full-time full-stack developer at ZitoVault and a part-time student at Univeristy of California San Diego.";
-
-      document.getElementById("member").innerHTML = members[0].name;
-      document.getElementById("photo").src = members[0].src;
-      document.getElementById("photo").alt = members[0].name;
-      document.getElementById("email").innerHTML = members[0].email;
-      document.getElementById("description").innerHTML = members[0].description;
-
-      return;
-  }
-
-  function prev() {
-    index--;
-    if (index < 0)
-    {
-        index = 2;
-    }
-    document.getElementById("photo").src = members[index].src;
-    document.getElementById("photo").alt = members[index].name;
-    document.getElementById("member").innerHTML = members[index].name;
-    document.getElementById("email").innerHTML = members[index].email;
-    document.getElementById("description").innerHTML = members[index].description;
-  }
-
-  function next() {
-    index++;
-    if (index > 2)
-    {
-        index = 0;
-    }
-    document.getElementById("photo").src = members[index].src;
-    document.getElementById("photo").alt = members[index].name;
-    document.getElementById("member").innerHTML = members[index].name;
-    document.getElementById("email").innerHTML = members[index].email;
-    document.getElementById("description").innerHTML = members[index].description;
-  }
-
-  </script>
-</head>
-<body onload="startup()">
-  <nav>
-    <ul>
-      <li><a id="team-name" href="index.html">Team AIR</a></li>
-      <li><a href="soundboard-part1a.html">Part 1A</a></li>
-      <li><a href="soundboard-part1b.html">Part 1B</a></li>
-      <li><a href="tagtest.html">Part 2</a></li>
-      <li id="login-item"><a href="login.html">Login</a></li>
-    </ul>
-  </nav>
-
-    <main>
-      <header>
-        <h1 id="member">Aracely Payan</h1>
-      </header>
-      <div>
-        <img id="photo" alt="" width="500" height="300" src="img/cheetah.jpg">
-      </div>
-      <div>
-        <strong>Email:</strong> <p id="email"></p>
-        <br />
-        <strong>Description:</strong> <p id="description"></p>
-        <br />
-      </div>
-
-      <button onclick="prev()">previous</button>
-      <button onclick="next()">next</button>
+		<div class="card">
+        <img height="100" width="150" src="assets/img/tiger.jpeg" alt="sound 12">
+        <audio controls id="audio12">
+          <source src="assets/mp3/evil-laugh-cackle.mp3" type="audio/mpeg">
+        </audio>
+		</div>
+      
+     
+     </section>
     </main>
-
-    <footer>
-      <span>&copy;TeamAir 2017</span>
-    </footer>
+   <footer><div> &copy; Team Air 2017 </div></footer>
   </body>
+</html>
 
-  </html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Team AIR Home page</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+    }
+
+    html {
+      background-color: #EEEEEE;
+      color: #3A4750;
+    }
+
+    nav {
+      background-color: #EA9215;
+    }
+
+    main,
+    footer {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%,0);
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 300%;
+      font-weight: 200;
+      letter-spacing: 3px;
+      word-spacing: 5px;
+    }
+
+    h1::first-letter {
+      color: #EA9215;
+      font-weight: 300;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      padding: 1rem;
+      background-color: #3A4750;
+      color: #FFF;
+      width: 100%;
+      text-align: center;
+    }
+
+    div {
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    li a {
+      float: left;
+      display: block;
+      color: #3A4750;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+      background-color: #3A4750;
+      color: #FFF;
+    }
+
+    #login-item {
+      float: right;
+    }
+
+    img {
+      border: 2px solid #3A4750;
+      border-radius: 15px;
+      width: 300px;
+      height: 200px;
+    }
+
+    button {
+      display: inline-block;
+      padding: 10px 30px;
+      font-size: 20px;
+      font-weight: 300;
+      text-decoration: none;
+      border-radius: 200px;
+      transition: background-color 0.2s, border 0.2s, color 0.2s;
+      border: 1px solid #3A4750;
+      color: #3A4750;
+      background-color: rgba(255, 255, 255, 0.8);
+      width: 150px;
+      text-transform: uppercase;
+    }
+
+    button:hover {
+      background-color: #3A4750;
+      border: 1px solid #3A4750;
+      color: #FFF;
+    }
+
+    button:last-of-type {
+      float: right;
+    }
+
+    strong {
+      font-size: 120%;
+    }
+
+
+  </style>
+
+  <script>
+  var members = new Array() ;
+  var index = 0;
+
+  function startup()
+  {
+      members[0] = new Image;
+      members[0].name = "Aracely Payan";
+      members[0].src = "img/aracely.jpg";
+      members[0].email = "apayan@ucsd.edu";
+      members[0].description = "Aracely is a super senior at UCSD. She was born and raised in Southern california and has a passionate love for ceviche. Her favorite ceviche restaurant in San Diego is Oscars in PB and her favorite alcoholic beverage is a moscow mule. She enjoys spending time with friends and hopes to learn some proper front end development with this class.";
+      members[1] = new Image;
+      members[1].name = "Isa Noui";
+      members[1].src = "img/isa.jpg";
+      members[1].email = "anoui@ucsd.edu";
+      members[1].description = "Isa is a senior at UCSD majoring in math-CS planning to become a full stack developer somewhere in SoCal. Isa was born in San Francisco and raised in Roseville, CA. He enjoys a free lifestyle and loves to snowboard and skydive.";
+      members[2] = new Image;
+      members[2].name = "Richard Zheng";
+      members[2].src = "img/richard.jpg";
+      members[2].email = "rjzheng@ucsd.edu";
+      members[2].description = "Richard is currently a senior studying Computer Engineering. He is interested in full-stack developer with a backend focus. He is currently a full-time full-stack developer at ZitoVault and a part-time student at Univeristy of California San Diego.";
+
+      document.getElementById("member").innerHTML = members[0].name;
+      document.getElementById("photo").src = members[0].src;
+      document.getElementById("photo").alt = members[0].name;
+      document.getElementById("email").innerHTML = members[0].email;
+      document.getElementById("description").innerHTML = members[0].description;
+
+      return;
+  }
+
+  function prev() {
+    index--;
+    if (index < 0)
+    {
+        index = 2;
+    }
+    document.getElementById("photo").src = members[index].src;
+    document.getElementById("photo").alt = members[index].name;
+    document.getElementById("member").innerHTML = members[index].name;
+    document.getElementById("email").innerHTML = members[index].email;
+    document.getElementById("description").innerHTML = members[index].description;
+  }
+
+  function next() {
+    index++;
+    if (index > 2)
+    {
+        index = 0;
+    }
+    document.getElementById("photo").src = members[index].src;
+    document.getElementById("photo").alt = members[index].name;
+    document.getElementById("member").innerHTML = members[index].name;
+    document.getElementById("email").innerHTML = members[index].email;
+    document.getElementById("description").innerHTML = members[index].description;
+  }
+
+  </script>
+</head>
+<body onload="startup()">
+  <nav>
+    <ul>
+      <li><a id="team-name" href="index.html">Team AIR</a></li>
+      <li><a href="soundboard-part1a.html">Part 1A</a></li>
+      <li><a href="soundboard-part1b.html">Part 1B</a></li>
+      <li><a href="tagtest.html">Part 2</a></li>
+      <li id="login-item"><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+    <main>
+      <header>
+        <h1 id="member">Aracely Payan</h1>
+      </header>
+      <div>
+        <img id="photo" alt="" width="500" height="300" src="img/cheetah.jpg">
+      </div>
+      <div>
+        <strong>Email:</strong> <p id="email"></p>
+        <br />
+        <strong>Description:</strong> <p id="description"></p>
+        <br />
+      </div>
+
+      <button onclick="prev()">previous</button>
+      <button onclick="next()">next</button>
+    </main>
+
+    <footer>
+      <span>&copy;TeamAir 2017</span>
+    </footer>
+  </body>
+
+  </html>
