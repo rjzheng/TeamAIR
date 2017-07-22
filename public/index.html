@@ -1,231 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>AIR SoundBoard</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>AIR SoundBoard</title>
 
-    <!-- Bootstrap -->
+  <!-- Bootstrap -->
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Lato', sans-serif;
-        font-size: 14px;
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+    }
+
+    html,
+    body {
+      background-color: #EEEEEE;
+      color: #3A4750;
+    }
+
+
+    audio {
+      visibility: hidden;
+    }
+
+    img {
+      border: 1px solid #000;
+      border-radius: 100%;
+      cursor: pointer;
+      transition: box-shadow 0.5s, transform 1s;
+    }
+
+    @-webkit-keyframes spin
+    {
+      from{-webkit-transform:rotate(0deg);}
+      to{-webkit-transform:rotate(360deg);}
+    }
+    @-moz-keyframes spin
+    {
+      from{-moz-transform:rotate(0deg);}
+      to{-moz-transform:rotate(360deg);}
+    }
+    @-ms-keyframes spin
+    {
+      from{-ms-transform:rotate(0deg);}
+      to{-ms-transform:rotate(360deg);}
+    }
+
+    img:hover {
+      box-shadow: 0px 0px 45px #EA9215;
+      transform: scale(1.10);
+      -webkit-animation-name: spin;
+      -webkit-animation-duration: 5s;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      -moz-animation-name: spin;
+      -moz-animation-duration: 5s;
+      -moz-animation-iteration-count: infinite;
+      -moz-animation-timing-function: linear;
+      -ms-animation-name: spin;
+      -ms-animation-duration: 5s;
+      -ms-animation-iteration-count: infinite;
+      -ms-animation-timing-function: linear;
+    }
+
+    footer {
+      padding: 1rem;
+      background-color: #3A4750;
+      color: #FFF;
+      width: 100%;
+      text-align: center;
+    }
+
+
+  </style>
+
+  <script>
+    function play(audioSrc) {
+
+      var audio = document.getElementById(audioSrc);
+
+      if (audio.paused) {
+        document.getElementById(audioSrc).play();
+      } else {
+        document.getElementById(audioSrc).pause();
       }
 
-      html,
-      body {
-        background-color: #EEEEEE;
-        color: #3A4750;
-      }
+    };
+
+  </script>
+</head>
+<body>
+ <header >
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand">AIR Soundboard</a>
+      </div>     
+      <ul class="nav navbar-nav">
+      <li class="active"><a href="assets/html/index.html">Home</a></li>
+      </ul>
+      <form class="navbar-form navbar-left" action="https://www.google.com" method="get">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Username">
+          <input type="text" class="form-control" placeholder="Password">
+        </div>
+        <button class="btn btn-default">Login</button>
+      </form>
+    </div>
+  </nav>
+
+</header>
+
+<main>
 
 
-      audio {
-        visibility: hidden;
-      }
+ <section class="container">
+  <h2> Click a button for sound </h2>
 
-      img {
-        border: 1px solid #000;
-        border-radius: 100%;
-        cursor: pointer;
-        transition: box-shadow 0.5s, transform 1s;
-      }
+  <div class="row">
 
-      @-webkit-keyframes spin
-      {
-          from{-webkit-transform:rotate(0deg);}
-          to{-webkit-transform:rotate(360deg);}
-      }
-      @-moz-keyframes spin
-      {
-          from{-moz-transform:rotate(0deg);}
-          to{-moz-transform:rotate(360deg);}
-      }
-      @-ms-keyframes spin
-      {
-          from{-ms-transform:rotate(0deg);}
-          to{-ms-transform:rotate(360deg);}
-      }
-
-      img:hover {
-        box-shadow: 0px 0px 45px #EA9215;
-        transform: scale(1.10);
-        -webkit-animation-name: spin;
-        -webkit-animation-duration: 5s;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-timing-function: linear;
-        -moz-animation-name: spin;
-        -moz-animation-duration: 5s;
-        -moz-animation-iteration-count: infinite;
-        -moz-animation-timing-function: linear;
-        -ms-animation-name: spin;
-        -ms-animation-duration: 5s;
-        -ms-animation-iteration-count: infinite;
-        -ms-animation-timing-function: linear;
-      }
-
-      footer {
-        padding: 1rem;
-        background-color: #3A4750;
-        color: #FFF;
-        width: 100%;
-        text-align: center;
-      }
+   <div class="col-md-3">
+    <img height="250" width="250" src="assets/img/bird.jpeg" alt="sound 1" onclick="play('audio1')">
+    <audio controls id="audio1">
+      <source src="assets/mp3/beat1.mp3" type="audio/mpeg">
+      </audio>
+    </div>
 
 
-    </style>
-
-    <script>
-      function play(audioSrc) {
-
-        var audio = document.getElementById(audioSrc);
-
-        if (audio.paused) {
-          document.getElementById(audioSrc).play();
-        } else {
-          document.getElementById(audioSrc).pause();
-        }
-
-      };
-
-    </script>
-  </head>
-  <body>
-   <header >
-    <h1>SoundBoard Game</h1>
+    <div class="col-md-3">
+      <img height="250" width="250" src="assets/img/cheetah.jpg" alt="sound 2" onclick="play('audio2')">
+      <audio controls id="audio2">
+        <source src="assets/mp3/beat2.mp3" type="audio/mpeg">
+        </audio>
+      </div>
 
 
-    <nav>
-     <form action="https://www.google.com" method="get">
-   	  <input type="text" placeholder="Username">
-   	  <input type="password" placeholder="Password">
-      <button>Login</button>
-     </form>
-    </nav>
-
-   </header>
-
-   <main>
-
-
-     <section class="container">
-      <h2> Click a button for sound </h2>
-
-        <div class="row">
-
-        	<div class="col-md-3">
-          <img height="250" width="250" src="assets/img/bird.jpeg" alt="sound 1" onclick="play('audio1')">
-          <audio controls id="audio1">
-            <source src="assets/mp3/beat1.mp3" type="audio/mpeg">
+      <div class="col-md-3">
+        <img height="250" width="250" src="assets/img/elephant.jpeg" alt="sound 3" onclick="play('audio3')">
+        <audio controls id="audio3">
+          <source src="assets/mp3/beat3.mp3" type="audio/mpeg">
           </audio>
-        	</div>
+        </div>
 
-
-      		<div class="col-md-3">
-              <img height="250" width="250" src="assets/img/cheetah.jpg" alt="sound 2" onclick="play('audio2')">
-              <audio controls id="audio2">
-                <source src="assets/mp3/beat2.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
-
-
-      		<div class="col-md-3">
-              <img height="250" width="250" src="assets/img/elephant.jpeg" alt="sound 3" onclick="play('audio3')">
-              <audio controls id="audio3">
-                <source src="assets/mp3/beat3.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
-
-      		<div class="col-md-3">
-              <img height="250" width="250" src="assets/img/fish.jpeg" alt="sound 4" onclick="play('audio4')">
-              <audio controls id="audio4">
-                <source src="assets/mp3/beat4.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
+        <div class="col-md-3">
+          <img height="250" width="250" src="assets/img/fish.jpeg" alt="sound 4" onclick="play('audio4')">
+          <audio controls id="audio4">
+            <source src="assets/mp3/beat4.mp3" type="audio/mpeg">
+            </audio>
+          </div>
 
         </div>
 
         <div class="row">
 
 
-      		<div class="col-md-3">
-              <img height="250" width="250" src="assets/img/flamingo.jpeg" alt="sound 5" onclick="play('audio5')">
-              <audio controls id="audio5">
-                <source src="assets/mp3/beat5.mp3" type="audio/mpeg">
+          <div class="col-md-3">
+            <img height="250" width="250" src="assets/img/flamingo.jpeg" alt="sound 5" onclick="play('audio5')">
+            <audio controls id="audio5">
+              <source src="assets/mp3/beat5.mp3" type="audio/mpeg">
               </audio>
-      		</div>
+            </div>
 
 
-      		<div class="col-md-3">
+            <div class="col-md-3">
               <img height="250" width="250" src="assets/img/gecco.jpeg" alt="sound 6" onclick="play('audio6')">
               <audio controls id="audio6">
                 <source src="assets/mp3/beat6.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
+                </audio>
+              </div>
 
 
-      		<div class="col-md-3">
-              <img height="250" width="250" src="assets/img/orangutan.jpg" alt="sound 7" onclick="play('audio7')">
-              <audio controls id="audio7">
-                <source src="assets/mp3/night-time.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
+              <div class="col-md-3">
+                <img height="250" width="250" src="assets/img/orangutan.jpg" alt="sound 7" onclick="play('audio7')">
+                <audio controls id="audio7">
+                  <source src="assets/mp3/night-time.mp3" type="audio/mpeg">
+                  </audio>
+                </div>
 
 
-      		<div class="col-md-3">
-              <img height="250" width="250" src="assets/img/parakeet.jpeg" alt="sound 8" onclick="play('audio8')">
-              <audio controls id="audio8">
-                <source src="assets/mp3/beat8.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
+                <div class="col-md-3">
+                  <img height="250" width="250" src="assets/img/parakeet.jpeg" alt="sound 8" onclick="play('audio8')">
+                  <audio controls id="audio8">
+                    <source src="assets/mp3/beat8.mp3" type="audio/mpeg">
+                    </audio>
+                  </div>
 
-        </div>
+                </div>
 
-        <div class="row">
+                <div class="row">
 
-      		<div class="col-md-3">
-              <img height="250" width="250" src="assets/img/pug.jpg" alt="sound 9" onclick="play('audio9')">
-              <audio controls id="audio9">
-                <source src="assets/mp3/no-mercy.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
-
-
-      		<div class="col-md-3">
-              <img height="250" width="250" src="assets/img/sloth.jpeg" alt="sound 10" onclick="play('audio10')">
-              <audio controls id="audio10">
-                <source src="assets/mp3/waves.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
+                  <div class="col-md-3">
+                    <img height="250" width="250" src="assets/img/pug.jpg" alt="sound 9" onclick="play('audio9')">
+                    <audio controls id="audio9">
+                      <source src="assets/mp3/no-mercy.mp3" type="audio/mpeg">
+                      </audio>
+                    </div>
 
 
-      		<div class="col-md-3">
-              <img height="250" width="250" src="assets/img/spider.jpeg" alt="sound 11" onclick="play('audio11')">
-              <audio controls id="audio11">
-                <source src="assets/mp3/red-alert.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
+                    <div class="col-md-3">
+                      <img height="250" width="250" src="assets/img/sloth.jpeg" alt="sound 10" onclick="play('audio10')">
+                      <audio controls id="audio10">
+                        <source src="assets/mp3/waves.mp3" type="audio/mpeg">
+                        </audio>
+                      </div>
 
 
-      		<div class="col-md-3">
-              <img height="250" width="250" src="assets/img/tiger.jpeg" alt="sound 12" onclick="play('audio12')">
-              <audio controls id="audio12">
-                <source src="assets/mp3/evil-laugh-cackle.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
-        </div>
+                      <div class="col-md-3">
+                        <img height="250" width="250" src="assets/img/spider.jpeg" alt="sound 11" onclick="play('audio11')">
+                        <audio controls id="audio11">
+                          <source src="assets/mp3/red-alert.mp3" type="audio/mpeg">
+                          </audio>
+                        </div>
 
 
-     </section>
-    </main>
-   <footer><div> &copy; Team Air 2017 </div></footer>
-  </body>
-</html>
+                        <div class="col-md-3">
+                          <img height="250" width="250" src="assets/img/tiger.jpeg" alt="sound 12" onclick="play('audio12')">
+                          <audio controls id="audio12">
+                            <source src="assets/mp3/evil-laugh-cackle.mp3" type="audio/mpeg">
+                            </audio>
+                          </div>
+                        </div>
+
+
+                      </section>
+                    </main>
+                    <footer><div> &copy; Team Air 2017 </div></footer>
+                  </body>
+                  </html>
