@@ -1,0 +1,221 @@
+/* Hint: use relative measurements you'll find them useful! */
+
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+	background-image: url("background.png");
+	background-attachment: fixed;
+	padding: 0 20%;
+	height: 100%;
+	width: 100%;
+}
+
+main {
+	border: 10px solid transparent;
+	border-image: url("border.gif") 30 round;
+	background-color: #FFF;
+	margin: 0 auto 3rem auto;
+	height: 100%;
+	width: 100%;
+}
+
+header {
+	margin: 1.5rem;
+	margin-bottom: 3rem;
+}
+
+
+section {
+	/* color rgb(243,234,95) is used */
+    background-color: rgb(243, 234, 95);
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100%;
+    margin: 1.5rem;
+}
+section > div {
+    /* font is 'Comic Sans MS, text is automatically adjusted to lowercase do not mod the HTML */
+    font-family: 'Comic Sans MS';
+    color: white;
+    text-transform: lowercase;
+    padding-top: 0.5rem;
+    height: 100%;
+    height: 2rem;
+}
+section > div:nth-child(odd) {
+	/* ANastNthChildSelectorToWrite means what it says it isn't an indetifier */
+	/* background color is  rgb(192,77,249) */
+	background-color: rgb(192, 77, 249);
+	width: 50%;
+	padding-left: 0.5rem;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+	margin-left: auto;
+}
+
+section > div:nth-child(even) {
+	/* ANastNthChildSelectorToWrite means what it says it isn't an indetifier */
+    /* background color is  rgb(43,209,252) */
+	background-color: rgb(43,209,252);
+	width: 50%;
+	text-align: right;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+	padding-right: 0.5rem;
+}
+
+section > div:nth-child(3):after {
+	/* gave you the nth child after selector for free to inspire you */
+	/* generated content in here ... a property can do that */
+	content: " \2665\2665\2665";
+}
+
+	/* a freebie for fun */
+aside {
+	background: rgb(255,63,63);
+	color: white;
+	border: 1rem solid black;
+	border-top-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	border-top-right-radius: 3rem;
+	border-bottom-left-radius: 3rem;
+	font-family: sans-serif;
+	font-size: 2rem;
+	margin: 1rem 1.5rem;
+	padding: 1rem;
+	text-align: center;
+}
+
+.logo{
+	background-color: rgb(230,95,191);
+	box-shadow: .1rem .2rem .1rem #888888;
+	font-family: 'Monoton';
+	font-weight: 500;
+	padding: 0.5rem 1rem;
+	border-radius:50%;
+	font-size: 2.5rem;
+	text-align: center;
+}
+
+a{
+	color: black;
+	text-decoration: none;
+}
+
+.fun{
+	font-size: 4rem;
+	float: right;
+	font-family: Courier, "new monospace";
+	text-transform: uppercase;
+	color: red;
+	-webkit-text-fill-color: white;
+	-webkit-text-stroke-width: .05rem;
+	-webkit-box-reflect: below -1.5rem -webkit-linear-gradient(bottom,rgba(255,0,0,1), rgba(255,0,0,0));
+	text-shadow: .1rem .1rem .3rem #ff5252;
+}
+
+@media screen and (max-width: 55rem) {
+    .fun {
+    	-webkit-box-reflect: inherit;
+    	float: none;
+    }
+
+    section > div:nth-child(odd) {
+		/* ANastNthChildSelectorToWrite means what it says it isn't an indetifier */
+		/* background color is  rgb(192,77,249) */
+		background-color: rgb(192, 77, 249);
+		width: 100%;
+		text-align: center;
+    }
+
+    section > div:nth-child(even) {
+		/* ANastNthChildSelectorToWrite means what it says it isn't an indetifier */
+        /* background color is  rgb(43,209,252) */
+		background-color: rgb(43,209,252);
+		width: 100%;
+		text-align: center;
+    }
+}
+
+.fun #kern2{
+	margin-left: -0.5rem;
+	letter-spacing: -1rem;
+}
+
+.fun #kern3{
+	letter-spacing: -0.5rem;
+}
+
+svg{
+	width: 25px;
+	height: 25px;
+}
+
+svg > use{
+	fill: white;
+	transition: fill 2s;
+}
+
+
+svg:hover { /*Grow*/
+    transform: scale(5) rotateZ(1080deg);
+    transition: all 2s;
+	animation-duration: 2s; /* Safari 4.0 - 8.0 */
+}
+
+svg:hover > use{
+	fill: black;
+}
+
+
+footer {
+	text-align: center;
+	background-color: rgb(230,95,191);
+	padding: 0.5rem;
+	font-family: cursive;
+	margin-top: 4rem;
+	margin-bottom: -0.2rem;
+	margin-left: -0.2rem;
+	margin-right: -0.2rem;
+}
+
+footer img {
+	width: 75px;
+	height: 85px;
+}
+
+footer .wrapper span{
+	visibility: hidden;
+	border: 3px solid #000;
+	background-color:white;
+	border-radius: 10%;
+	padding: 3px;
+	box-shadow: .1rem .2rem .1rem rgba(0, 0, 0, 0.3);
+	position: absolute;
+	margin-left: 1rem;
+}
+
+footer .wrapper span::before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 15px solid;
+	border-color: transparent #000 transparent transparent;
+	top: 0.5px;
+	left: -33px;
+}
+
+footer img:hover ~span{
+	visibility:visible;
+}
+
+
+/* Opps truncated the file for you to fill in */
+
+/* Solution given should be below 250 lines, solution we had was below 200 easily */
