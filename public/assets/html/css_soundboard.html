@@ -1,3 +1,4 @@
+<!-- We have 3 errors and 26 warnings in total for this file. They all follow the pattern that the there are unknown vendor extensions such as -webkit, -o, -ms, and -moz. After doing research online, we came to a conclusion that these errors and warnings are ok to have because the validator does not recognize these extensions. However, we need to have them to make sure everything shows correctly on different browsers. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +8,9 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>AIR SoundBoard</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
+  <link type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
 
-  <style>
+  <style type="text/css">
     * {
       margin: 0;
       padding: 0;
@@ -125,7 +126,6 @@
       background-color: #3A4750;
       color: #FFF;
     }
-
 
 
     form {
