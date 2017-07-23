@@ -21,19 +21,41 @@
       font-size: 14px;
     }
 
-    .navbar {
-      background-color: #EA9215;
-    }
 
     html,
     body {
       background-color: #EEEEEE;
       color: #3A4750;
     }
-    
+
+    nav {
+      background-color: #EA9215;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    li a {
+      float: left;
+      display: block;
+      color: #3A4750;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+      background-color: #3A4750;
+      color: #FFF;
+    }
+
     .container-fluid{
-	    display: table;	
-	    padding-bottom: 15px;    
+	    display: table;
+	    padding-bottom: 15px;
     }
 
 	.container{
@@ -41,13 +63,13 @@
 		display:inline-block;
 		float: left;
 	}
-	
+
 	.imgcell{
 		margin: 2rem;
 	    height: 250px;
-	    width: 250px;	
+	    width: 250px;
     }
-	
+
 	img{
 	  	width: 250px;
 	  	height: 250px;
@@ -57,31 +79,14 @@
 	  	cursor: pointer;
 	  	transition: box-shadow 0.5s, transform 1s;
 	}
-	
-	#home{
-      float: left;
-      display: block;
-      color: #3A4750;
-      text-align: center;
-      font-size: large;
-      padding: 14px 16px;
-      text-decoration: none;
-      background-color: #EA9215;
-      transition: background-color 0.3s;
-    }
-    /* Change the link color to #111 (black) on hover */
-    #home:hover {
-      background-color: #3A4750;
-      color: #FFF;
-    }
-    
-    #login-item {
-      float: right;
-    }
-	
+
+  #login-item {
+    float: right;
+  }
+
 	button{
 		color: #EA9215;
-		background-color: #EEEEEE;	
+		background-color: #EEEEEE;
 	}
 
 	.grid{
@@ -158,23 +163,19 @@
   </script>
 </head>
 <body>
- <header >
-  <nav class="navbar navbar-inverse">
-    <div class="container">
-      <div class="navbar-header" style="float: left">
-        <div class="navbar-brand" style="color: #000; font-size: x-large;" >AIR Soundboard</div>
+ <header>
+  <nav>
+    <ul>
+      <li><a>AIR Soundboard</a></li>
+      <li><a href="../../index.html">Home</a></li>
+    </ul>
+    <!-- <form class="navbar-form navbar-left form-style">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Username">
+        <input type="text" class="form-control" placeholder="Password">
       </div>
-      <ul class="nav navbar-nav">
-      <li class="active"><a id ="home" href="../../index.html">Home</a></li>
-      </ul>
-      <form class="navbar-form navbar-left form-style" action="https://www.google.com" method="get">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Username">
-          <input type="text" class="form-control" placeholder="Password">
-        </div>
-        <button class="btn btn-default"><b>Login</b></button>
-      </form>
-    </div>
+      <button class="btn btn-default">Login</button>
+    </form> -->
   </nav>
 
 </header>
@@ -187,17 +188,17 @@
 	  </div>
 	</section>
      <section class="container-fluid">
-	  	
+
 	  	<div class="row justify-content-md-center">
 	        <div class="row">
-			
+
 	        	<div class="col-3 col-sm-3 imgcell" >
 				<img src="./../../assets/img/silhouette1.jpeg" alt="sound 11" onclick="play('audio1')">
 	          <audio controls id="audio1">
 	            <source src="./../../assets/mp3/beat1.mp3" type="audio/mpeg">
 	          </audio>
-	        	</div>	
-	
+	        	</div>
+
 	        	<div class="col-3 col-sm-3 imgcell" >
 				<img src="./../../assets/img/silhouette2.jpeg" alt="sound 11" onclick="play('audio2')">
 	              <audio controls id="audio2">
@@ -210,7 +211,7 @@
 	                <source src="./../../assets/mp3/beat3.mp3" type="audio/mpeg">
 	              </audio>
 	      		</div>
-	
+
 	        	<div class="col-3 col-sm-3 imgcell" >
 				<img src="./../../assets/img/silhouette4.jpeg" alt="sound 11" onclick="play('audio4')">
 	              <audio controls id="audio4">
@@ -226,15 +227,15 @@
 	              <audio controls id="audio5">
 	                <source src="./../../assets/mp3/beat5.mp3" type="audio/mpeg">
 	              </audio>
-	      		</div>	
-	
+	      		</div>
+
 	        	<div class="col-3 col-sm-3 imgcell" >
 				<img src="./../../assets/img/silhouette6.jpeg" alt="sound 11" onclick="play('audio6')">
 	              <audio controls id="audio6">
 	                <source src="./../../assets/mp3/beat6.mp3" type="audio/mpeg">
 	              </audio>
-	      		</div>	
-	
+	      		</div>
+
 	        	<div class="col-3 col-sm-3 imgcell" >
 				<img src="./../../assets/img/silhouette7.jpeg" alt="sound 11" onclick="play('audio7')">
 	              <audio controls id="audio7">
@@ -252,14 +253,14 @@
 	        </div>
 
 	        <div class="row">
-	
+
 	        	<div class="col-3 col-sm-3 imgcell" >
 				<img src="./../../assets/img/silhouette9.jpeg" alt="sound 11" onclick="play('audio9')">
 	              <audio controls id="audio9">
 	                <source src="./../../assets/mp3/no-mercy.mp3" type="audio/mpeg">
 	              </audio>
-	      		</div>	
-	
+	      		</div>
+
 	        	<div class="col-3 col-sm-3 imgcell" >
 				<img src="./../../assets/img/silhouette10.png" alt="sound 11" onclick="play('audio10')">
 	              <audio controls id="audio10">
