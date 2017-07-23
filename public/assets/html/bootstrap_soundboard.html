@@ -36,16 +36,45 @@
     }
 
 
+	.col-md-1{
+	    padding-top: 20rem;
+	    padding-bottom: 20rem;
+    }
+	
+	.input-columns{
+		height:60rem;
+	}
+
     audio {
       visibility: hidden;
     }
 
-    img {
-      border: 1px solid #000;
-      border-radius: 100%;
-      cursor: pointer;
-      transition: box-shadow 0.5s, transform 1s;
-    }
+	.button{
+	width: 250px;
+	height: 250px;
+	background-color:#999a9d;
+	border: 0.5px solid #000;
+	border-radius: 100%;
+	cursor: pointer;
+	transition: box-shadow 0.5s, transform 1s;
+	margin: 2rem;
+	}
+	
+	.grid{
+	  margin: auto; 
+	  position: relative; 
+	}
+
+	audio {
+	        visibility: hidden;
+	      }
+       
+    .audio-controls{
+		writing-mode: bt-lr; /* IE */
+		-webkit-appearance: slider-vertical; /* WebKit */
+		width: 2rem;
+		height: 100%;
+	}
 
     @-webkit-keyframes spin
     {
@@ -63,7 +92,7 @@
       to{-ms-transform:rotate(360deg);}
     }
 
-    img:hover {
+    button:hover {
       box-shadow: 0px 0px 45px #EA9215;
       transform: scale(1.10);
       -webkit-animation-name: spin;
@@ -97,6 +126,7 @@
       var audio = document.getElementById(audioSrc);
 
       if (audio.paused) {
+	    audio.playbackRate=2;
         document.getElementById(audioSrc).play();
       } else {
         document.getElementById(audioSrc).pause();
@@ -129,118 +159,119 @@
 </header>
 
 <main>
+     <section class="container-fluid">
 
-
- <section class="container">
-  <h2> Click a button for sound </h2>
-
-  <div class="row">
-
-   <div class="col-md-3">
-    <img height="250" width="250" src="../img/bird.jpeg" alt="sound 1" onclick="play('audio1')">
-    <audio controls id="audio1">
-      <source src="../mp3/beat1.mp3" type="audio/mpeg">
-      </audio>
-    </div>
-
-
-    <div class="col-md-3">
-      <img height="250" width="250" src="../img/cheetah.jpg" alt="sound 2" onclick="play('audio2')">
-      <audio controls id="audio2">
-        <source src="../mp3/beat2.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-
-
-      <div class="col-md-3">
-        <img height="250" width="250" src="../img/elephant.jpeg" alt="sound 3" onclick="play('audio3')">
-        <audio controls id="audio3">
-          <source src="../mp3/beat3.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-
-        <div class="col-md-3">
-          <img height="250" width="250" src="../img/fish.jpeg" alt="sound 4" onclick="play('audio4')">
-          <audio controls id="audio4">
-            <source src="../mp3/beat4.mp3" type="audio/mpeg">
-            </audio>
-          </div>
-
-        </div>
-
-        <div class="row">
-
-
-          <div class="col-md-3">
-            <img height="250" width="250" src="../img/flamingo.jpeg" alt="sound 5" onclick="play('audio5')">
-            <audio controls id="audio5">
-              <source src="../mp3/beat5.mp3" type="audio/mpeg">
-              </audio>
-            </div>
-
-
-            <div class="col-md-3">
-              <img height="250" width="250" src="../img/gecco.jpeg" alt="sound 6" onclick="play('audio6')">
-              <audio controls id="audio6">
-                <source src="../mp3/beat6.mp3" type="audio/mpeg">
-                </audio>
-              </div>
-
-
-              <div class="col-md-3">
-                <img height="250" width="250" src="../img/orangutan.jpg" alt="sound 7" onclick="play('audio7')">
-                <audio controls id="audio7">
-                  <source src="../mp3/night-time.mp3" type="audio/mpeg">
-                  </audio>
-                </div>
-
-
-                <div class="col-md-3">
-                  <img height="250" width="250" src="../img/parakeet.jpeg" alt="sound 8" onclick="play('audio8')">
-                  <audio controls id="audio8">
-                    <source src="../mp3/beat8.mp3" type="audio/mpeg">
-                    </audio>
-                  </div>
-
-                </div>
-
-                <div class="row">
-
-                  <div class="col-md-3">
-                    <img height="250" width="250" src="../img/pug.jpg" alt="sound 9" onclick="play('audio9')">
-                    <audio controls id="audio9">
-                      <source src="../mp3/no-mercy.mp3" type="audio/mpeg">
-                      </audio>
-                    </div>
-
-
-                    <div class="col-md-3">
-                      <img height="250" width="250" src="../img/sloth.jpeg" alt="sound 10" onclick="play('audio10')">
-                      <audio controls id="audio10">
-                        <source src="../mp3/waves.mp3" type="audio/mpeg">
-                        </audio>
-                      </div>
-
-
-                      <div class="col-md-3">
-                        <img height="250" width="250" src="../img/spider.jpeg" alt="sound 11" onclick="play('audio11')">
-                        <audio controls id="audio11">
-                          <source src="../mp3/red-alert.mp3" type="audio/mpeg">
-                          </audio>
-                        </div>
-
-
-                        <div class="col-md-3">
-                          <img height="250" width="250" src="../img/tiger.jpeg" alt="sound 12" onclick="play('audio12')">
-                          <audio controls id="audio12">
-                            <source src="../mp3/evil-laugh-cackle.mp3" type="audio/mpeg">
-                            </audio>
-                          </div>
-                        </div>
-
-
-                      </section>
-                    </main>
-                    <footer><div> &copy; Team Air 2017 </div></footer>
-                  </body>
-                  </html>
+      <h2> Click a button for sound </h2>
+	  	
+	  	<div class="row-fluid">
+		  	<div class="col-md-1">
+			  	<div class="row input-columns">
+				  	<input class="audio-controls" type="range" orient="vertical">
+				  	<label>Volume</label>
+			  	</div>
+		  	</div>
+		  	<div class="col-md-1">
+			  	<div class="row input-columns">
+				  	<input class="audio-controls" type="range" orient="vertical">
+				  	<label>Speed</label>
+			  	</div>
+		  	</div>
+		  	<div class="col-md-10">
+		        <div class="row">
+		
+		        	<div class="col-md-3 button" onclick="play('audio1')">
+		          <audio controls id="audio1">
+		            <source src="assets/mp3/beat1.mp3" type="audio/mpeg">
+		          </audio>
+		        	</div>
+		
+		
+		      		<div class="col-md-3 button" onclick="play('audio2')">
+		              <audio controls id="audio2">
+		                <source src="assets/mp3/beat2.mp3" type="audio/mpeg">
+		              </audio>
+		      		</div>
+		
+		
+		      		<div class="col-md-3 button" onclick="play('audio3')">
+		              <audio controls id="audio3">
+		                <source src="assets/mp3/beat3.mp3" type="audio/mpeg">
+		              </audio>
+		      		</div>
+		
+		      		<div class="col-md-3 button" onclick="play('audio4')">
+		              <audio controls id="audio4">
+		                <source src="assets/mp3/beat4.mp3" type="audio/mpeg">
+		              </audio>
+		      		</div>
+		
+		        </div>
+		
+		        <div class="row">
+		
+		
+		      		<div class="col-md-3 button" onclick="play('audio5')">
+		              <audio controls id="audio5">
+		                <source src="assets/mp3/beat5.mp3" type="audio/mpeg">
+		              </audio>
+		      		</div>
+		
+		
+		      		<div class="col-md-3 button" onclick="play('audio6')">
+		              <audio controls id="audio6">
+		                <source src="assets/mp3/beat6.mp3" type="audio/mpeg">
+		              </audio>
+		      		</div>
+		
+		
+		      		<div class="col-md-3 button" onclick="play('audio7')">
+		              <audio controls id="audio7">
+		                <source src="assets/mp3/night-time.mp3" type="audio/mpeg">
+		              </audio>
+		      		</div>
+		
+		
+		      		<div class="col-md-3 button" onclick="play('audio8')">
+		              <audio controls id="audio8">
+		                <source src="assets/mp3/beat8.mp3" type="audio/mpeg">
+		              </audio>
+		      		</div>
+		
+		        </div>
+		
+		        <div class="row">
+		
+		      		<div class="col-md-3 button" onclick="play('audio9')">
+		              <audio controls id="audio9">
+		                <source src="assets/mp3/no-mercy.mp3" type="audio/mpeg">
+		              </audio>
+		      		</div>
+		
+		
+		      		<div class="col-md-3 button" onclick="play('audio10')">
+		              <audio controls id="audio10">
+		                <source src="assets/mp3/waves.mp3" type="audio/mpeg">
+		              </audio>
+		      		</div>
+		
+		
+		      		<div class="col-md-3 button" onclick="play('audio11')">
+		              <audio controls id="audio11">
+		                <source src="assets/mp3/red-alert.mp3" type="audio/mpeg">
+		              </audio>
+		      		</div>
+		
+		
+		      		<div class="col-md-3 button" onclick="play('audio12')">
+		              <audio controls id="audio12">
+		                <source src="assets/mp3/evil-laugh-cackle.mp3" type="audio/mpeg">
+		              </audio>
+		      		</div>
+		        </div>
+		  	</div>
+	  	</div>
+     </section>
+    </main>
+   <footer><div> &copy; Team Air 2017 </div></footer>
+  </body>
+</html>
