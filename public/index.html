@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>AIR SoundBoard</title>
+  <title>Team AIR Home page</title>
 
-  <!-- Bootstrap -->
-
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -21,66 +17,39 @@
       font-size: 14px;
     }
 
-    .container-fluid {
-      background-color: #EA9215;
-    }
-    .nav navbar-nav {
-      color: #EAB415
-      /*color: #3A4750;*/
-    }
-
-    html,
-    body {
+    html {
       background-color: #EEEEEE;
       color: #3A4750;
     }
 
-
-    audio {
-      visibility: hidden;
+    nav {
+      background-color: #EA9215;
     }
 
-    img {
-      border: 1px solid #000;
-      border-radius: 100%;
-      cursor: pointer;
-      transition: box-shadow 0.5s, transform 1s;
+    main,
+    footer {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%,0);
     }
 
-    @-webkit-keyframes spin
-    {
-      from{-webkit-transform:rotate(0deg);}
-      to{-webkit-transform:rotate(360deg);}
-    }
-    @-moz-keyframes spin
-    {
-      from{-moz-transform:rotate(0deg);}
-      to{-moz-transform:rotate(360deg);}
-    }
-    @-ms-keyframes spin
-    {
-      from{-ms-transform:rotate(0deg);}
-      to{-ms-transform:rotate(360deg);}
+    h1 {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 300%;
+      font-weight: 200;
+      letter-spacing: 3px;
+      word-spacing: 5px;
     }
 
-    img:hover {
-      box-shadow: 0px 0px 45px #EA9215;
-      transform: scale(1.10);
-      -webkit-animation-name: spin;
-      -webkit-animation-duration: 5s;
-      -webkit-animation-iteration-count: infinite;
-      -webkit-animation-timing-function: linear;
-      -moz-animation-name: spin;
-      -moz-animation-duration: 5s;
-      -moz-animation-iteration-count: infinite;
-      -moz-animation-timing-function: linear;
-      -ms-animation-name: spin;
-      -ms-animation-duration: 5s;
-      -ms-animation-iteration-count: infinite;
-      -ms-animation-timing-function: linear;
+    h1::first-letter {
+      color: #EA9215;
+      font-weight: 300;
     }
 
     footer {
+      position: absolute;
+      bottom: 0;
       padding: 1rem;
       background-color: #3A4750;
       color: #FFF;
@@ -88,159 +57,170 @@
       text-align: center;
     }
 
+    div {
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    li a {
+      float: left;
+      display: block;
+      color: #3A4750;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+      background-color: #3A4750;
+      color: #FFF;
+    }
+
+    #login-item {
+      float: right;
+    }
+
+    img {
+      border: 2px solid #3A4750;
+      border-radius: 15px;
+      width: 300px;
+      height: 200px;
+    }
+
+    button {
+      display: inline-block;
+      padding: 10px 30px;
+      font-size: 20px;
+      font-weight: 300;
+      text-decoration: none;
+      border-radius: 200px;
+      transition: background-color 0.2s, border 0.2s, color 0.2s;
+      border: 1px solid #3A4750;
+      color: #3A4750;
+      background-color: rgba(255, 255, 255, 0.8);
+      width: 150px;
+      text-transform: uppercase;
+    }
+
+    button:hover {
+      background-color: #3A4750;
+      border: 1px solid #3A4750;
+      color: #FFF;
+    }
+
+    button:last-of-type {
+      float: right;
+    }
+
+    strong {
+      font-size: 120%;
+    }
+
 
   </style>
 
   <script>
-    function play(audioSrc) {
+  var members = new Array() ;
+  var index = 0;
 
-      var audio = document.getElementById(audioSrc);
+  function startup()
+  {
+      members[0] = new Image;
+      members[0].name = "Aracely Payan";
+      members[0].src = "assets/img/aracely.jpg";
+      members[0].email = "apayan@ucsd.edu";
+      members[0].description = "Aracely is a super senior at UCSD. She was born and raised in Southern california and has a passionate love for ceviche. Her favorite ceviche restaurant in San Diego is Oscars in PB and her favorite alcoholic beverage is a moscow mule. She enjoys spending time with friends and hopes to learn some proper front end development with this class.";
+      members[1] = new Image;
+      members[1].name = "Isa Noui";
+      members[1].src = "assets/img/isa.jpg";
+      members[1].email = "anoui@ucsd.edu";
+      members[1].description = "Isa is a senior at UCSD majoring in math-CS planning to become a full stack developer somewhere in SoCal. Isa was born in San Francisco and raised in Roseville, CA. He enjoys a free lifestyle and loves to snowboard and skydive.";
+      members[2] = new Image;
+      members[2].name = "Richard Zheng";
+      members[2].src = "assets/img/richard.jpg";
+      members[2].email = "rjzheng@ucsd.edu";
+      members[2].description = "Richard is currently a senior studying Computer Engineering. He is interested in full-stack developer with a backend focus. He is currently a full-time full-stack developer at ZitoVault and a part-time student at Univeristy of California San Diego.";
 
-      if (audio.paused) {
-        document.getElementById(audioSrc).play();
-      } else {
-        document.getElementById(audioSrc).pause();
-      }
+      document.getElementById("member").innerHTML = members[0].name;
+      document.getElementById("photo").src = members[0].src;
+      document.getElementById("photo").alt = members[0].name;
+      document.getElementById("email").innerHTML = members[0].email;
+      document.getElementById("description").innerHTML = members[0].description;
 
-    };
+      return;
+  }
+
+  function prev() {
+    index--;
+    if (index < 0)
+    {
+        index = 2;
+    }
+    document.getElementById("photo").src = members[index].src;
+    document.getElementById("photo").alt = members[index].name;
+    document.getElementById("member").innerHTML = members[index].name;
+    document.getElementById("email").innerHTML = members[index].email;
+    document.getElementById("description").innerHTML = members[index].description;
+  }
+
+  function next() {
+    index++;
+    if (index > 2)
+    {
+        index = 0;
+    }
+    document.getElementById("photo").src = members[index].src;
+    document.getElementById("photo").alt = members[index].name;
+    document.getElementById("member").innerHTML = members[index].name;
+    document.getElementById("email").innerHTML = members[index].email;
+    document.getElementById("description").innerHTML = members[index].description;
+  }
 
   </script>
 </head>
-<body>
- <header >
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand">AIR Soundboard</a>
-      </div>     
-      <ul class="nav navbar-nav">
-      <li class="active"><a href="assets/html/index.html">Home</a></li>
-      </ul>
-      <form class="navbar-form navbar-left" action="https://www.google.com" method="get">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Username">
-          <input type="text" class="form-control" placeholder="Password">
-        </div>
-        <button class="btn btn-default">Login</button>
-      </form>
-    </div>
+<body onload="startup()">
+  <nav>
+    <ul>
+      <li><a id="team-name" href="index.html">Team AIR</a></li>
+      <li><a href="assets/html/soundboard-part1a.html">Part 1A</a></li>
+      <li><a href="assets/html/soundboard-part1b.html">Part 1B</a></li>
+      <li><a href="assets/html/tagtest.html">Part 2</a></li>
+      <li><a href="assets/html/bootstrap_soundboard.html">SoundBoard(Bootstrap)</a></li>
+      <li><a href="assets/html/css_soundboard.html">SoundBoard(CSS)</a></li>
+      <li id="login-item"><a href="login.html">Login</a></li>
+    </ul>
   </nav>
 
-</header>
-
-<main>
-
-
- <section class="container">
-  <h2> Click a button for sound </h2>
-
-  <div class="row">
-
-   <div class="col-md-3">
-    <img height="250" width="250" src="assets/img/bird.jpeg" alt="sound 1" onclick="play('audio1')">
-    <audio controls id="audio1">
-      <source src="assets/mp3/beat1.mp3" type="audio/mpeg">
-      </audio>
-    </div>
-
-
-    <div class="col-md-3">
-      <img height="250" width="250" src="assets/img/cheetah.jpg" alt="sound 2" onclick="play('audio2')">
-      <audio controls id="audio2">
-        <source src="assets/mp3/beat2.mp3" type="audio/mpeg">
-        </audio>
+    <main>
+      <header>
+        <h1 id="member">Aracely Payan</h1>
+      </header>
+      <div>
+        <img id="photo" alt="" width="500" height="300" src="assets/img/cheetah.jpg">
+      </div>
+      <div>
+        <strong>Email:</strong> <p id="email"></p>
+        <br />
+        <strong>Description:</strong> <p id="description"></p>
+        <br />
       </div>
 
+      <button onclick="prev()">previous</button>
+      <button onclick="next()">next</button>
+    </main>
 
-      <div class="col-md-3">
-        <img height="250" width="250" src="assets/img/elephant.jpeg" alt="sound 3" onclick="play('audio3')">
-        <audio controls id="audio3">
-          <source src="assets/mp3/beat3.mp3" type="audio/mpeg">
-          </audio>
-        </div>
+    <footer>
+      <span>&copy;TeamAir 2017</span>
+    </footer>
+  </body>
 
-        <div class="col-md-3">
-          <img height="250" width="250" src="assets/img/fish.jpeg" alt="sound 4" onclick="play('audio4')">
-          <audio controls id="audio4">
-            <source src="assets/mp3/beat4.mp3" type="audio/mpeg">
-            </audio>
-          </div>
-
-        </div>
-
-        <div class="row">
-
-
-          <div class="col-md-3">
-            <img height="250" width="250" src="assets/img/flamingo.jpeg" alt="sound 5" onclick="play('audio5')">
-            <audio controls id="audio5">
-              <source src="assets/mp3/beat5.mp3" type="audio/mpeg">
-              </audio>
-            </div>
-
-
-            <div class="col-md-3">
-              <img height="250" width="250" src="assets/img/gecco.jpeg" alt="sound 6" onclick="play('audio6')">
-              <audio controls id="audio6">
-                <source src="assets/mp3/beat6.mp3" type="audio/mpeg">
-                </audio>
-              </div>
-
-
-              <div class="col-md-3">
-                <img height="250" width="250" src="assets/img/orangutan.jpg" alt="sound 7" onclick="play('audio7')">
-                <audio controls id="audio7">
-                  <source src="assets/mp3/night-time.mp3" type="audio/mpeg">
-                  </audio>
-                </div>
-
-
-                <div class="col-md-3">
-                  <img height="250" width="250" src="assets/img/parakeet.jpeg" alt="sound 8" onclick="play('audio8')">
-                  <audio controls id="audio8">
-                    <source src="assets/mp3/beat8.mp3" type="audio/mpeg">
-                    </audio>
-                  </div>
-
-                </div>
-
-                <div class="row">
-
-                  <div class="col-md-3">
-                    <img height="250" width="250" src="assets/img/pug.jpg" alt="sound 9" onclick="play('audio9')">
-                    <audio controls id="audio9">
-                      <source src="assets/mp3/no-mercy.mp3" type="audio/mpeg">
-                      </audio>
-                    </div>
-
-
-                    <div class="col-md-3">
-                      <img height="250" width="250" src="assets/img/sloth.jpeg" alt="sound 10" onclick="play('audio10')">
-                      <audio controls id="audio10">
-                        <source src="assets/mp3/waves.mp3" type="audio/mpeg">
-                        </audio>
-                      </div>
-
-
-                      <div class="col-md-3">
-                        <img height="250" width="250" src="assets/img/spider.jpeg" alt="sound 11" onclick="play('audio11')">
-                        <audio controls id="audio11">
-                          <source src="assets/mp3/red-alert.mp3" type="audio/mpeg">
-                          </audio>
-                        </div>
-
-
-                        <div class="col-md-3">
-                          <img height="250" width="250" src="assets/img/tiger.jpeg" alt="sound 12" onclick="play('audio12')">
-                          <audio controls id="audio12">
-                            <source src="assets/mp3/evil-laugh-cackle.mp3" type="audio/mpeg">
-                            </audio>
-                          </div>
-                        </div>
-
-
-                      </section>
-                    </main>
-                    <footer><div> &copy; Team Air 2017 </div></footer>
-                  </body>
-                  </html>
+  </html>
