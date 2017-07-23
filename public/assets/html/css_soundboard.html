@@ -19,17 +19,21 @@
     }
 
     .row {
-      zoom: 1;
+      margin-right: -15px;
+      margin-left: -15px;
     }
 
     .row:before,
     .row:after {
         content:"";
         display:table;
-		justify-content: space-between;
     }
     .row:after {
       clear:both;
+    }
+
+    .center {
+      text-align: center;
     }
 
     .col {
@@ -45,13 +49,11 @@
 
     .span-1-of-4 {
     	width: 23.8%;
-    	justify-content: space-around;
     }
 
     @media only screen and (max-width: 480px) {
     	.span-1-of-4 {
     		width: 100%;
-    		justify-content: space-around;
     	}
     }
 
@@ -78,8 +80,17 @@
     .header div {
       padding-right: 15px;
       padding-left: 15px;
+      padding-bottom: 15px;
       margin-right: auto;
       margin-left: auto;
+
+    }
+
+    .header p {
+      margin-bottom: 15px;
+      font-size: 21px;
+      font-weight: 200;
+      color: #777;
     }
 
     nav {
@@ -167,6 +178,7 @@
       color: #999;
     }
 
+
     h1 {
       margin: .67em 0;
       font-size: 36px;
@@ -176,17 +188,15 @@
       line-height: 1.1;
     }
 
-    p {
-      margin-bottom: 15px;
-      font-size: 21px;
-      font-weight: 200;
-      color: #777;
-    }
 
     @media screen and (min-width: 768px) {
       .header {
         padding-top: 48px;
         padding-bottom: 48px;
+      }
+
+      .header p {
+        line-height: 1.4;
       }
 
       h1 {
@@ -250,8 +260,6 @@
       background-color: #e6e6e6;
       border-color: #adadad;
     }
-
-
 
   	img{
 	  	width: 250px;
@@ -367,7 +375,7 @@
 	  </div>
 	 </section>
    <section>
-   	<div class="container-fluid">
+   	<div class="center">
         <div class="row">
 
         	<div class="col span-1-of-4 imgcell">
