@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet" type="text/css">
 
   <!--
+	  On errors: 
 		4 errors and 12 warnings were found in the bootstrap version of our soundboard. 
 		The first error refers to the parser’s inability to retrieve our local css file
 		which is fine as we are uploading this to firebase and do have access to this
@@ -25,6 +26,20 @@
 		The 12 warnings are of the form 
 		Property x is an unknown vendor extension. This again was used in an attempt to have more features
 		supported by different browsers. We are okay with it not validating as we understand that we gain features by using them. 
+		
+		On performance testing:
+		When all was said and done our file sizes were 
+
+		Bootstrap version 130 KB that is, 129KB for the min.css bootstrap file and 9KB for the html file 
+		Vanilla CSS version 12 KB 
+		
+		Load speeds on desktop ranged from 
+		Bootstrap -> 35.89 ms to 134.13 ms 
+		Vanilla CSS -> 35.89 ms to 134.13ms
+		
+		And on mobile our average was 
+		Bootstrap: 1.65s
+		Vanilla: 668ms
 
 	-->
   <style type="text/css">
