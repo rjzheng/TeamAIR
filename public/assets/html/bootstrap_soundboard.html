@@ -9,10 +9,25 @@
 
   <!-- Bootstrap -->
 
-  <link href="./../../assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
+  <link href="./../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet" type="text/css">
 
-  <style>
+  <!--
+		4 errors and 12 warnings were found in the bootstrap version of our soundboard. 
+		The first error refers to the parser’s inability to retrieve our local css file
+		which is fine as we are uploading this to firebase and do have access to this
+		file ourselves. The next three errors refer to the @ rule not being implemented.
+		The link below states that we are able to use the @ rule although it may not necessarily validate.
+		The use of the @ rule is to get more features supported in 		different browsers.  
+	
+		https://www.sitepoint.com/community/t/how-to-fix-the-w3c-error-sorry-the-at-rule-moz-keyframes-is-not-implemented/114229
+	
+		The 12 warnings are of the form 
+		Property x is an unknown vendor extension. This again was used in an attempt to have more features
+		supported by different browsers. We are okay with it not validating as we understand that we gain features by using them. 
+
+	-->
+  <style type="text/css">
     * {
       margin: 0;
       padding: 0;
