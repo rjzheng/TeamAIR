@@ -21,15 +21,18 @@
       font-size: 14px;
     }
 
-    .nav navbar-nav {
-      color: #EAB415
-      /*color: #3A4750;*/
-    }
-
     html,
     body {
       background-color: #EEEEEE;
       color: #3A4750;
+    }
+
+    nav {
+      background-color: #EA9215 !important;
+    }
+
+    .active {
+      background-color: #EAB415 !important;
     }
 
 
@@ -37,7 +40,7 @@
 	    padding-top: 20rem;
 	    padding-bottom: 20rem;
     }
-	
+
 	.input-columns{
 		height:60rem;
 	}
@@ -56,16 +59,16 @@
 	transition: box-shadow 0.5s, transform 1s;
 	margin: 2rem;
 	}
-	
+
 	.grid{
-	  margin: auto; 
-	  position: relative; 
+	  margin: auto;
+	  position: relative;
 	}
 
 	audio {
 	        visibility: hidden;
 	      }
-       
+
     .audio-controls{
 		writing-mode: bt-lr; /* IE */
 		-webkit-appearance: slider-vertical; /* WebKit */
@@ -74,9 +77,9 @@
 	}
 
 	.jumbotron-style{
-		background-color: white;	
+		background-color: white;
 	}
-	
+
     @-webkit-keyframes spin
     {
       from{-webkit-transform:rotate(0deg);}
@@ -93,7 +96,7 @@
       to{-ms-transform:rotate(360deg);}
     }
 
-    button:hover {
+    .button:hover {
       box-shadow: 0px 0px 45px #EA9215;
       transform: scale(1.10);
       -webkit-animation-name: spin;
@@ -145,7 +148,7 @@
         <a class="navbar-brand">AIR Soundboard</a>
       </div>
       <ul class="nav navbar-nav">
-      <li class="active"><a href="../../index.html">Home</a></li>
+      <li><a href="../../index.html" class="active">Home</a></li>
       </ul>
       <form class="navbar-form navbar-left" action="https://www.google.com" method="get">
         <div class="form-group">
@@ -168,8 +171,6 @@
 	</section>
      <section class="container-fluid">
 
-      <h2> Click a button for sound </h2>
-	  	
 	  	<div class="row-fluid">
 		  	<div class="col-md-1">
 			  	<div class="row input-columns">
@@ -185,90 +186,90 @@
 		  	</div>
 		  	<div class="col-md-10">
 		        <div class="row">
-		
+
 		        	<div class="col-md-3 button" onclick="play('audio1')">
 		          <audio controls id="audio1">
 		            <source src="./../../assets/mp3/beat1.mp3" type="audio/mpeg">
 		          </audio>
 		        	</div>
-		
-		
+
+
 		      		<div class="col-md-3 button" onclick="play('audio2')">
 		              <audio controls id="audio2">
 		                <source src="./../../assets/mp3/beat2.mp3" type="audio/mpeg">
 		              </audio>
 		      		</div>
-		
-		
+
+
 		      		<div class="col-md-3 button" onclick="play('audio3')">
 		              <audio controls id="audio3">
 		                <source src="./../../assets/mp3/beat3.mp3" type="audio/mpeg">
 		              </audio>
 		      		</div>
-		
+
 		      		<div class="col-md-3 button" onclick="play('audio4')">
 		              <audio controls id="audio4">
 		                <source src="./../../assets/mp3/beat4.mp3" type="audio/mpeg">
 		              </audio>
 		      		</div>
-		
+
 		        </div>
-		
+
 		        <div class="row">
-		
-		
+
+
 		      		<div class="col-md-3 button" onclick="play('audio5')">
 		              <audio controls id="audio5">
 		                <source src="./../../assets/mp3/beat5.mp3" type="audio/mpeg">
 		              </audio>
 		      		</div>
-		
-		
+
+
 		      		<div class="col-md-3 button" onclick="play('audio6')">
 		              <audio controls id="audio6">
 		                <source src="./../../assets/mp3/beat6.mp3" type="audio/mpeg">
 		              </audio>
 		      		</div>
-		
-		
+
+
 		      		<div class="col-md-3 button" onclick="play('audio7')">
 		              <audio controls id="audio7">
 		                <source src="./../../assets/mp3/night-time.mp3" type="audio/mpeg">
 		              </audio>
 		      		</div>
-		
-		
+
+
 		      		<div class="col-md-3 button" onclick="play('audio8')">
 		              <audio controls id="audio8">
 		                <source src="./../../assets/mp3/beat8.mp3" type="audio/mpeg">
 		              </audio>
 		      		</div>
-		
+
 		        </div>
-		
+
 		        <div class="row">
-		
+
 		      		<div class="col-md-3 button" onclick="play('audio9')">
 		              <audio controls id="audio9">
 		                <source src="./../../assets/mp3/no-mercy.mp3" type="audio/mpeg">
 		              </audio>
 		      		</div>
-		
-		
+
+
 		      		<div class="col-md-3 button" onclick="play('audio10')">
 		              <audio controls id="audio10">
 		                <source src="./../../assets/mp3/waves.mp3" type="audio/mpeg">
 		              </audio>
 		      		</div>
-		
-		
+
+
 		      		<div class="col-md-3 button" onclick="play('audio11')">
 		              <audio controls id="audio11">
 		                <source src="./../../assets/mp3/red-alert.mp3" type="audio/mpeg">
 		              </audio>
 		      		</div>
-		
-		
+
+
 		      		<div class="col-md-3 button" onclick="play('audio12')">
 		              <audio controls id="audio12">
 		                <source src="./../../assets/mp3/evil-laugh-cackle.mp3" type="audio/mpeg">
