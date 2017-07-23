@@ -26,7 +26,7 @@
     .row:after {
         content:"";
         display:table;
-		justify-content: space-between
+		justify-content: space-between;
     }
     .row:after {
         clear:both;
@@ -41,17 +41,19 @@
 
     @media only screen and (max-width: 480px) {
     	.col {
-        margin: 0;
+        	margin: 0;
     	}
     }
 
     .span-1-of-4 {
     	width: 23.8%;
+    	justify-content: space-around;
     }
 
     @media only screen and (max-width: 480px) {
     	.span-1-of-4 {
     		width: 100%;
+    		justify-content: space-around;
     	}
     }
 
@@ -100,11 +102,6 @@
 	  	border-radius: 100%;
 	  	cursor: pointer;
 	  	transition: box-shadow 0.5s, transform 1s;
-	}
-	
-	.container{
-		padding-left: 2rem; 
-		padding-right: 2rem;	
 	}
 	
 	.imgcell{
@@ -215,7 +212,7 @@
 	  </div>
 	 </section>
    <section>
-
+   	<div class="container-fluid">	
         <div class="row">
 
         	<div class="col span-1-of-4 imgcell">
@@ -317,6 +314,7 @@
                 <source src="./../../assets/mp3/evil-laugh-cackle.mp3" type="audio/mpeg">
               </audio>
       		</div>
+        </div>
       </div>
      </section>
     </main>
