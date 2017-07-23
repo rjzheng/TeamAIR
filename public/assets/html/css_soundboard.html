@@ -18,14 +18,22 @@
       font-size: 14px;
     }
 
+    .row {
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
     .row:before,
     .row:after {
         content:"";
         display:table;
-		justify-content: space-between;
     }
     .row:after {
       clear:both;
+    }
+
+    .center {
+      text-align: center;
     }
 
     .col {
@@ -41,13 +49,11 @@
 
     .span-1-of-4 {
     	width: 23.8%;
-    	justify-content: space-around;
     }
 
     @media only screen and (max-width: 480px) {
     	.span-1-of-4 {
     		width: 100%;
-    		justify-content: space-around;
     	}
     }
 
@@ -74,13 +80,22 @@
     .header div {
       padding-right: 15px;
       padding-left: 15px;
+      padding-bottom: 15px;
       margin-right: auto;
       margin-left: auto;
+
+    }
+
+    .header p {
+      margin-bottom: 15px;
+      font-size: 21px;
+      font-weight: 200;
+      color: #777;
     }
 
     nav {
       background-color: #EA9215;
-      margin-bottom: 5px;
+
     }
 
     ul {
@@ -89,6 +104,13 @@
       padding: 0;
       overflow: hidden;
     }
+
+    li {
+      position: relative;
+      display: block;
+      line-height: 20px;
+    }
+
     li a {
       float: left;
       display: block;
@@ -145,6 +167,18 @@
       box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
     }
 
+    input::-moz-placeholder {
+      color: #999;
+      opacity: 1;
+    }
+    input:-ms-input-placeholder {
+      color: #999;
+    }
+    input::-webkit-input-placeholder {
+      color: #999;
+    }
+
+
     h1 {
       margin: .67em 0;
       font-size: 36px;
@@ -154,17 +188,15 @@
       line-height: 1.1;
     }
 
-    p {
-      margin-bottom: 15px;
-      font-size: 21px;
-      font-weight: 200;
-      color: #777;
-    }
 
     @media screen and (min-width: 768px) {
       .header {
         padding-top: 48px;
         padding-bottom: 48px;
+      }
+
+      .header p {
+        line-height: 1.4;
       }
 
       h1 {
@@ -197,12 +229,8 @@
     }
 
     form button {
-      color: #333;
-      background-color: #fff;
-      border-color: #ccc;
       display: inline-block;
       padding: 6px 12px;
-      margin-bottom: 0;
       font-size: 14px;
       font-weight: normal;
       line-height: 1.42857143;
@@ -215,8 +243,13 @@
       -moz-user-select: none;
       -ms-user-select: none;
       background-image: none;
-      border: 1px solid transparent;
+      border: 1px solid #ccc;
       border-radius: 4px;
+      overflow: visible;
+      text-transform: none;
+      margin: 0;
+      color: #333;
+      background-color: #fff;
     }
 
     form button:hover {
@@ -234,7 +267,7 @@
 	  	cursor: pointer;
 	  	transition: box-shadow 0.5s, transform 1s;
 	}
-	
+
 	.imgcell{
 		margin: 2rem;
 	    height: 250px;
@@ -339,7 +372,7 @@
 	  </div>
 	 </section>
    <section>
-   	<div class="container-fluid">	
+   	<div class="center">
         <div class="row">
 
         	<div class="col span-1-of-4 imgcell">
