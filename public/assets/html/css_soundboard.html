@@ -8,333 +8,17 @@
   <title>AIR SoundBoard</title>
 
   <link type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
-  
-  <!-- 
-	We have 3 errors and 26 warnings in total for this file. They all follow the 
+
+  <link type="text/css" href="../css/soundboard.css" rel="stylesheet" />
+
+  <!--
+	We have 3 errors and 26 warnings in total for this file. They all follow the
 	pattern that the there are unknown vendor extensions such as -webkit, -o, -ms, and 	-moz.
-	After doing research online, we came to a conclusion that these errors and warnings are 
+	After doing research online, we came to a conclusion that these errors and warnings are
 	ok to have because the validator does not recognize these extensions. However,
 	we need to have them to make sure everything shows correctly on different browsers.
-	
+
 	-->
-  <style type="text/css">
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-    }
-
-    .row {
-      margin-right: -15px;
-      margin-left: -15px;
-    }
-
-    .row:before,
-    .row:after {
-        content:"";
-        display:table;
-    }
-    .row:after {
-      clear:both;
-    }
-
-    .center {
-      text-align: center;
-    }
-
-    .col {
-    	display: inline-block;
-    }
-
-
-    @media only screen and (max-width: 480px) {
-    	.col {
-        	margin: 0;
-    	}
-    }
-
-    .span-1-of-4 {
-    	width: 23.8%;
-    }
-
-    @media only screen and (max-width: 480px) {
-    	.span-1-of-4 {
-    		width: 100%;
-    	}
-    }
-
-    html,
-    body {
-      background-color: #EEEEEE;
-      color: #3A4750;
-    }
-
-    audio {
-      visibility: hidden;
-    }
-
-
-    .header {
-      padding-top: 30px;
-      padding-bottom: 30px;
-      margin-bottom: 30px;
-      color: inherit;
-      background-color: white;
-      text-align: center;
-    }
-
-    .header div {
-      padding-right: 15px;
-      padding-left: 15px;
-      padding-bottom: 15px;
-      margin-right: auto;
-      margin-left: auto;
-
-    }
-
-    .header p {
-      margin-bottom: 15px;
-      font-size: 21px;
-      font-weight: 200;
-      color: #777;
-    }
-
-    nav {
-      background-color: #EA9215;
-
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-
-    li {
-      position: relative;
-      display: block;
-      line-height: 20px;
-    }
-
-    li a {
-      float: left;
-      display: block;
-      color: #3A4750;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-    /* Change the link color to #111 (black) on hover */
-    li a:hover {
-      background-color: #3A4750;
-      color: #FFF;
-    }
-
-
-    form {
-      border-color: #e7e7e7;
-      display: block;
-      padding: 10px 15px;
-      margin-top: 8px;
-      margin-right: -15px;
-      margin-left: -15px;
-      border-top: 1px solid transparent;
-      border-bottom: 1px solid transparent;
-      -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .1);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .1);
-    }
-
-    input{
-      display: block;
-      width: 100%;
-      height: 34px;
-      padding: 6px 12px;
-      font-size: 14px;
-      line-height: 1.42857143;
-      color: #555;
-      background-color: #fff;
-      background-image: none;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-      box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    }
-
-    input:focus {
-      border-color: #66afe9;
-      outline: 0;
-      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-      box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-    }
-
-    input::-moz-placeholder {
-      color: #999;
-      opacity: 1;
-    }
-    input:-ms-input-placeholder {
-      color: #999;
-    }
-    input::-webkit-input-placeholder {
-      color: #999;
-    }
-
-
-    h1 {
-      margin: .67em 0;
-      font-size: 36px;
-      margin-top: 20px;
-      margin-bottom: 10px;
-      font-weight: 500;
-      line-height: 1.1;
-    }
-
-
-    @media screen and (min-width: 768px) {
-      .header {
-        padding-top: 48px;
-        padding-bottom: 48px;
-      }
-
-      .header p {
-        line-height: 1.4;
-      }
-
-      h1 {
-        font-size: 63px;
-      }
-
-      form {
-        float: left !important;
-        width: auto;
-        padding-top: 0;
-        padding-bottom: 0;
-        margin-right: 0;
-        margin-left: 0;
-        border: 0;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-      }
-
-      form input {
-        display: inline-block;
-        width: auto;
-        vertical-align: middle;
-      }
-      form div {
-        display: inline-block;
-        margin-bottom: 0;
-        vertical-align: middle;
-        margin-bottom: 3px;
-      }
-    }
-
-    form button {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 14px;
-      font-weight: normal;
-      line-height: 1.42857143;
-      text-align: center;
-      white-space: nowrap;
-      vertical-align: middle;
-      -ms-touch-action: manipulation;
-      cursor: pointer;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      background-image: none;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      overflow: visible;
-      text-transform: none;
-      margin: 0;
-      color: #333;
-      background-color: #fff;
-    }
-
-    form button:hover {
-      text-decoration: none;
-      color: #333;
-      background-color: #e6e6e6;
-      border-color: #adadad;
-    }
-
-  	img{
-	  	width: 250px;
-	  	height: 250px;
-	  	border: 0.5px solid #000;
-	  	border-radius: 100%;
-	  	cursor: pointer;
-	  	transition: box-shadow 0.5s, transform 1s;
-	}
-
-	.imgcell{
-		margin: 2rem;
-	    height: 250px;
-	    width: 250px;
-    }
-
-  	audio {
-      visibility: hidden;
-    }
-
-    .audio-controls{
-    	-webkit-appearance: slider-vertical; /* WebKit */
-    	width: 2rem;
-    	height: 100%;
-  	}
-
-
-    @-webkit-keyframes spin
-    {
-      from{-webkit-transform:rotate(0deg);}
-      to{-webkit-transform:rotate(360deg);}
-    }
-    @-moz-keyframes spin
-    {
-      from{-moz-transform:rotate(0deg);}
-      to{-moz-transform:rotate(360deg);}
-    }
-    @-ms-keyframes spin
-    {
-      from{-ms-transform:rotate(0deg);}
-      to{-ms-transform:rotate(360deg);}
-    }
-
-    img:hover {
-      box-shadow: 0px 0px 45px #EA9215;
-      transform: scale(1.10);
-      -webkit-animation-name: spin;
-      -webkit-animation-duration: 5s;
-      -webkit-animation-iteration-count: infinite;
-      -webkit-animation-timing-function: linear;
-      -moz-animation-name: spin;
-      -moz-animation-duration: 5s;
-      -moz-animation-iteration-count: infinite;
-      -moz-animation-timing-function: linear;
-      -ms-animation-name: spin;
-      -ms-animation-duration: 5s;
-      -ms-animation-iteration-count: infinite;
-      -ms-animation-timing-function: linear;
-    }
-
-    footer {
-      padding: 1rem;
-      background-color: #3A4750;
-      color: #FFF;
-      width: 100%;
-      text-align: center;
-    }
-
-
-  </style>
 
   <script>
     function play(audioSrc) {
@@ -381,7 +65,7 @@
    	<div class="center">
         <div class="row">
 
-        	<div class="col span-1-of-4 imgcell">
+        	<div class="col imgcell">
 				<img src="./../../assets/img/silhouette1.jpeg" alt="sound 11" onclick="play('audio1')">
           <audio controls id="audio1">
             <source src="./../../assets/mp3/beat1.mp3" type="audio/mpeg">
@@ -389,7 +73,7 @@
         	</div>
 
 
-      		<div class="col span-1-of-4 imgcell">
+      		<div class="col imgcell">
 				<img src="./../../assets/img/silhouette2.jpeg" alt="sound 11" onclick="play('audio2')">
               <audio controls id="audio2">
                 <source src="./../../assets/mp3/beat2.mp3" type="audio/mpeg">
@@ -397,25 +81,21 @@
       		</div>
 
 
-      		<div class="col span-1-of-4 imgcell">
+      		<div class="col imgcell">
 				<img src="./../../assets/img/silhouette3.jpeg" alt="sound 11" onclick="play('audio3')">
               <audio controls id="audio3">
                 <source src="./../../assets/mp3/beat3.mp3" type="audio/mpeg">
               </audio>
       		</div>
 
-      		<div class="col span-1-of-4 imgcell">
+      		<div class="col imgcell">
 	      		<img src="./../../assets/img/silhouette4.jpeg" alt="sound 11" onclick="play('audio4')">
               <audio controls id="audio4">
                 <source src="./../../assets/mp3/beat4.mp3" type="audio/mpeg">
               </audio>
       		</div>
 
-        </div>
-
-        <div class="row">
-
-      		<div class="col span-1-of-4 imgcell">
+      		<div class="col imgcell">
 				<img src="./../../assets/img/silhouette5.jpeg" alt="sound 11" onclick="play('audio5')">
               <audio controls id="audio5">
                 <source src="./../../assets/mp3/beat5.mp3" type="audio/mpeg">
@@ -423,7 +103,7 @@
       		</div>
 
 
-      		<div class="col span-1-of-4 imgcell">
+      		<div class="col imgcell">
 				<img src="./../../assets/img/silhouette6.jpeg" alt="sound 11" onclick="play('audio6')">
               <audio controls id="audio6">
                 <source src="./../../assets/mp3/beat6.mp3" type="audio/mpeg">
@@ -431,7 +111,7 @@
       		</div>
 
 
-      		<div class="col span-1-of-4 imgcell">
+      		<div class="col imgcell">
 				<img src="./../../assets/img/silhouette7.jpeg" alt="sound 11" onclick="play('audio7')">
               <audio controls id="audio7">
                 <source src="./../../assets/mp3/night-time.mp3" type="audio/mpeg">
@@ -439,18 +119,15 @@
       		</div>
 
 
-      		<div class="col span-1-of-4 imgcell">
+      		<div class="col imgcell">
 				<img src="./../../assets/img/silhouette8.png" alt="sound 11" onclick="play('audio8')">
               <audio controls id="audio8">
                 <source src="./../../assets/mp3/beat8.mp3" type="audio/mpeg">
               </audio>
       		</div>
 
-        </div>
 
-        <div class="row">
-
-      		<div class="col span-1-of-4 imgcell">
+      		<div class="col imgcell">
 				<img src="./../../assets/img/silhouette9.jpeg" alt="sound 11" onclick="play('audio9')">
               <audio controls id="audio9">
                 <source src="./../../assets/mp3/no-mercy.mp3" type="audio/mpeg">
@@ -458,7 +135,7 @@
       		</div>
 
 
-      		<div class="col span-1-of-4 imgcell">
+      		<div class="col imgcell">
 	      		<img src="./../../assets/img/silhouette10.png" alt="sound 11" onclick="play('audio10')">
               <audio controls id="audio10">
                 <source src="./../../assets/mp3/waves.mp3" type="audio/mpeg">
@@ -466,7 +143,7 @@
       		</div>
 
 
-      		<div class="col span-1-of-4 imgcell">
+      		<div class="col imgcell">
 				<img src="./../../assets/img/silhouette11.png" alt="sound 11" onclick="play('audio11')">
               <audio controls id="audio11">
                 <source src="./../../assets/mp3/red-alert.mp3" type="audio/mpeg">
@@ -474,7 +151,7 @@
       		</div>
 
 
-      		<div class="col span-1-of-4 imgcell">
+      		<div class="col imgcell">
 				<img src="./../../assets/img/silhouette12.jpeg" alt="sound 11" onclick="play('audio12')">
               <audio controls id="audio12">
                 <source src="./../../assets/mp3/evil-laugh-cackle.mp3" type="audio/mpeg">
