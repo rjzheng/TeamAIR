@@ -6,12 +6,6 @@
   font-size: 14px;
 }
 
-html,
-body {
-  background-color: #EEEEEE;
-  color: #3A4750;
-}
-
 audio {
   visibility: hidden;
 }
@@ -42,7 +36,6 @@ audio {
   padding-bottom: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: white;
   text-align: center;
 }
 
@@ -52,19 +45,12 @@ audio {
   padding-bottom: 15px;
   margin-right: auto;
   margin-left: auto;
-
 }
 
 .header p {
   margin-bottom: 15px;
   font-size: 21px;
-  font-weight: 200;
-  color: #777;
-}
-
-nav {
-  background-color: #EA9215;
-
+  font-weight: 300;
 }
 
 ul {
@@ -72,29 +58,28 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  cursor: pointer;
 }
 
 li {
   position: relative;
   display: block;
   line-height: 20px;
+  cursor: pointer;
 }
 
 li a {
   float: left;
   display: block;
-  color: #3A4750;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   transition: background-color 0.3s;
 }
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #3A4750;
-  color: #FFF;
-}
 
+#form-li{
+  float: right;
+}
 
 form {
   border-color: #e7e7e7;
@@ -237,7 +222,7 @@ img{
 }
 
 .imgcell{
-margin: 2rem;
+  margin: 2rem;
   height: 250px;
   width: 250px;
 }
@@ -270,7 +255,6 @@ audio {
 }
 
 img:hover {
-  box-shadow: 0px 0px 45px #EA9215;
   transform: scale(1.10);
   -webkit-animation-name: spin;
   -webkit-animation-duration: 5s;
@@ -288,8 +272,31 @@ img:hover {
 
 footer {
   padding: 1rem;
-  background-color: #3A4750;
-  color: #FFF;
   width: 100%;
   text-align: center;
+}
+
+ul li
+{
+    display: block;
+    float: left;
+}
+
+li ul
+{
+    display: none;
+}
+
+
+ul li a
+{
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+li:hover ul
+{
+    display: block;
+    /*position: absolute;*/
 }

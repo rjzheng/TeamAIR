@@ -1,0 +1,51 @@
+html,
+body {
+  background-color: #EEEEEE;
+  color: #3A4750;
+}
+
+.header {
+  background-color: #3A4750;
+  color: #EEEEEE;
+}
+
+.header h1 {
+  text-shadow: 0px 0px 10px #303841;
+}
+
+.header p {
+  color: #FFF;
+  text-shadow: 0px 0px 10px #303841;
+}
+
+nav {
+  background-color: #EA9215;
+}
+
+li a {
+  color: #3A4750;
+}
+
+li a:hover {
+  background-color: #3A4750;
+  color: #FFF;
+}
+
+li:hover a
+{
+    background: #617F8A;
+}
+
+li:hover li a:hover
+{
+    background: #3A4750;
+}
+
+img:hover {
+  box-shadow: 0px 0px 45px #EA9215;
+}
+
+footer {
+  background-color: #3A4750;
+  color: #FFF;
+}

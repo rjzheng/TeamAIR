@@ -1,0 +1,50 @@
+html,
+body {
+  background-color: #435055;
+  color: #29A19C;
+}
+
+.header {
+  background-color: #29A19C;
+  color: #27323A;
+}
+
+.header h1 {
+  text-shadow: 0px 0px 10px #A3F7BF;
+}
+
+.header p {
+  text-shadow: 0px 0px 10px #A3F7BF;
+}
+
+nav {
+  background-color: #27323A;
+}
+
+li a {
+  color: #29A19C;
+}
+
+li a:hover {
+  background-color: #29A19C;
+  color: #FFF;
+}
+
+li:hover a
+{
+    background: #354653;
+}
+
+li:hover li a:hover
+{
+    background: #29A19C;
+}
+
+img:hover {
+  box-shadow: 0px 0px 45px #A3F7BF;
+}
+
+footer {
+  background-color: #29A19C;
+  color: #FFF;
+}

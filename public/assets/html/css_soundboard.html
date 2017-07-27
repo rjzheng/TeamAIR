@@ -10,6 +10,7 @@
   <link type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
 
   <link type="text/css" href="../css/soundboard.css" rel="stylesheet" />
+  <link type="text/css" href="../css/original-theme.css" rel="stylesheet" id="theme_css" />
 
   <!--
 	We have 3 errors and 26 warnings in total for this file. They all follow the
@@ -31,7 +32,14 @@
         document.getElementById(audioSrc).pause();
       }
 
+
+
     };
+
+    function switch_theme(theme) {
+      document.getElementById('theme_css').href = theme;
+    }
+
 
   </script>
 </head>
@@ -41,13 +49,23 @@
      <ul>
        <li><a>AIR Soundboard</a></li>
        <li><a href="../../index.html">Home</a></li>
-       <form>
-         <div>
-           <input type="text" placeholder="Username">
-           <input type="text" placeholder="Password">
-         </div>
-         <button>Login</button>
-       </form>
+       <li><a>Themes</a>
+         <ul>
+           <li><a onclick="switch_theme('../css/original-theme.css');">Original</a></li>
+           <li><a onclick="switch_theme('../css/mint-theme.css');">Mint</a></li>
+           <li><a onclick="switch_theme('../css/hype-theme.css');">Hype</a></li>
+         </ul>
+       </li>
+       <li id="form-li">
+         <form>
+           <div>
+             <input type="text" placeholder="Username">
+             <input type="text" placeholder="Password">
+           </div>
+           <button>Login</button>
+         </form>
+       </li>
+
      </ul>
 
    </nav>
@@ -61,105 +79,104 @@
 	    <p>Then show us your skills by creating a master mix with the buttons below! </p>
 	  </div>
 	 </section>
-   <section>
-   	<div class="center">
-        <div class="row">
+ 	 <div class="center">
+      <div class="row">
 
-        	<div class="col imgcell">
-				<img src="./../../assets/img/silhouette1.jpeg" alt="sound 11" onclick="play('audio1')">
-          <audio controls id="audio1">
-            <source src="./../../assets/mp3/beat1.mp3" type="audio/mpeg">
-          </audio>
-        	</div>
-
-
-      		<div class="col imgcell">
-				<img src="./../../assets/img/silhouette2.jpeg" alt="sound 11" onclick="play('audio2')">
-              <audio controls id="audio2">
-                <source src="./../../assets/mp3/beat2.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
+      	<div class="col imgcell">
+			<img src="./../../assets/img/silhouette1.jpeg" alt="sound 11" onclick="play('audio1')">
+        <audio controls id="audio1">
+          <source src="./../../assets/mp3/beat1.mp3" type="audio/mpeg">
+        </audio>
+      	</div>
 
 
-      		<div class="col imgcell">
-				<img src="./../../assets/img/silhouette3.jpeg" alt="sound 11" onclick="play('audio3')">
-              <audio controls id="audio3">
-                <source src="./../../assets/mp3/beat3.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
-
-      		<div class="col imgcell">
-	      		<img src="./../../assets/img/silhouette4.jpeg" alt="sound 11" onclick="play('audio4')">
-              <audio controls id="audio4">
-                <source src="./../../assets/mp3/beat4.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
-
-      		<div class="col imgcell">
-				<img src="./../../assets/img/silhouette5.jpeg" alt="sound 11" onclick="play('audio5')">
-              <audio controls id="audio5">
-                <source src="./../../assets/mp3/beat5.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
+    		<div class="col imgcell">
+			<img src="./../../assets/img/silhouette2.jpeg" alt="sound 11" onclick="play('audio2')">
+            <audio controls id="audio2">
+              <source src="./../../assets/mp3/beat2.mp3" type="audio/mpeg">
+            </audio>
+    		</div>
 
 
-      		<div class="col imgcell">
-				<img src="./../../assets/img/silhouette6.jpeg" alt="sound 11" onclick="play('audio6')">
-              <audio controls id="audio6">
-                <source src="./../../assets/mp3/beat6.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
+    		<div class="col imgcell">
+			<img src="./../../assets/img/silhouette3.jpeg" alt="sound 11" onclick="play('audio3')">
+            <audio controls id="audio3">
+              <source src="./../../assets/mp3/beat3.mp3" type="audio/mpeg">
+            </audio>
+    		</div>
+
+    		<div class="col imgcell">
+      		<img src="./../../assets/img/silhouette4.jpeg" alt="sound 11" onclick="play('audio4')">
+            <audio controls id="audio4">
+              <source src="./../../assets/mp3/beat4.mp3" type="audio/mpeg">
+            </audio>
+    		</div>
+
+    		<div class="col imgcell">
+			<img src="./../../assets/img/silhouette5.jpeg" alt="sound 11" onclick="play('audio5')">
+            <audio controls id="audio5">
+              <source src="./../../assets/mp3/beat5.mp3" type="audio/mpeg">
+            </audio>
+    		</div>
 
 
-      		<div class="col imgcell">
-				<img src="./../../assets/img/silhouette7.jpeg" alt="sound 11" onclick="play('audio7')">
-              <audio controls id="audio7">
-                <source src="./../../assets/mp3/night-time.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
+    		<div class="col imgcell">
+			<img src="./../../assets/img/silhouette6.jpeg" alt="sound 11" onclick="play('audio6')">
+            <audio controls id="audio6">
+              <source src="./../../assets/mp3/beat6.mp3" type="audio/mpeg">
+            </audio>
+    		</div>
 
 
-      		<div class="col imgcell">
-				<img src="./../../assets/img/silhouette8.png" alt="sound 11" onclick="play('audio8')">
-              <audio controls id="audio8">
-                <source src="./../../assets/mp3/beat8.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
+    		<div class="col imgcell">
+			<img src="./../../assets/img/silhouette7.jpeg" alt="sound 11" onclick="play('audio7')">
+            <audio controls id="audio7">
+              <source src="./../../assets/mp3/night-time.mp3" type="audio/mpeg">
+            </audio>
+    		</div>
 
 
-      		<div class="col imgcell">
-				<img src="./../../assets/img/silhouette9.jpeg" alt="sound 11" onclick="play('audio9')">
-              <audio controls id="audio9">
-                <source src="./../../assets/mp3/no-mercy.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
+    		<div class="col imgcell">
+			<img src="./../../assets/img/silhouette8.png" alt="sound 11" onclick="play('audio8')">
+            <audio controls id="audio8">
+              <source src="./../../assets/mp3/beat8.mp3" type="audio/mpeg">
+            </audio>
+    		</div>
 
 
-      		<div class="col imgcell">
-	      		<img src="./../../assets/img/silhouette10.png" alt="sound 11" onclick="play('audio10')">
-              <audio controls id="audio10">
-                <source src="./../../assets/mp3/waves.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
+    		<div class="col imgcell">
+			<img src="./../../assets/img/silhouette9.jpeg" alt="sound 11" onclick="play('audio9')">
+            <audio controls id="audio9">
+              <source src="./../../assets/mp3/no-mercy.mp3" type="audio/mpeg">
+            </audio>
+    		</div>
 
 
-      		<div class="col imgcell">
-				<img src="./../../assets/img/silhouette11.png" alt="sound 11" onclick="play('audio11')">
-              <audio controls id="audio11">
-                <source src="./../../assets/mp3/red-alert.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
+    		<div class="col imgcell">
+      		<img src="./../../assets/img/silhouette10.png" alt="sound 11" onclick="play('audio10')">
+            <audio controls id="audio10">
+              <source src="./../../assets/mp3/waves.mp3" type="audio/mpeg">
+            </audio>
+    		</div>
 
 
-      		<div class="col imgcell">
-				<img src="./../../assets/img/silhouette12.jpeg" alt="sound 11" onclick="play('audio12')">
-              <audio controls id="audio12">
-                <source src="./../../assets/mp3/evil-laugh-cackle.mp3" type="audio/mpeg">
-              </audio>
-      		</div>
-        </div>
+    		<div class="col imgcell">
+			<img src="./../../assets/img/silhouette11.png" alt="sound 11" onclick="play('audio11')">
+            <audio controls id="audio11">
+              <source src="./../../assets/mp3/red-alert.mp3" type="audio/mpeg">
+            </audio>
+    		</div>
+
+
+    		<div class="col imgcell">
+			<img src="./../../assets/img/silhouette12.jpeg" alt="sound 11" onclick="play('audio12')">
+            <audio controls id="audio12">
+              <source src="./../../assets/mp3/evil-laugh-cackle.mp3" type="audio/mpeg">
+            </audio>
+    		</div>
       </div>
-     </section>
+    </div>
+
     </main>
    <footer><div> &copy; Team Air 2017 </div></footer>
   </body>
