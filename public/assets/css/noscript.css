@@ -1,0 +1,31 @@
+/* --------------------------------- */
+/* BASIC SETUP */
+/* --------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #f9f9f9;
+  color: #48545d;
+  font-family: 'Lato', 'Arial', 'sans-serif';
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-size: 80%;
+  text-align: center;
+  transform: translate(0,30%);
+}
+
+/* --------------------------------- */
+/* ICONS */
+/* --------------------------------- */
+i {
+  color: #EA9215;
+  font-size: 800%;
+}
