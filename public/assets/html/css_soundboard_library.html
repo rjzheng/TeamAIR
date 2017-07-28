@@ -17,6 +17,8 @@
   <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
   <!-- END TRACKJS -->
 
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+
   <!--
 	We have 3 errors and 26 warnings in total for this file. They all follow the
 	pattern that the there are unknown vendor extensions such as -webkit, -o, -ms, and 	-moz.
@@ -26,7 +28,11 @@
 
 	-->
 
-  <script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+      // HTTP call to get json data
+    });
     function play(audioSrc) {
 
       var audio = document.getElementById(audioSrc);
