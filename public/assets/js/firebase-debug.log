@@ -1,0 +1,12 @@
+[debug] [2017-07-28T14:34:08.028Z] ----------------------------------------------------------------------
+[debug] [2017-07-28T14:34:08.031Z] Command:      /usr/local/Cellar/node/8.1.4/bin/node /usr/local/bin/firebase deploy
+[debug] [2017-07-28T14:34:08.031Z] CLI Version:  3.9.1
+[debug] [2017-07-28T14:34:08.031Z] Platform:     darwin
+[debug] [2017-07-28T14:34:08.031Z] Node Version: v8.1.4
+[debug] [2017-07-28T14:34:08.031Z] Time:         Fri Jul 28 2017 07:34:08 GMT-0700 (PDT)
+[debug] [2017-07-28T14:34:08.031Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-07-28T14:34:08.044Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-28T14:34:08.044Z] > authorizing via signed-in user
+[debug] [2017-07-28T14:34:08.046Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/teamair-d90e1  
+ Fri Jul 28 2017 07:34:08 GMT-0700 (PDT)
