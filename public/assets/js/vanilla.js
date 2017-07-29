@@ -27,26 +27,22 @@ function render (hipHopConfig) {
 		source.type = btn.audio.type;
 
 		btnContainer.appendChild(button.content.cloneNode(true));
-		document.getElementsByTagName('img')[index].onclick= function(){play(audio.id)};
-
+		document.getElementsByTagName('img')[index].addEventListener('click',  
+		(function() {
+		      var audio = document.getElementById(btn.audio.id);
+		      if (audio.paused) {
+		        audio.play();
+		      } else {
+		        audio.pause();
+		      }
+	  	})(),false);
 	}
 }
-    function play(audioSrc) {
-      var audio = document.getElementById(audioSrc);
-
-      if (audio.paused) {
-        document.getElementById(audioSrc).play();
-      } else {
-        document.getElementById(audioSrc).pause();
-      }
-
-	  return true;
-
-    };
 
     function switch_theme(theme) {
       document.getElementById('theme_css').href = theme;
       // trackJs.track('test check');
     }
+    
 var hipHopConfig = getHipHopConfig();
 render(hipHopConfig)
