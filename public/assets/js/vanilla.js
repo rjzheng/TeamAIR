@@ -11,15 +11,15 @@ function getDisneyConfig(){
 	 return JSON.parse(jsonText);
 }
 
-function render (config) {
+function render (config, containerId, buttonId) {
 	if(typeof config === 'undefined'){
 		//throw error
 	}
 
-	var btnContainer = document.getElementById("btn-container");
+	var btnContainer = document.getElementById(containerId);
 	for( var index in config.buttons){
 		var btn = config.buttons[index];
-		var button = document.getElementById("button");
+		var button = document.getElementById(buttonId);
 		var image = button.content.querySelector('img');
 		var audio = button.content.querySelector('audio');
 		var source = button.content.querySelector('source');
@@ -52,13 +52,18 @@ function switch_theme(theme) {
 }
 
 function switch_beats(config){
+		var disneyContainer  = document.getElementById("btn-container-disney");
+		var hipHopContainer = document.getElementById("btn-container-hip-hop");
 	  if(config === '../config/hip_hop_config.json'){
-		  render(getHipHopConfig());
+	  	disneyContainer.style.display = 'none'; 
+	  	hipHopContainer.style.display = 'block';	
 	  }
 	  else{
-		  render(getDisneyConfig());
+	  	disneyContainer.style.display = 'block'; 
+	  	hipHopContainer.style.display = 'none';	
 	  }
 }
     
-var hipHopConfig = getHipHopConfig();
-render(hipHopConfig)
+render(getHipHopConfig(), 'btn-container-hip-hop', 'button-hip-hop');
+render(getDisneyConfig(), 'btn-container-disney','button-disney');
+document.getElementById("btn-container-disney").style.display = 'none';
