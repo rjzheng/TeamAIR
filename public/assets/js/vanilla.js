@@ -60,7 +60,7 @@ function play(audioSrc){
 function switch_beats(config){
 	var disneyContainer  = document.getElementById("btn-container-disney");
 	var hipHopContainer = document.getElementById("btn-container-hip-hop");
-	if(config === '../config/hip_hop_config.json'){
+	if(config === '/assets/config/hip_hop_config.json'){
 		disneyContainer.style.display = 'none'; 
 		hipHopContainer.style.display = 'block';	
 	}
