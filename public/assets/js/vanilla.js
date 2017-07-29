@@ -5,14 +5,20 @@ function getHipHopConfig(){
  return JSON.parse(jsonText);
 }
 
-function render (hipHopConfig) {
-	if(typeof hipHopConfig === 'undefined'){
+function getDisneyConfig(){
+	var jsonText = '{ "name": "disney_config.json", "buttons": [ { "img": { "src": "./../../assets/img/mermaid.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio1\')" }, "audio": { "id": "audio1", "src": "./../../assets/mp3/mermaid.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/toystory.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio2\')" }, "audio": { "id": "audio2", "src": "./../../assets/mp3/toystory.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/cinderella.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio3\')" }, "audio": { "id": "audio3", "src": "./../../assets/mp3/bibbity.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/kuzco.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio4\')" }, "audio": { "id": "audio4", "src": "./../../assets/mp3/emperor.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/jiminy.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio5\')" }, "audio": { "id": "audio5", "src": "./../../assets/mp3/wishUponAStar.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/junglebook.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio6\')" }, "audio": { "id": "audio6", "src": "./../../assets/mp3/beLikeYou.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/cruella.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio7\')" }, "audio": { "id": "audio7", "src": "./../../assets/mp3/cruella.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/tangled.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio8\')" }, "audio": { "id": "audio8", "src": "./../../assets/mp3/tangled.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/mulan.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio9\')" }, "audio": { "id": "audio9", "src": "./../../assets/mp3/mulan.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/hercules.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio10\')" }, "audio": { "id": "audio10", "src": "./../../assets/mp3/muses.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/lionking.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio11\')" }, "audio": { "id": "audio11", "src": "./../../assets/mp3/lionKing.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/aladdin.png", "alt": "hip hop silhouette", "onclick": "play(\'audio12\')" }, "audio": { "id": "audio12", "src": "./../../assets/mp3/wholeNewWorld.mp3", "type": "audio/mpeg" } } ] }';
+	
+	 return JSON.parse(jsonText);
+}
+
+function render (config) {
+	if(typeof config === 'undefined'){
 		//throw error
 	}
 
 	var btnContainer = document.getElementById("btn-container");
-	for( var index in hipHopConfig.buttons){
-		var btn = hipHopConfig.buttons[index];
+	for( var index in config.buttons){
+		var btn = config.buttons[index];
 		var button = document.getElementById("button");
 		var image = button.content.querySelector('img');
 		var audio = button.content.querySelector('audio');
@@ -27,6 +33,7 @@ function render (hipHopConfig) {
 		source.type = btn.audio.type;
 
 		btnContainer.appendChild(button.content.cloneNode(true));
+		
 		document.getElementsByTagName('img')[index].addEventListener('click',  
 		(function() {
 		      var audio = document.getElementById(btn.audio.id);
@@ -39,10 +46,19 @@ function render (hipHopConfig) {
 	}
 }
 
-    function switch_theme(theme) {
-      document.getElementById('theme_css').href = theme;
-      // trackJs.track('test check');
-    }
+function switch_theme(theme) {
+  document.getElementById('theme_css').href = theme;
+  // trackJs.track('test check');
+}
+
+function switch_beats(config){
+	  if(config === '../config/hip_hop_config.json'){
+		  render(getHipHopConfig());
+	  }
+	  else{
+		  render(getDisneyConfig());
+	  }
+}
     
 var hipHopConfig = getHipHopConfig();
 render(hipHopConfig)
