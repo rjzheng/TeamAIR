@@ -6,7 +6,7 @@ function getHipHopConfig(){
 }
 
 function getDisneyConfig(){
-	var jsonText = '{ "name": "disney_config.json", "buttons": [ { "img": { "src": "./../../assets/img/mermaid.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio1\')" }, "audio": { "id": "audio1", "src": "./../../assets/mp3/mermaid.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/toystory.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio2\')" }, "audio": { "id": "audio2", "src": "./../../assets/mp3/toystory.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/cinderella.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio3\')" }, "audio": { "id": "audio3", "src": "./../../assets/mp3/bibbity.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/kuzco.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio4\')" }, "audio": { "id": "audio4", "src": "./../../assets/mp3/emperor.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/jiminy.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio5\')" }, "audio": { "id": "audio5", "src": "./../../assets/mp3/wishUponAStar.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/junglebook.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio6\')" }, "audio": { "id": "audio6", "src": "./../../assets/mp3/beLikeYou.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/cruella.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio7\')" }, "audio": { "id": "audio7", "src": "./../../assets/mp3/cruella.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/tangled.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio8\')" }, "audio": { "id": "audio8", "src": "./../../assets/mp3/tangled.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/mulan.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio9\')" }, "audio": { "id": "audio9", "src": "./../../assets/mp3/mulan.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/hercules.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio10\')" }, "audio": { "id": "audio10", "src": "./../../assets/mp3/muses.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/lionking.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio11\')" }, "audio": { "id": "audio11", "src": "./../../assets/mp3/lionKing.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/aladdin.png", "alt": "hip hop silhouette", "onclick": "play(\'audio12\')" }, "audio": { "id": "audio12", "src": "./../../assets/mp3/wholeNewWorld.mp3", "type": "audio/mpeg" } } ] }';
+	var jsonText = '{ "name": "disney_config.json", "buttons": [ { "img": { "src": "./../../assets/img/mermaid.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio13\')" }, "audio": { "id": "audio13", "src": "./../../assets/mp3/mermaid.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/toystory.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio14\')" }, "audio": { "id": "audio14", "src": "./../../assets/mp3/toystory.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/cinderella.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio15\')" }, "audio": { "id": "audio15", "src": "./../../assets/mp3/bibbity.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/kuzco.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio16\')" }, "audio": { "id": "audio16", "src": "./../../assets/mp3/emperor.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/jiminy.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio17\')" }, "audio": { "id": "audio17", "src": "./../../assets/mp3/wishUponAStar.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/junglebook.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio18\')" }, "audio": { "id": "audio18", "src": "./../../assets/mp3/beLikeYou.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/cruella.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio19\')" }, "audio": { "id": "audio19", "src": "./../../assets/mp3/cruella.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/tangled.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio20\')" }, "audio": { "id": "audio20", "src": "./../../assets/mp3/tangled.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/mulan.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio21\')" }, "audio": { "id": "audio21", "src": "./../../assets/mp3/mulan.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/hercules.jpg", "alt": "hip hop silhouette", "onclick": "play(\'audio22\')" }, "audio": { "id": "audio22", "src": "./../../assets/mp3/muses.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/lionking.jpeg", "alt": "hip hop silhouette", "onclick": "play(\'audio23\')" }, "audio": { "id": "audio23", "src": "./../../assets/mp3/lionKing.mp3", "type": "audio/mpeg" } }, { "img": { "src": "./../../assets/img/aladdin.png", "alt": "hip hop silhouette", "onclick": "play(\'audio24\')" }, "audio": { "id": "audio24", "src": "./../../assets/mp3/wholeNewWorld.mp3", "type": "audio/mpeg" } } ] }';
 	
 	 return JSON.parse(jsonText);
 }
@@ -26,29 +26,28 @@ function render (config, containerId, buttonId) {
 
 		image.src = btn.img.src;
 		image.alt = btn.img.alt;
-
+		image.setAttribute("onclick", btn.img.onclick);
 		audio.id = btn.audio.id;
 
 		source.src = btn.audio.src;
 		source.type = btn.audio.type;
 
-		btnContainer.appendChild(button.content.cloneNode(true));
-		
-		document.getElementsByTagName('img')[index].addEventListener('click',  
-		(function() {
-		      var audio = document.getElementById(btn.audio.id);
-		      if (audio.paused) {
-		        audio.play();
-		      } else {
-		        audio.pause();
-		      }
-	  	})(),false);
+		btnContainer.appendChild(button.content.cloneNode(true));		
 	}
 }
 
 function switch_theme(theme) {
   document.getElementById('theme_css').href = theme;
   // trackJs.track('test check');
+}
+
+function play(audioSrc){
+	var audio = document.getElementById(audioSrc);
+	if (audio.paused) {
+	audio.play();
+	} else {
+	audio.pause();
+	}
 }
 
 function switch_beats(config){
