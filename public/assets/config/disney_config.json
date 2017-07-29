@@ -5,10 +5,10 @@
       "img": {
         "src": "./../../assets/img/mermaid.jpeg",
         "alt": "hip hop silhouette",
-        "onclick": "play('audio1')" 
+        "onclick": "play('audio13')" 
       },
       "audio": {
-        "id": "audio1",
+        "id": "audio13",
         "src": "./../../assets/mp3/mermaid.mp3",
         "type": "audio/mpeg"
       }
@@ -17,10 +17,10 @@
       "img": {
         "src": "./../../assets/img/toystory.jpeg",
         "alt": "hip hop silhouette",
-        "onclick": "play('audio2')" 
+        "onclick": "play('audio14')" 
       },
       "audio": {
-        "id": "audio2",
+        "id": "audio14",
         "src": "./../../assets/mp3/toystory.mp3",
         "type": "audio/mpeg"
       }
@@ -29,10 +29,10 @@
       "img": {
         "src": "./../../assets/img/cinderella.jpg",
         "alt": "hip hop silhouette",
-        "onclick": "play('audio3')" 
+        "onclick": "play('audio15')" 
       },
       "audio": {
-        "id": "audio3",
+        "id": "audio15",
         "src": "./../../assets/mp3/bibbity.mp3",
         "type": "audio/mpeg"
       }
@@ -41,10 +41,10 @@
       "img": {
         "src": "./../../assets/img/kuzco.jpg",
         "alt": "hip hop silhouette",
-        "onclick": "play('audio4')" 
+        "onclick": "play('audio16')" 
       },
       "audio": {
-        "id": "audio4",
+        "id": "audio16",
         "src": "./../../assets/mp3/emperor.mp3",
         "type": "audio/mpeg"
       }
@@ -53,10 +53,10 @@
       "img": {
         "src": "./../../assets/img/jiminy.jpeg",
         "alt": "hip hop silhouette",
-        "onclick": "play('audio5')" 
+        "onclick": "play('audio17')" 
       },
       "audio": {
-        "id": "audio5",
+        "id": "audio17",
         "src": "./../../assets/mp3/wishUponAStar.mp3",
         "type": "audio/mpeg"
       }
@@ -65,10 +65,10 @@
       "img": {
         "src": "./../../assets/img/junglebook.jpg",
         "alt": "hip hop silhouette",
-        "onclick": "play('audio6')" 
+        "onclick": "play('audio18')" 
       },
       "audio": {
-        "id": "audio6",
+        "id": "audio18",
         "src": "./../../assets/mp3/beLikeYou.mp3",
         "type": "audio/mpeg"
       }
@@ -77,10 +77,10 @@
       "img": {
         "src": "./../../assets/img/cruella.jpg",
         "alt": "hip hop silhouette",
-        "onclick": "play('audio7')" 
+        "onclick": "play('audio19')" 
       },
       "audio": {
-        "id": "audio7",
+        "id": "audio19",
         "src": "./../../assets/mp3/cruella.mp3",
         "type": "audio/mpeg"
       }
@@ -89,10 +89,10 @@
       "img": {
         "src": "./../../assets/img/tangled.jpg",
         "alt": "hip hop silhouette",
-        "onclick": "play('audio8')" 
+        "onclick": "play('audio20')" 
       },
       "audio": {
-        "id": "audio8",
+        "id": "audio20",
         "src": "./../../assets/mp3/tangled.mp3",
         "type": "audio/mpeg"
       }
@@ -101,10 +101,10 @@
       "img": {
         "src": "./../../assets/img/mulan.jpeg",
         "alt": "hip hop silhouette",
-        "onclick": "play('audio9')" 
+        "onclick": "play('audio21')" 
       },
       "audio": {
-        "id": "audio9",
+        "id": "audio21",
         "src": "./../../assets/mp3/mulan.mp3",
         "type": "audio/mpeg"
       }
@@ -113,10 +113,10 @@
       "img": {
         "src": "./../../assets/img/hercules.jpg",
         "alt": "hip hop silhouette",
-        "onclick": "play('audio10')" 
+        "onclick": "play('audio22')" 
       },
       "audio": {
-        "id": "audio10",
+        "id": "audio22",
         "src": "./../../assets/mp3/muses.mp3",
         "type": "audio/mpeg"
       }
@@ -125,10 +125,10 @@
       "img": {
         "src": "./../../assets/img/lionking.jpeg",
         "alt": "hip hop silhouette",
-        "onclick": "play('audio11')" 
+        "onclick": "play('audio23')" 
       },
       "audio": {
-        "id": "audio11",
+        "id": "audio23",
         "src": "./../../assets/mp3/lionKing.mp3",
         "type": "audio/mpeg"
       }
@@ -137,10 +137,10 @@
       "img": {
         "src": "./../../assets/img/aladdin.png",
         "alt": "hip hop silhouette",
-        "onclick": "play('audio12')" 
+        "onclick": "play('audio24')" 
       },
       "audio": {
-        "id": "audio12",
+        "id": "audio24",
         "src": "./../../assets/mp3/wholeNewWorld.mp3",
         "type": "audio/mpeg"
       }
