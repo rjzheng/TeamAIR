@@ -3,145 +3,133 @@
   "buttons": [
     {
       "img": {
-        "src": "./../../assets/img/mermaid.jpeg",
-        "alt": "hip hop silhouette",
-        "onclick": "play('audio13')" 
+        "src": "/assets/img/mermaid.jpeg",
+        "alt": "hip hop silhouette"
       },
       "audio": {
         "id": "audio13",
-        "src": "./../../assets/mp3/mermaid.mp3",
+        "src": "/assets/mp3/mermaid.mp3",
         "type": "audio/mpeg"
       }
     },
     {
       "img": {
-        "src": "./../../assets/img/toystory.jpeg",
-        "alt": "hip hop silhouette",
-        "onclick": "play('audio14')" 
+        "src": "/assets/img/toystory.jpeg",
+        "alt": "hip hop silhouette"
       },
       "audio": {
         "id": "audio14",
-        "src": "./../../assets/mp3/toystory.mp3",
+        "src": "/assets/mp3/toystory.mp3",
         "type": "audio/mpeg"
       }
     },
     {
       "img": {
-        "src": "./../../assets/img/cinderella.jpg",
-        "alt": "hip hop silhouette",
-        "onclick": "play('audio15')" 
+        "src": "/assets/img/cinderella.jpg",
+        "alt": "hip hop silhouette"
       },
       "audio": {
         "id": "audio15",
-        "src": "./../../assets/mp3/bibbity.mp3",
+        "src": "/assets/mp3/bibbity.mp3",
         "type": "audio/mpeg"
       }
     },
     {
       "img": {
-        "src": "./../../assets/img/kuzco.jpg",
-        "alt": "hip hop silhouette",
-        "onclick": "play('audio16')" 
+        "src": "/assets/img/kuzco.jpg",
+        "alt": "hip hop silhouette"
       },
       "audio": {
         "id": "audio16",
-        "src": "./../../assets/mp3/emperor.mp3",
+        "src": "/assets/mp3/emperor.mp3",
         "type": "audio/mpeg"
       }
     },
         {
       "img": {
-        "src": "./../../assets/img/jiminy.jpeg",
-        "alt": "hip hop silhouette",
-        "onclick": "play('audio17')" 
+        "src": "/assets/img/jiminy.jpeg",
+        "alt": "hip hop silhouette"
       },
       "audio": {
         "id": "audio17",
-        "src": "./../../assets/mp3/wishUponAStar.mp3",
+        "src": "/assets/mp3/wishUponAStar.mp3",
         "type": "audio/mpeg"
       }
     },
     {
       "img": {
-        "src": "./../../assets/img/junglebook.jpg",
-        "alt": "hip hop silhouette",
-        "onclick": "play('audio18')" 
+        "src": "/assets/img/junglebook.jpg",
+        "alt": "hip hop silhouette"
       },
       "audio": {
         "id": "audio18",
-        "src": "./../../assets/mp3/beLikeYou.mp3",
+        "src": "/assets/mp3/beLikeYou.mp3",
         "type": "audio/mpeg"
       }
     },
     {
       "img": {
-        "src": "./../../assets/img/cruella.jpg",
-        "alt": "hip hop silhouette",
-        "onclick": "play('audio19')" 
+        "src": "/assets/img/cruella.jpg",
+        "alt": "hip hop silhouette"
       },
       "audio": {
         "id": "audio19",
-        "src": "./../../assets/mp3/cruella.mp3",
+        "src": "/assets/mp3/cruella.mp3",
         "type": "audio/mpeg"
       }
     },
     {
       "img": {
-        "src": "./../../assets/img/tangled.jpg",
-        "alt": "hip hop silhouette",
-        "onclick": "play('audio20')" 
+        "src": "/assets/img/tangled.jpg",
+        "alt": "hip hop silhouette"
       },
       "audio": {
         "id": "audio20",
-        "src": "./../../assets/mp3/tangled.mp3",
+        "src": "/assets/mp3/tangled.mp3",
         "type": "audio/mpeg"
       }
     },
         {
       "img": {
-        "src": "./../../assets/img/mulan.jpeg",
-        "alt": "hip hop silhouette",
-        "onclick": "play('audio21')" 
+        "src": "/assets/img/mulan.jpeg",
+        "alt": "hip hop silhouette"
       },
       "audio": {
         "id": "audio21",
-        "src": "./../../assets/mp3/mulan.mp3",
+        "src": "/assets/mp3/mulan.mp3",
         "type": "audio/mpeg"
       }
     },
     {
       "img": {
-        "src": "./../../assets/img/hercules.jpg",
-        "alt": "hip hop silhouette",
-        "onclick": "play('audio22')" 
+        "src": "/assets/img/hercules.jpg",
+        "alt": "hip hop silhouette"
       },
       "audio": {
         "id": "audio22",
-        "src": "./../../assets/mp3/muses.mp3",
+        "src": "/assets/mp3/muses.mp3",
         "type": "audio/mpeg"
       }
     },
     {
       "img": {
-        "src": "./../../assets/img/lionking.jpeg",
-        "alt": "hip hop silhouette",
-        "onclick": "play('audio23')" 
+        "src": "/assets/img/lionking.jpeg",
+        "alt": "hip hop silhouette"
       },
       "audio": {
         "id": "audio23",
-        "src": "./../../assets/mp3/lionKing.mp3",
+        "src": "/assets/mp3/lionKing.mp3",
         "type": "audio/mpeg"
       }
     },
     {
       "img": {
-        "src": "./../../assets/img/aladdin.png",
-        "alt": "hip hop silhouette",
-        "onclick": "play('audio24')" 
+        "src": "/assets/img/aladdin.png",
+        "alt": "hip hop silhouette"
       },
       "audio": {
         "id": "audio24",
-        "src": "./../../assets/mp3/wholeNewWorld.mp3",
+        "src": "/assets/mp3/wholeNewWorld.mp3",
         "type": "audio/mpeg"
       }
     }

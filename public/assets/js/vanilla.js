@@ -71,7 +71,7 @@ function switch_beats(config){
 }
 
 window.onload = function(){
-	getJSONConfig('https://teamair-d90e1.firebaseapp.com/assets/config/hiphop_config.json');
-	getJSONConfig('https://teamair-d90e1.firebaseapp.com/assets/config/disney_config.json');
+	getJSONConfig('/assets/config/hiphop_config.json');
+	getJSONConfig('/assets/config/disney_config.json');
 	document.getElementById("btn-container-disney").style.display = 'none';
 }    
