@@ -6,6 +6,16 @@
   font-size: 14px;
 }
 
+#loader {
+ position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url('/assets/img/loading.gif') #fff 50% 50% no-repeat;
+}
+
 audio {
   visibility: hidden;
 }
@@ -93,21 +103,8 @@ input{
   h1 {
     font-size: 63px;
   }
-
-/*
-  form {
-    float: left !important;
-    width: auto;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-right: 0;
-    margin-left: 0;
-    border: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-*/
 }
+
 
 img{
   width: 250px;
