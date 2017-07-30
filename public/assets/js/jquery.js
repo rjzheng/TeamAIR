@@ -1,7 +1,7 @@
 function fetchJson(url, containerGroup) {
   $.ajax({
     method: "GET",
-    url: "https://teamair-d90e1.firebaseapp.com" + url})
+    url: url})
     .done(function(config) {
       createTemplates(config, containerGroup);
   });
@@ -44,6 +44,10 @@ function createTemplates(config, containerGroup) {
 function switch_theme(theme) {
   $('#theme_css').attr('href', theme);
   // trackJs.track('test check');
+}
+
+function switch_version(version) {
+  $('#format_css').attr('href', version);
 }
 
 function switch_beats(config){
