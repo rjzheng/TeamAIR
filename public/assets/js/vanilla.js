@@ -33,7 +33,7 @@ function render (config) {
 
 		image.src = btn.img.src;
 		image.alt = btn.img.alt;
-		image.setAttribute("onclick", btn.img.onclick);
+		image.setAttribute("onclick", 'play(\'' + btn.audio.id + '\')');
 		audio.id = btn.audio.id;
 
 		source.src = btn.audio.src;
