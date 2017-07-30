@@ -35,15 +35,6 @@ function render (config) {
 		image.alt = btn.img.alt;
 		image.setAttribute('onclick', 'play(\'' + btn.audio.id + '\')');
 		image.setAttribute('onerror', 'this.src=\'/assets/img/noimage.jpg\'');
-/*
-		image.addEventListener('onerror', function(){
-			this.src = '/assets/img/noimage.jpg'	
-		});
-		document.getElementsByTagName('img')[index].addEventListener('onclick', function(){
-			 play('\'' + btn.audio.id + '\'');	
-		}, false);
-*/
-		
 		audio.id = btn.audio.id;
 
 		source.src = btn.audio.src;
@@ -57,6 +48,10 @@ function render (config) {
 function switch_theme(theme) {
 	document.getElementById('theme_css').href = theme;
 	// trackJs.track('test check');
+}
+
+function switch_version(version) {
+	document.getElementById('format_css').href = version;
 }
 
 function play(audioSrc){
