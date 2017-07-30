@@ -3,11 +3,16 @@ function fetchJson(url, containerGroup) {
     method: "GET",
     url: url})
     .done(function(config) {
+      trackJs.track('JQUERY: ' + url + ' is fetched');
       createTemplates(config, containerGroup);
   });
 }
 
 function createTemplates(config, containerGroup) {
+
+  if (typeof config === 'undefined') {
+    trackJs.track('JQUERY: ' + config + ' is undefined');
+  }
   $.each(config.buttons, function( index ){
     var btn = config.buttons[index];
 
@@ -38,15 +43,19 @@ function createTemplates(config, containerGroup) {
     container.append(audio);
 
     $(containerGroup).append(container);
+
+    trackJs.track('JQUERY: ' + 'button ' + index + ' created');
   });
 }
 
 function switch_theme(theme) {
+  trackJs.track('JQUERY: ' + 'theme changed to ' + theme);
   $('#theme_css').attr('href', theme);
-  // trackJs.track('test check');
+
 }
 
 function switch_version(version) {
+  trackJs.track('JQUERY: ' + 'version changed to ' + version);
   $('#format_css').attr('href', version);
 }
 
@@ -54,10 +63,12 @@ function switch_beats(config){
 	var disneyContainer  = $("#btn-container-disney");
 	var hipHopContainer = $("#btn-container-hip-hop");
 	if(config === 'hiphop'){
+    trackJs.track('JQUERY: ' + 'Hip Hop version selected');
 		disneyContainer.hide();
 		hipHopContainer.show();
 	}
 	else{
+    trackJs.track('JQUERY: ' + 'Disney version selected');
 		disneyContainer.show();
 		hipHopContainer.hide();
 	}
@@ -69,11 +80,12 @@ function addSliderEventListeners(){
 	var audioSrcs = $('audio');
 
 	volumeSlider.change(function(){
-    console.log('earqw');
+    trackJs.track('JQUERY: ' + 'changing volumne');
 		sliderChange('volume', volumeSlider.val());
 	});
 
 	speedSlider.change(function(){
+    trackJs.track('JQUERY: ' + 'changing audio speed');
 		sliderChange('playbackRate', speedSlider.val());
 	});
 }
@@ -83,9 +95,11 @@ function sliderChange(attribute, value){
   console.log(value);
 	for( var index in audioSrcs){
 		if(attribute === 'volume'){
+      trackJs.track('JQUERY: ' + 'changing volume to ' + value);
 			audioSrcs[index].volume = value;
 		}
 		else{
+      trackJs.track('JQUERY: ' + 'changing audio speed to ' + value);
 			audioSrcs[index].playbackRate = value;
 		}
 	}
