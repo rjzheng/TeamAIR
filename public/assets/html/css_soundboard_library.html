@@ -9,7 +9,7 @@
 
   <link type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
 
-  <link type="text/css" href="../css/soundboard.css" rel="stylesheet" />
+  <link type="text/css" href="../css/soundboard.css" rel="stylesheet" id="format_css" />
   <link type="text/css" href="../css/original-theme.css" rel="stylesheet" id="theme_css" />
 
   <!-- BEGIN TRACKJS -->
@@ -31,12 +31,14 @@
 
 </head>
 <body>
+
   <noscript
     <div style="position: fixed; top: 0px; left: 0px; z-index: 3000;
                 height: 100%; width: 100%; background-color: #FFFFFF">
     </div>
     <meta http-equiv="refresh" content="0;url=noscript.html">
   </noscript>
+
  <header >
    <nav>
      <ul>
@@ -55,6 +57,12 @@
            <li><a onclick="switch_beats('disney');">Disney</a></li>
          </ul>
        </li>
+       <li><a>Version</a>
+         <ul class="dropdown">
+           <li><a onclick="switch_version('../css/soundboard.css')">Full</a></li>
+           <li><a onclick="switch_version('../css/compact_soundboard.css')">Compact</a></li>
+         </ul>
+       </li>
     </ul>
 
    </nav>
@@ -68,6 +76,16 @@
 	    <p>Then show us your skills by creating a master mix with the buttons below! </p>
 	  </div>
 	 </section>
+   <form>
+ 		<div class="slider">
+ 			<label>Speed</label>
+ 			<input id="speed" type="range" min="1" max="2" step="0.1" value="0">
+ 		</div>
+ 		<div class="slider">
+ 			<label>Volume</label>
+ 			<input id="volume" type="range" min="0" max="1" step="0.1" value="0">
+ 		</div>
+ 	</form>
  	 <div class="center">
       <div id="btn-container-hip-hop" class="row">
       </div>

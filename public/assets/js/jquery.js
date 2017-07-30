@@ -1,7 +1,7 @@
 function fetchJson(url, containerGroup) {
   $.ajax({
     method: "GET",
-    url: "https://teamair-d90e1.firebaseapp.com" + url})
+    url: url})
     .done(function(config) {
       createTemplates(config, containerGroup);
   });
@@ -46,6 +46,10 @@ function switch_theme(theme) {
   // trackJs.track('test check');
 }
 
+function switch_version(version) {
+  $('#format_css').attr('href', version);
+}
+
 function switch_beats(config){
 	var disneyContainer  = $("#btn-container-disney");
 	var hipHopContainer = $("#btn-container-hip-hop");
@@ -59,8 +63,37 @@ function switch_beats(config){
 	}
 }
 
+function addSliderEventListeners(){
+	var volumeSlider = $('#volume');
+	var speedSlider = $('#speed');
+	var audioSrcs = $('audio');
+
+	volumeSlider.change(function(){
+    console.log('earqw');
+		sliderChange('volume', volumeSlider.val());
+	});
+
+	speedSlider.change(function(){
+		sliderChange('playbackRate', speedSlider.val());
+	});
+}
+
+function sliderChange(attribute, value){
+	var audioSrcs = $('audio');
+  console.log(value);
+	for( var index in audioSrcs){
+		if(attribute === 'volume'){
+			audioSrcs[index].volume = value;
+		}
+		else{
+			audioSrcs[index].playbackRate = value;
+		}
+	}
+}
+
 $(document).ready(function() {
   fetchJson('/assets/config/hiphop_config.json', '#btn-container-hip-hop');
   fetchJson('/assets/config/disney_config.json', '#btn-container-disney');
   $('#btn-container-disney').hide();
+  addSliderEventListeners();
 });
