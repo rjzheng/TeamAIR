@@ -1,114 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>AIR SoundBoard</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <link type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
+    <title>AIR SoundBoard</title>
 
-  <link type="text/css" href="../css/soundboard.css" rel="stylesheet" />
-  <link type="text/css" href="../css/original-theme.css" rel="stylesheet" id="theme_css" />
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
 
-  <!-- BEGIN TRACKJS -->
-<!--
-  <script type="text/javascript">window._trackJs = { token: '74fcd39c9ba64a8396c39e5c6b4978dd' };</script>
-  <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
--->
-  <!-- END TRACKJS -->
+    <link type="text/css" href="../css/soundboard.css" rel="stylesheet" />
+    <link type="text/css" href="../css/original-theme.css" rel="stylesheet" id="theme_css" />
 
-  <!--
-	We have 3 errors and 26 warnings in total for this file. They all follow the
-	pattern that the there are unknown vendor extensions such as -webkit, -o, -ms, and 	-moz.
-	After doing research online, we came to a conclusion that these errors and warnings are
-	ok to have because the validator does not recognize these extensions. However,
-	we need to have them to make sure everything shows correctly on different browsers.
-
-	-->
+    <!-- BEGIN TRACKJS -->
+    <script type="text/javascript">
+        window._trackJs = {
+            token: '74fcd39c9ba64a8396c39e5c6b4978dd'
+        };
+    </script>
+    <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+    <!-- END TRACKJS -->
 </head>
+
 <body>
-  <noscript
-    <div style="position: fixed; top: 0px; left: 0px; z-index: 3000;
-                height: 100%; width: 100%; background-color: #FFFFFF">
-    </div>
-    <meta http-equiv="refresh" content="0;url=noscript.html">
-  </noscript>
- <header >
-   <nav>
-     <ul>
-       <li><a>AIR Soundboard</a></li>
-       <li><a href="../../index.html">Home</a></li>
-       <li><a>Themes</a>
-         <ul class="dropdown">
-           <li><a onclick="switch_theme('/assets/css/original-theme.css');">Original</a></li>
-           <li><a onclick="switch_theme('/assets/css/mint-theme.css');">Mint</a></li>
-           <li><a onclick="switch_theme('/assets/css/hype-theme.css');">Hype</a></li>
-         </ul>
-       </li>
-       <li><a>Beats</a>
-         <ul class="dropdown">
-           <li><a onclick="switch_beats('/assets/config/hip_hop_config.json');">Hip Hop</a></li>
-           <li><a onclick="switch_beats('/assets/config/disney_config.json');">Disney</a></li>
-         </ul>
-       </li>
-       <li><a>Version</a>
-         <ul class="dropdown">
-           <li><a onclick="">Full</a></li>
-           <li><a onclick="">Compact</a></li>
-         </ul>
-       </li>
-    </ul>
-
-   </nav>
-
-</header>
-
-<main>
-	<section class="header">
-	  <div>
-	    <h1>Are you a musical prodigy?</h1>
-	    <p>Then show us your skills by creating a master mix with the buttons below! </p>
-	  </div>
-	  
-	</section>
-	<div id="loader"></div>
-	<form>
-		<div class="slider">
-			<label>Speed</label>
-			<input id="speed" type="range" min="1" max="2" step="0.1" value="0">
-		</div>
-		<div class="slider">
-			<label>Volume</label>
-			<input id="volume" type="range" min="0" max="1" step="0.1" value="0">
-		</div>
-	</form>
- 	 <div class="center">
-      <div id = "btn-container-hip-hop" class="row">
-		<template id="button-hip-hop">
-			<div class="col imgcell">
-			    <img>
-          		<audio controls>
-            			<source>
-            	</audio>
-      		</div>
-		</template>
-      </div>
-      <div id = "btn-container-disney" class="row">
-		<template id="button-disney">
-			<div class="col imgcell">
-			    <img>
-          		<audio controls>
-            			<source>
-            	</audio>
-      		</div>
-		</template>
-      </div>
-    </div>
+    <noscript <div style="position: fixed; top: 0px; left: 0px; z-index: 3000;
+	height: 100%; width: 100%; background-color: #FFFFFF">
+        </div>
+        <meta http-equiv="refresh" content="0;url=noscript.html">
+    </noscript>
+    <header>
+        <nav>
+            <ul>
+                <li><a>AIR Soundboard</a>
+                </li>
+                <li><a href="/index.html">Home</a>
+                </li>
+                <li><a>Themes</a>
+                    <ul class="dropdown">
+                        <li><a onclick="switch_theme('/assets/css/original-theme.css');">Original</a>
+                        </li>
+                        <li><a onclick="switch_theme('/assets/css/mint-theme.css');">Mint</a>
+                        </li>
+                        <li><a onclick="switch_theme('/assets/css/hype-theme.css');">Hype</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a>Beats</a>
+                    <ul class="dropdown">
+                        <li><a onclick="switch_beats('/assets/config/hip_hop_config.json');">Hip Hop</a>
+                        </li>
+                        <li><a onclick="switch_beats('/assets/config/disney_config.json');">Disney</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a>Version</a>
+                    <ul class="dropdown">
+                        <li><a onclick="">Full</a>
+                        </li>
+                        <li><a onclick="">Compact</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="header">
+            <div>
+                <h1>Are you a musical prodigy?</h1>
+                <p>Then show us your skills by creating a master mix with the buttons below! </p>
+            </div>
+        </section>
+        <div id="loader"></div>
+        <form>
+            <div class="slider">
+                <label>Speed</label>
+                <input id="speed" type="range" min="1" max="2" step="0.1" value="0">
+            </div>
+            <div class="slider">
+                <label>Volume</label>
+                <input id="volume" type="range" min="0" max="1" step="0.1" value="0">
+            </div>
+        </form>
+        <div class="center">
+            <div id="btn-container-hip-hop" class="row">
+                <template id="button-hip-hop">
+                    <div class="col imgcell">
+                        <img>
+                        <audio controls>
+                            <source>
+                        </audio>
+                    </div>
+                </template>
+            </div>
+            <div id="btn-container-disney" class="row">
+                <template id="button-disney">
+                    <div class="col imgcell">
+                        <img>
+                        <audio controls>
+                            <source>
+                        </audio>
+                    </div>
+                </template>
+            </div>
+        </div>
 
     </main>
-   <footer><div> &copy; Team Air 2017 </div></footer>
-   <script type="text/javascript" src="../js/vanilla.js"></script>
-  </body>
+    <footer>
+        <div> &copy; Team Air 2017 </div>
+    </footer>
+    <script type="text/javascript" src="../js/vanilla.js"></script>
+</body>
+
 </html>
