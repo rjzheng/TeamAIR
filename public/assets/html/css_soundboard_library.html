@@ -9,15 +9,15 @@
 
   <link type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
 
-  <link type="text/css" href="../css/soundboard.css" rel="stylesheet" id="format_css" />
-  <link type="text/css" href="../css/original-theme.css" rel="stylesheet" id="theme_css" />
+  <link type="text/css" href="/assets/css/soundboard.css" rel="stylesheet" id="format_css" />
+  <link type="text/css" href="/assets/css/original-theme.css" rel="stylesheet" id="theme_css" />
 
   <!-- BEGIN TRACKJS -->
   <script type="text/javascript">window._trackJs = { token: '74fcd39c9ba64a8396c39e5c6b4978dd' };</script>
   <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
   <!-- END TRACKJS -->
 
-  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 
   <!--
 	We have 3 errors and 26 warnings in total for this file. They all follow the
@@ -32,7 +32,7 @@
 </head>
 <body>
 
-  <noscript
+  <noscript>
     <div id="noscript"></div>
     <meta http-equiv="refresh" content="0;url=noscript.html">
   </noscript>
@@ -41,12 +41,12 @@
    <nav>
      <ul>
        <li><a>AIR Soundboard</a></li>
-       <li><a href="../../index.html">Home</a></li>
+       <li><a href="/index.html">Home</a></li>
        <li><a>Themes</a>
          <ul class="dropdown">
-           <li><a onclick="switch_theme('../css/original-theme.css');">Original</a></li>
-           <li><a onclick="switch_theme('../css/mint-theme.css');">Mint</a></li>
-           <li><a onclick="switch_theme('../css/hype-theme.css');">Hype</a></li>
+           <li><a onclick="switch_theme('/assets/css/original-theme.css');">Original</a></li>
+           <li><a onclick="switch_theme('/assets/css/mint-theme.css');">Mint</a></li>
+           <li><a onclick="switch_theme('/assets/css/hype-theme.css');">Hype</a></li>
          </ul>
        </li>
        <li><a>Beats</a>
@@ -57,8 +57,8 @@
        </li>
        <li><a>Version</a>
          <ul class="dropdown">
-           <li><a onclick="switch_version('../css/soundboard.css')">Full</a></li>
-           <li><a onclick="switch_version('../css/compact_soundboard.css')">Compact</a></li>
+           <li><a onclick="switch_version('/assets/css/soundboard.css')">Full</a></li>
+           <li><a onclick="switch_version('/assets/css/compact_soundboard.css')">Compact</a></li>
          </ul>
        </li>
     </ul>
@@ -94,6 +94,6 @@
 
     </main>
    <footer><div> &copy; Team Air 2017 </div></footer>
-   <script type="text/javascript" src="../js/jquery.js"></script>
+   <script type="text/javascript" src="/assets/js/jquery.js"></script>
   </body>
 </html>
