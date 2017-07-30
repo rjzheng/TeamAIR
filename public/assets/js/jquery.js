@@ -92,7 +92,6 @@ function addSliderEventListeners(){
 
 function sliderChange(attribute, value){
 	var audioSrcs = $('audio');
-  console.log(value);
 	for( var index in audioSrcs){
 		if(attribute === 'volume'){
       trackJs.track('JQUERY: ' + 'changing volume to ' + value);

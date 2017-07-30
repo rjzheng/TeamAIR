@@ -91,12 +91,12 @@ function addSliderEventListeners(){
 	var audioSrcs = document.getElementsByTagName('audio');
 
 	volumeSlider.addEventListener('change', function(){
-    trackJs.track('VANILLA JS: ' + 'changing volume to ' + value);
+    trackJs.track('VANILLA JS: ' + 'changing volume to ' + volumeSlider.value);
 		sliderChange('volume', volumeSlider.value);
 	});
 
 	speedSlider.addEventListener('change', function(){
-    trackJs.track('VANILLA JS: ' + 'change audio speed to ' + value);
+    trackJs.track('VANILLA JS: ' + 'change audio speed to ' + speedSlider.value);
 		sliderChange('playbackRate', speedSlider.value);
 	});
 }
