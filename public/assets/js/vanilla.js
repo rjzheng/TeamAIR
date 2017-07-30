@@ -1,29 +1,33 @@
 function getJSONConfig(path){
  	var xhr = new XMLHttpRequest();
  	if(xhr){
-	 	xhr.open('GET', path, false); 
+	 	xhr.open('GET', path, false);
+    trackJs.track('VANILLA JS: ' + path + ' is fetched');
 	 	xhr.onreadystatechange = function(){ handleResponse(xhr); }
-		xhr.send(null); 	 
+		xhr.send(null);
  	}
 }
 
 function handleResponse(xhr){
 	if(xhr.readyState === 4 && xhr.status === 200){
 		var config = JSON.parse(xhr.responseText);
+    trackJs.track('VANILLA JS: ' + 'parsing json');
 		render(config);
-	}
+	} else {
+    trackJs.track('VANILLA JS: ' + 'error in xhr');
+  }
 }
 
 function render (config) {
 	if(typeof config === 'undefined'){
-		//throw error
+		trackJs.track('VANILLA JS: ' + config + ' is undefined');
 	}
-	
-	var containerId = config.name === 'hiphop_config.json' ? 'btn-container-hip-hop' : 'btn-container-disney'; 
-	var buttonId = config.name === 'hiphop_config.json' ? 'button-hip-hop' : 'button-disney'; 
-	
+
+	var containerId = config.name === 'hiphop_config.json' ? 'btn-container-hip-hop' : 'btn-container-disney';
+	var buttonId = config.name === 'hiphop_config.json' ? 'button-hip-hop' : 'button-disney';
+
 	var btnContainer = document.getElementById(containerId);
-	
+
 	for( var index in config.buttons){
 		var btn = config.buttons[index];
 		var button = document.getElementById(buttonId);
@@ -41,16 +45,19 @@ function render (config) {
 		source.type = btn.audio.type;
 
 		btnContainer.appendChild(button.content.cloneNode(true));
-			
+
+    trackJs.track('VANILLA JS: ' + 'button ' + index + ' created');
+
 	}
 }
 
 function switch_theme(theme) {
+  trackJs.track('VANILLA JS: ' + 'theme changed to ' + theme);
 	document.getElementById('theme_css').href = theme;
-	// trackJs.track('test check');
 }
 
 function switch_version(version) {
+  trackJs.track('VANILLA JS: ' + 'verison is changed to ' + version);
 	document.getElementById('format_css').href = version;
 }
 
@@ -67,12 +74,14 @@ function switch_beats(config){
 	var disneyContainer  = document.getElementById('btn-container-disney');
 	var hipHopContainer = document.getElementById('btn-container-hip-hop');
 	if(config === '/assets/config/hip_hop_config.json'){
-		disneyContainer.style.display = 'none'; 
-		hipHopContainer.style.display = 'block';	
+    trackJs.track('VANILLA JS: ' + 'Hip Hop version selected');
+		disneyContainer.style.display = 'none';
+		hipHopContainer.style.display = 'block';
 	}
 	else{
-		disneyContainer.style.display = 'block'; 
-		hipHopContainer.style.display = 'none';	
+    trackJs.track('VANILLA JS: ' + 'Disney version selected');
+		disneyContainer.style.display = 'block';
+		hipHopContainer.style.display = 'none';
 	}
 }
 
@@ -80,24 +89,28 @@ function addSliderEventListeners(){
 	var volumeSlider = document.getElementById('volume');
 	var speedSlider = document.getElementById('speed');
 	var audioSrcs = document.getElementsByTagName('audio');
-	
+
 	volumeSlider.addEventListener('change', function(){
+    trackJs.track('VANILLA JS: ' + 'changing volume to ' + value);
 		sliderChange('volume', volumeSlider.value);
 	});
-	
+
 	speedSlider.addEventListener('change', function(){
+    trackJs.track('VANILLA JS: ' + 'change audio speed to ' + value);
 		sliderChange('playbackRate', speedSlider.value);
 	});
 }
 
 function sliderChange(attribute, value){
 	var audioSrcs = document.getElementsByTagName('audio');
-	
+
 	for( var index in audioSrcs){
 		if(attribute === 'volume'){
-			audioSrcs[index].volume = value		
+      trackJs.track('VANILLA JS: ' + 'changing volume');
+			audioSrcs[index].volume = value
 		}
 		else{
+      trackJs.track('VANILLA JS: ' + 'changing audio speed');
 			audioSrcs[index].playbackRate = value
 
 		}
@@ -110,4 +123,4 @@ window.onload = function(){
 	document.getElementById("btn-container-disney").style.display = 'none';
 	addSliderEventListeners();
 	document.getElementById("loader").style.display = 'none';
-}    
+}
