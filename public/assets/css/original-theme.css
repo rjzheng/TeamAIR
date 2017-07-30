@@ -41,6 +41,10 @@ li:hover li a:hover
     background: #3A4750;
 }
 
+img {
+  background-image: radial-gradient(#EA9215, #6f7980) !important;
+}
+
 img:hover {
   box-shadow: 0px 0px 45px #EA9215;
 }

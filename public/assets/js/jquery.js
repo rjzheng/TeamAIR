@@ -96,4 +96,5 @@ $(document).ready(function() {
   fetchJson('/assets/config/disney_config.json', '#btn-container-disney');
   $('#btn-container-disney').hide();
   addSliderEventListeners();
+  $('#loader').hide();
 });
