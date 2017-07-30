@@ -200,6 +200,13 @@ audio {
   }
 }
 
+  }
+  to{
+	  -ms-transform:rotateY(0deg);
+	  -ms-transform:translateY(0rem);
+  }
+}
+
 
 img:hover {
   transform: scale(1.10);
