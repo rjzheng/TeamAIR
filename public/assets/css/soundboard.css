@@ -13,6 +13,9 @@ audio {
 .row {
   margin-right: -15px;
   margin-left: -15px;
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 
@@ -141,7 +144,7 @@ audio {
   }
   to{
 	  -webkit-transform:rotateY(0deg);
-	  -webkit-transform:translateY(0rem);	  
+	  -webkit-transform:translateY(0rem);
   }
 }
 @-moz-keyframes rotate
@@ -149,12 +152,12 @@ audio {
   from{
 
 	  -moz-transform:rotateY(-90deg);
-	  -moz-transform:translateY(5rem); 
+	  -moz-transform:translateY(5rem);
   }
   to{
 
 	  -moz-transform:rotateY(0deg);
-	  -moz-transform:translateY(0rem);	  
+	  -moz-transform:translateY(0rem);
   }
 }
 @-ms-keyframes rotate
@@ -253,5 +256,3 @@ li:hover > .dropdown li {
 .dropdown li:last-child > a{
     border-radius: 0px 0px .5rem .5rem;
 }
-
-
