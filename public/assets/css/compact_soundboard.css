@@ -162,7 +162,6 @@ li a {
 }
 
 li:hover > .dropdown li {
-	min-width: ;
   display: block;
    -webkit-animation-name: rotate;
   -webkit-animation-duration: 0.5s;

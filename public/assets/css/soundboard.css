@@ -42,7 +42,6 @@ audio {
       margin: 0;
   }
   li:active > .dropdown li {
-  	min-width: ;
     display: block;
      -webkit-animation-name: rotate;
     -webkit-animation-duration: 0.5s;
@@ -199,7 +198,7 @@ audio {
 	  -ms-transform:translateY(0rem);
   }
 }
-}
+
 
 img:hover {
   transform: scale(1.10);
@@ -274,7 +273,6 @@ li a {
 }
 
 li:hover > .dropdown li {
-	min-width: ;
   display: block;
    -webkit-animation-name: rotate;
   -webkit-animation-duration: 0.5s;
