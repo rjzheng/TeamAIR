@@ -34,12 +34,23 @@ function render (config) {
 		image.src = btn.img.src;
 		image.alt = btn.img.alt;
 		image.setAttribute('onclick', 'play(\'' + btn.audio.id + '\')');
+		image.setAttribute('onerror', 'this.src=\'/assets/img/noimage.jpg\'');
+/*
+		image.addEventListener('onerror', function(){
+			this.src = '/assets/img/noimage.jpg'	
+		});
+		document.getElementsByTagName('img')[index].addEventListener('onclick', function(){
+			 play('\'' + btn.audio.id + '\'');	
+		}, false);
+*/
+		
 		audio.id = btn.audio.id;
 
 		source.src = btn.audio.src;
 		source.type = btn.audio.type;
 
-		btnContainer.appendChild(button.content.cloneNode(true));		
+		btnContainer.appendChild(button.content.cloneNode(true));
+			
 	}
 }
 
@@ -103,4 +114,5 @@ window.onload = function(){
 	getJSONConfig('/assets/config/disney_config.json');
 	document.getElementById("btn-container-disney").style.display = 'none';
 	addSliderEventListeners();
+	document.getElementById("loader").style.display = 'none';
 }    
