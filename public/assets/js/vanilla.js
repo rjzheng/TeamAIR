@@ -1,26 +1,44 @@
 function getJSONConfig(path){
  	var xhr = new XMLHttpRequest();
- 	if(xhr){
+ 	if(xhr && xhr != null){
 	 	xhr.open('GET', path, false);
     trackJs.track('VANILLA JS: ' + path + ' is fetched');
 	 	xhr.onreadystatechange = function(){ handleResponse(xhr); }
 		xhr.send(null);
- 	}
+ 	} else {
+    trackJs.track('VANILLA JS: ' + 'xhr has bad value');
+    displayErrorPage();
+  }
 }
 
 function handleResponse(xhr){
-	if(xhr.readyState === 4 && xhr.status === 200){
-		var config = JSON.parse(xhr.responseText);
-    trackJs.track('VANILLA JS: ' + 'parsing json');
-		render(config);
+	if(xhr.readyState === 4){
+    if(xhr.status === 200) {
+      if(xhr.responseText) {
+        var config = JSON.parse(xhr.responseText);
+        trackJs.track('VANILLA JS: ' + 'parsing json');
+    		render(config);
+      } else {
+        trackJs.track('VANILLA JS: ' + 'no json data');
+        displayErrorPage();
+      }
+
+    } else {
+      trackJs.track('VANILLA JS: ' + 'error from the Ajax call')
+      displayErrorPage();
+    }
+
 	} else {
-    trackJs.track('VANILLA JS: ' + 'error in xhr');
+    trackJs.track('VANILLA JS: ' + 'Ajax not ready');
+    displayErrorPage();
   }
 }
 
 function render (config) {
 	if(typeof config === 'undefined'){
 		trackJs.track('VANILLA JS: ' + config + ' is undefined');
+      console.log('enter');
+    displayErrorPage();
 	}
 
 	var containerId = config.name === 'hiphop_config.json' ? 'btn-container-hip-hop' : 'btn-container-disney';
@@ -117,10 +135,15 @@ function sliderChange(attribute, value){
 	}
 }
 
+function displayErrorPage() {
+  location.replace('./error-page.html');
+}
+
 window.onload = function(){
 	getJSONConfig('/assets/config/hiphop_config.json');
 	getJSONConfig('/assets/config/disney_config.json');
 	document.getElementById("btn-container-disney").style.display = 'none';
 	addSliderEventListeners();
 	document.getElementById("loader").style.display = 'none';
+  document.getElementById("error-page").style.display = 'none';
 }

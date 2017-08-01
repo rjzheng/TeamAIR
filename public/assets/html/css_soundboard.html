@@ -27,11 +27,13 @@
 
 <body>
     <noscript>
-     <div id="noscript">
-
+     <div class="error" id="noscript">
      </div>
-	<meta http-equiv="refresh" content="0;url=noscript.html">
+      	<meta http-equiv="refresh" content="0;url=noscript.html">
     </noscript>
+    <div class="error" id="error-page">
+      <!-- <meta http-equiv="refresh" content="0;url=error-page.html"> -->
+    </div>
     <header>
         <nav>
             <ul>
@@ -69,13 +71,13 @@
         </nav>
     </header>
     <main>
+        <div id="loader"></div>
         <section class="header">
             <div>
                 <h1>Are you a musical prodigy?</h1>
                 <p>Then show us your skills by creating a master mix with the buttons below! </p>
             </div>
         </section>
-        <div id="loader"></div>
         <form>
             <div class="slider">
                 <label>Speed</label>
