@@ -1,11 +1,12 @@
 function getJSONConfig(path){
  	var xhr = new XMLHttpRequest();
  	if(xhr && xhr != null){
-	 	xhr.open('GET', path, false);
+	 	xhr.open('GET', path);
     track('VANILLA JS: ' + path + ' is fetched');
 	 	xhr.onreadystatechange = function(){ handleResponse(xhr); }
 		xhr.send(null);
  	} else {
+	console.log('yuup');
     track('VANILLA JS: ' + 'xhr has bad value');
     displayErrorPage();
   }
@@ -28,10 +29,7 @@ function handleResponse(xhr){
       displayErrorPage();
     }
 
-	} else {
-    track('VANILLA JS: ' + 'Ajax not ready');
-    displayErrorPage();
-  }
+	}
 }
 
 function render (config) {
@@ -159,19 +157,12 @@ function displayErrorPage() {
   location.replace('/assets/html/error-page.html');
 }
 
-/*
-function displayOfflinePage() {
-	location.replace('/assets/html/offline.html');
-}
-*/
-
 window.onload = function(){
-	getJSONConfig('/assets/config/hiphop_config.json');
-	getJSONConfig('/assets/config/disney_config.json');
+	getJSONConfig('https://teamair-d90e1.firebaseapp.com/assets/config/hiphop_config.json');
 	document.getElementById("btn-container-disney").style.display = 'none';
 	addSliderEventListeners();
+	debugger;
 	document.getElementById("loader").style.display = 'none';
-	document.getElementById("error-page").style.display = 'none';
 
   	if('serviceWorker' in navigator) {
 	    navigator.serviceWorker.register('/sw.js').then(function(registration) {
@@ -192,7 +183,12 @@ window.onload = function(){
 			x.className = x.className.replace("show", "");
 		}, 3000);
   	}
-
   	window.addEventListener('online',  updateOnlineStatus);
   	window.addEventListener('offline', updateOnlineStatus);
 }
+window.addEventListener('load', function(){
+	console.log('commence lazy loading');
+	getJSONConfig('https://teamair-d90e1.firebaseapp.com/assets/config/disney_config.json');
+	
+}, false)
+
