@@ -126,16 +126,18 @@ img{
   border-radius: 100%;
   cursor: pointer;
   transition: box-shadow 0.5s, transform 1s;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .imgcell{
   margin: 2rem;
   height: 250px;
   width: 250px;
-}
-
-audio {
-  visibility: hidden;
 }
 
 .slider {
@@ -257,18 +259,18 @@ audio {
 }
 
 
-img:hover {
-  transform: scale(1.10);
+img.active {
+  transform: scale(5);
   -webkit-animation-name: spin;
-  -webkit-animation-duration: 5s;
+  -webkit-animation-duration: 3.75s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
   -moz-animation-name: spin;
-  -moz-animation-duration: 5s;
+  -moz-animation-duration: 3.75s;
   -moz-animation-iteration-count: infinite;
   -moz-animation-timing-function: linear;
   -ms-animation-name: spin;
-  -ms-animation-duration: 5s;
+  -ms-animation-duration: 3.75s;
   -ms-animation-iteration-count: infinite;
   -ms-animation-timing-function: linear;
 }
@@ -331,15 +333,15 @@ li a {
 
 li:hover > .dropdown li {
   display: block;
-   -webkit-animation-name: rotate;
-  -webkit-animation-duration: 0.5s;
+   /*-webkit-animation-name: rotate;
+  -webkit-animation-duration: 0.2s;
   -webkit-animation-timing-function: linear;
   -moz-animation-name: rotate;
-  -moz-animation-duration: 0.5s;
+  -moz-animation-duration: 0.2s;
   -moz-animation-timing-function: linear;
   -ms-animation-name: rotate;
-  -ms-animation-duration: 0.5s;
-  -ms-animation-timing-function: linear;
+  -ms-animation-duration: 0.2s;
+  -ms-animation-timing-function: linear;*/
 }
 
 .dropdown li:last-child > a{
@@ -372,7 +374,7 @@ li:hover > .dropdown li {
     from {
 	    bottom: 0;
 	    opacity: 0;
-	} 
+	}
     to {
 		bottom: 30px;
 		opacity: 1;
@@ -381,11 +383,11 @@ li:hover > .dropdown li {
 
 @keyframes fadein {
     from {
-	    bottom: 0; 
+	    bottom: 0;
 	    opacity: 0;
 	}
     to {
-	    bottom: 30px; 
+	    bottom: 30px;
 	    opacity: 1;
 	}
 }
@@ -394,7 +396,7 @@ li:hover > .dropdown li {
     from {
 	    bottom: 30px;
 	    opacity: 1;
-	} 
+	}
     to {
 	    bottom: 0;
 	    opacity: 0;

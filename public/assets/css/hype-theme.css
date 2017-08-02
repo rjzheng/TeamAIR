@@ -46,7 +46,8 @@ img {
   background-image: radial-gradient(#EA5455, #51647d) !important;
 }
 
-img:hover {
+img:hover,
+img.active {
   box-shadow: 0px 0px 45px #FDE9C9;
 }
 
@@ -59,6 +60,7 @@ footer {
   box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
   background: #2D4059;
   border: 0px solid #000101;
+  transition: box-shadow 0.3s;
 }
 
 .slider:focus::-webkit-slider-runnable-track {
@@ -69,17 +71,20 @@ footer {
   box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
   background: #2D4059;
   border: 0px solid #000101;
+  transition: box-shadow 0.3s;
 }
 
 .slider::-ms-fill-lower {
   background: #2D4059;
   border: 0px solid #000101;
   box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  transition: box-shadow 0.3s;
 }
 .slider::-ms-fill-upper {
   background: #2D4059;
   border: 0px solid #000101;
   box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  transition: box-shadow 0.3s;
 }
 
 .slider:focus::-ms-fill-lower {
@@ -105,4 +110,25 @@ footer {
   box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
   border: 0px solid #000000;
   background: #EA5455;
+}
+
+.slider::-webkit-slider-runnable-track:hover
+ {
+  box-shadow: 0px 0px 25px #2D4059;
+}
+
+.slider::-moz-range-track:hover
+ {
+  box-shadow: 0px 0px 25px #2D4059;
+}
+
+.slider::-ms-fill-upper:hover
+ {
+  box-shadow: 0px 0px 25px #2D4059;
+}
+
+
+.slider::-ms-fill-lower:hover
+ {
+  box-shadow: 0px 0px 25px #2D4059;
 }

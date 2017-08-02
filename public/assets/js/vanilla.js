@@ -55,7 +55,8 @@ function render (config) {
 
 		image.src = btn.img.src;
 		image.alt = btn.img.alt;
-		image.setAttribute('onclick', 'play(\'' + btn.audio.id + '\')');
+    image.id = 'image'+index;
+		image.setAttribute('onclick', 'play(\''+btn.audio.id+'\','+index+')');
 		image.setAttribute('onerror', 'this.src=\'/assets/img/noimage.jpg\'');
 		audio.id = btn.audio.id;
 
@@ -79,16 +80,24 @@ function switch_version(version) {
 	document.getElementById('format_css').href = version;
 }
 
-function play(audioSrc){
+function play(audioSrc, index){
 	var audio = document.getElementById(audioSrc);
-	
+  var image = document.getElementById('image'+index);
+
 	if(!audio.readyState >=2){
-		return;	
+		return;
 	}
-	
+
 	if (audio.paused) {
-		audio.play();
+    if(!image.classList.contains('active')) {
+      image.classList.add('active');
+  		audio.play();
+      audio.onended = function() {
+        image.classList.remove('active');
+      }
+    }
 	} else {
+    image.classList.remove('active');
 		audio.pause();
 	}
 }
@@ -142,7 +151,7 @@ function sliderChange(attribute, value){
 
 function track(message){
 	if(navigator.onLine && typeof trackJs !== 'undefined'){
-		trackJs.track(message); 
+		trackJs.track(message);
 	}
 }
 
@@ -163,13 +172,13 @@ window.onload = function(){
 	addSliderEventListeners();
 	document.getElementById("loader").style.display = 'none';
 	document.getElementById("error-page").style.display = 'none';
-	
+
   	if('serviceWorker' in navigator) {
 	    navigator.serviceWorker.register('/sw.js').then(function(registration) {
 	    	// Registration was successful
 	    	track('Service worker was registered successfully');
 	    }, function(err) {
-	    	// Probably want to do some sort of error handling here 
+	    	// Probably want to do some sort of error handling here
 			track('Oh no, something went wrong! Could not register service worker');
 	    });
 	}
@@ -180,11 +189,10 @@ window.onload = function(){
 		x.innerHTML = onLineStatus;
 		x.className = "show";
 		setTimeout(function(){
-			x.className = x.className.replace("show", ""); 
+			x.className = x.className.replace("show", "");
 		}, 3000);
   	}
 
   	window.addEventListener('online',  updateOnlineStatus);
   	window.addEventListener('offline', updateOnlineStatus);
 }
-
