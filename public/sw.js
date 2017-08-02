@@ -82,7 +82,7 @@ self.addEventListener('install', function(event) {
 		.then(function(cache) {
 			return cache.addAll(urlsToCache);
 		}, function(err) {
-			debugger;
+			console.log('Something went wrong will setting up caches');
 	    	// Probably want to do some sort of error handling here 
 			//trackJs.track('Oh no, something went wrong! Could not register service worker');
 	    })
@@ -106,7 +106,7 @@ self.addEventListener('fetch', function(event) {
 	  }
 	)
 	.catch(function(){
-		debugger;
+		console.log('Something went wrong during the fetch event');
 	})
 	);
 });

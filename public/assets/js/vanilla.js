@@ -2,11 +2,11 @@ function getJSONConfig(path){
  	var xhr = new XMLHttpRequest();
  	if(xhr && xhr != null){
 	 	xhr.open('GET', path, false);
-    trackJs.track('VANILLA JS: ' + path + ' is fetched');
+    track('VANILLA JS: ' + path + ' is fetched');
 	 	xhr.onreadystatechange = function(){ handleResponse(xhr); }
 		xhr.send(null);
  	} else {
-    trackJs.track('VANILLA JS: ' + 'xhr has bad value');
+    track('VANILLA JS: ' + 'xhr has bad value');
     displayErrorPage();
   }
 }
@@ -16,27 +16,27 @@ function handleResponse(xhr){
     if(xhr.status === 200) {
       if(xhr.responseText) {
         var config = JSON.parse(xhr.responseText);
-        trackJs.track('VANILLA JS: ' + 'parsing json');
+        track('VANILLA JS: ' + 'parsing json');
     		render(config);
       } else {
-        trackJs.track('VANILLA JS: ' + 'no json data');
+        track('VANILLA JS: ' + 'no json data');
         displayErrorPage();
       }
 
     } else {
-      trackJs.track('VANILLA JS: ' + 'error from the Ajax call')
+      track('VANILLA JS: ' + 'error from the Ajax call')
       displayErrorPage();
     }
 
 	} else {
-    trackJs.track('VANILLA JS: ' + 'Ajax not ready');
+    track('VANILLA JS: ' + 'Ajax not ready');
     displayErrorPage();
   }
 }
 
 function render (config) {
 	if(typeof config === 'undefined'){
-		trackJs.track('VANILLA JS: ' + config + ' is undefined');
+		track('VANILLA JS: ' + config + ' is undefined');
       console.log('enter');
     displayErrorPage();
 	}
@@ -64,18 +64,18 @@ function render (config) {
 
 		btnContainer.appendChild(button.content.cloneNode(true));
 
-    trackJs.track('VANILLA JS: ' + 'button ' + index + ' created');
+    track('VANILLA JS: ' + 'button ' + index + ' created');
 
 	}
 }
 
 function switch_theme(theme) {
-  trackJs.track('VANILLA JS: ' + 'theme changed to ' + theme);
+  track('VANILLA JS: ' + 'theme changed to ' + theme);
 	document.getElementById('theme_css').href = theme;
 }
 
 function switch_version(version) {
-  trackJs.track('VANILLA JS: ' + 'verison is changed to ' + version);
+  track('VANILLA JS: ' + 'verison is changed to ' + version);
 	document.getElementById('format_css').href = version;
 }
 
@@ -97,12 +97,12 @@ function switch_beats(config){
 	var disneyContainer  = document.getElementById('btn-container-disney');
 	var hipHopContainer = document.getElementById('btn-container-hip-hop');
 	if(config === '/assets/config/hip_hop_config.json'){
-    trackJs.track('VANILLA JS: ' + 'Hip Hop version selected');
+    track('VANILLA JS: ' + 'Hip Hop version selected');
 		disneyContainer.style.display = 'none';
 		hipHopContainer.style.display = 'block';
 	}
 	else{
-    trackJs.track('VANILLA JS: ' + 'Disney version selected');
+    track('VANILLA JS: ' + 'Disney version selected');
 		disneyContainer.style.display = 'block';
 		hipHopContainer.style.display = 'none';
 	}
@@ -114,12 +114,12 @@ function addSliderEventListeners(){
 	var audioSrcs = document.getElementsByTagName('audio');
 
 	volumeSlider.addEventListener('change', function(){
-    trackJs.track('VANILLA JS: ' + 'changing volume to ' + volumeSlider.value);
+    track('VANILLA JS: ' + 'changing volume to ' + volumeSlider.value);
 		sliderChange('volume', volumeSlider.value);
 	});
 
 	speedSlider.addEventListener('change', function(){
-    trackJs.track('VANILLA JS: ' + 'change audio speed to ' + speedSlider.value);
+    track('VANILLA JS: ' + 'change audio speed to ' + speedSlider.value);
 		sliderChange('playbackRate', speedSlider.value);
 	});
 }
@@ -129,14 +129,20 @@ function sliderChange(attribute, value){
 
 	for( var index in audioSrcs){
 		if(attribute === 'volume'){
-      trackJs.track('VANILLA JS: ' + 'changing volume');
+      track('VANILLA JS: ' + 'changing volume');
 			audioSrcs[index].volume = value
 		}
 		else{
-      trackJs.track('VANILLA JS: ' + 'changing audio speed');
+      track('VANILLA JS: ' + 'changing audio speed');
 			audioSrcs[index].playbackRate = value
 
 		}
+	}
+}
+
+function track(message){
+	if(navigator.onLine && typeof trackJs !== 'undefined'){
+		trackJs.track(message); 
 	}
 }
 
@@ -155,11 +161,25 @@ window.onload = function(){
   	if('serviceWorker' in navigator) {
 	    navigator.serviceWorker.register('/sw.js').then(function(registration) {
 	    	// Registration was successful
-	    	trackJs.track('Service worker was registered successfully');
+	    	track('Service worker was registered successfully');
 	    }, function(err) {
 		    debugger;
 	    	// Probably want to do some sort of error handling here 
-			trackJs.track('Oh no, something went wrong! Could not register service worker');
+			track('Oh no, something went wrong! Could not register service worker');
 	    });
 	}
+	function updateOnlineStatus(event) {
+    	var onLineStatus = navigator.onLine ? "Your are now online" : "You are now offline";
+
+		var x = document.getElementById("toast")
+		x.innerHTML = onLineStatus;
+		x.className = "show";
+		setTimeout(function(){
+			x.className = x.className.replace("show", ""); 
+		}, 3000);
+  	}
+
+  	window.addEventListener('online',  updateOnlineStatus);
+  	window.addEventListener('offline', updateOnlineStatus);
 }
+
