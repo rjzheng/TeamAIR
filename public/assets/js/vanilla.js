@@ -81,6 +81,11 @@ function switch_version(version) {
 
 function play(audioSrc){
 	var audio = document.getElementById(audioSrc);
+	
+	if(!audio.readyState >=2){
+		return;	
+	}
+	
 	if (audio.paused) {
 		audio.play();
 	} else {
@@ -145,5 +150,16 @@ window.onload = function(){
 	document.getElementById("btn-container-disney").style.display = 'none';
 	addSliderEventListeners();
 	document.getElementById("loader").style.display = 'none';
-  document.getElementById("error-page").style.display = 'none';
+	document.getElementById("error-page").style.display = 'none';
+	
+  	if('serviceWorker' in navigator) {
+	    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+	    	// Registration was successful
+	    	trackJs.track('Service worker was registered successfully');
+	    }, function(err) {
+		    debugger;
+	    	// Probably want to do some sort of error handling here 
+			trackJs.track('Oh no, something went wrong! Could not register service worker');
+	    });
+	}
 }
