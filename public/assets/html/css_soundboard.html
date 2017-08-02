@@ -8,17 +8,19 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title>AIR SoundBoard</title>
-
-    <link type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
-
+	<link rel="preload" href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" as="font" crossorigin>
     <link type="text/css" href="../css/soundboard.css" rel="stylesheet" id="format_css"/>
     <link type="text/css" href="../css/original-theme.css" rel="stylesheet" id="theme_css" />
+	<link rel="manifest" href="/manifest.json">
 
 
     <!-- BEGIN TRACKJS -->
     <script type="text/javascript">
         window._trackJs = {
-            token: '74fcd39c9ba64a8396c39e5c6b4978dd'
+            token: '74fcd39c9ba64a8396c39e5c6b4978dd',
+            console: {
+				display: true // Hides console logs from the users/dev tools, but keeps them in your timeline
+  			}
         };
     </script>
     <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
