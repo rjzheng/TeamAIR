@@ -161,8 +161,8 @@ window.onload = function(){
 	getJSONConfig('https://teamair-d90e1.firebaseapp.com/assets/config/hiphop_config.json');
 	document.getElementById("btn-container-disney").style.display = 'none';
 	addSliderEventListeners();
+	debugger;
 	document.getElementById("loader").style.display = 'none';
-	document.getElementById("error-page").style.display = 'none';
 
   	if('serviceWorker' in navigator) {
 	    navigator.serviceWorker.register('/sw.js').then(function(registration) {

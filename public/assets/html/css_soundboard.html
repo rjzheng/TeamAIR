@@ -11,6 +11,9 @@
 	<link rel="preload" href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" as="font" crossorigin>
     <link type="text/css" href="../css/soundboard.css" rel="stylesheet" id="format_css"/>
     <link type="text/css" href="../css/original-theme.css" rel="stylesheet" id="theme_css" />
+    <link rel="stylesheet" href="../css/ionicons.min.css">
+
+    <meta name="theme-color" content="#ea9215">
 	<link rel="manifest" href="/manifest.json">
 
 
@@ -29,13 +32,12 @@
 
 <body>
     <noscript>
-     <div class="error" id="noscript">
-     </div>
-      	<meta http-equiv="refresh" content="0;url=noscript.html">
+	    <div class="nojs" id="error-page">
+		  <i class="ion-android-cancel"></i>
+	      <h1>You do not have Javascript turned on in your browser!</h1>
+	      <h2>Please turn it Javascript on in your browser and try again <a href="/assets/html/css_soundboard.html">here</a>.</h2>
+	    </div>
     </noscript>
-    <div class="error" id="error-page">
-      <!-- <meta http-equiv="refresh" content="0;url=error-page.html"> -->
-    </div>
     <header>
         <nav>
             <ul>
