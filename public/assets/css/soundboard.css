@@ -7,9 +7,9 @@
 }
 
 #loader {
- position: fixed;
-  left: 0px;
-  top: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 9999;
@@ -137,12 +137,67 @@ audio {
   visibility: hidden;
 }
 
-.audio-controls{
-  -webkit-appearance: slider-vertical; /* WebKit */
-  width: 2rem;
-  height: 100%;
+.slider {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  background: transparent;
 }
 
+.slider:focus {
+  outline: none;
+}
+
+.slider::-webkit-slider-runnable-track {
+  height: 12.8px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.slider::-moz-range-track {
+  height: 12.8px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.slider::-ms-track {
+  height: 12.8px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 39px 0;
+  color: transparent;
+}
+
+.slider::-ms-fill-lower {
+  border-radius: 50px;
+}
+.slider::-ms-fill-upper {
+  border-radius: 50px;
+}
+
+.slider::-webkit-slider-thumb {
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.6px;
+}
+
+.slider::-moz-range-thumb {
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.slider::-ms-thumb {
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  cursor: pointer;
+}
 
 @-webkit-keyframes spin
 {
@@ -238,7 +293,7 @@ nav > ul > li {
   cursor: pointer;
 }
 
-#noscript{
+.error{
 	position: fixed;
 	top: 0px;
 	left: 0px;
