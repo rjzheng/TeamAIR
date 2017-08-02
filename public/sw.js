@@ -81,11 +81,11 @@ self.addEventListener('install', function(event) {
 		caches.open(CACHE_NAME)
 		.then(function(cache) {
 			return cache.addAll(urlsToCache);
-		}, function(err) {
-			console.log('Something went wrong will setting up caches');
-	    	// Probably want to do some sort of error handling here 
-			//trackJs.track('Oh no, something went wrong! Could not register service worker');
-	    })
+		})
+	    .catch(function(e){
+			debugger;
+			console.log('Something went wrong during the fetch event');
+		})
 	);
 });
 
@@ -94,19 +94,17 @@ self.addEventListener('fetch', function(event) {
 	caches.match(event.request)
 	  .then(function(response) {
 	    // Cache hit - return response
-	    if (response) {
-		    		debugger;
-
-	    	return response;
-	    }
 	    if(!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
+			return fetch(event.request);
         }
-	    return fetch(event.request);
+	    return response;
 	  }
 	)
 	.catch(function(){
+		debugger;
 		console.log('Something went wrong during the fetch event');
+		return fetch(event.request);
+
 	})
 	);
 });

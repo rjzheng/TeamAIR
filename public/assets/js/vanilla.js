@@ -147,8 +147,14 @@ function track(message){
 }
 
 function displayErrorPage() {
-  location.replace('./error-page.html');
+  location.replace('/assets/html/error-page.html');
 }
+
+/*
+function displayOfflinePage() {
+	location.replace('/assets/html/offline.html');
+}
+*/
 
 window.onload = function(){
 	getJSONConfig('/assets/config/hiphop_config.json');
@@ -163,7 +169,6 @@ window.onload = function(){
 	    	// Registration was successful
 	    	track('Service worker was registered successfully');
 	    }, function(err) {
-		    debugger;
 	    	// Probably want to do some sort of error handling here 
 			track('Oh no, something went wrong! Could not register service worker');
 	    });
