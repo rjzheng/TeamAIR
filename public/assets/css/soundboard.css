@@ -125,7 +125,7 @@ input{
   h1 {
     font-size: 63px;
   }
-  
+
   h2{
 	  font-size: 53px;
   }
@@ -145,6 +145,13 @@ img{
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+
+.img-label {
+  font-size: 1.5em;
+  font-weight: 400;
+  text-align: center;
+  display: none;
 }
 
 .imgcell{
@@ -448,4 +455,3 @@ i {
 .nojs > h2{
 	font-size: 16px;
 }
-

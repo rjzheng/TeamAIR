@@ -51,6 +51,10 @@ img.active
   box-shadow: 0px 0px 45px #EA9215;
 }
 
+.img-label {
+  text-shadow: 0px 0px 10px #EA9215;
+}
+
 footer {
   background-color: #3A4750;
   color: #FFF;

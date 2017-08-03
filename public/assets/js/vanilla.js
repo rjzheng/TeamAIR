@@ -6,9 +6,8 @@ function getJSONConfig(path){
 	 	xhr.onreadystatechange = function(){ handleResponse(xhr); }
 		xhr.send(null);
  	} else {
-	console.log('yuup');
     track('VANILLA JS: ' + 'xhr has bad value');
-    displayErrorPage();
+    //displayErrorPage();
   }
 }
 
@@ -21,12 +20,12 @@ function handleResponse(xhr){
     		render(config);
       } else {
         track('VANILLA JS: ' + 'no json data');
-        displayErrorPage();
+        //displayErrorPage();
       }
 
     } else {
       track('VANILLA JS: ' + 'error from the Ajax call')
-      displayErrorPage();
+      //displayErrorPage();
     }
 
 	}
@@ -36,7 +35,7 @@ function render (config) {
 	if(typeof config === 'undefined'){
 		track('VANILLA JS: ' + config + ' is undefined');
       console.log('enter');
-    displayErrorPage();
+    //displayErrorPage();
 	}
 
 	var containerId = config.name === 'hiphop_config.json' ? 'btn-container-hip-hop' : 'btn-container-disney';
@@ -50,13 +49,15 @@ function render (config) {
 		var image = button.content.querySelector('img');
 		var audio = button.content.querySelector('audio');
 		var source = button.content.querySelector('source');
+    var span = button.content.querySelector('span');
 
 		image.src = btn.img.src;
 		image.alt = btn.img.alt;
-    image.id = 'image'+index;
-		image.setAttribute('onclick', 'play(\''+btn.audio.id+'\','+index+')');
+    image.id = 'image'+btn.audio.id;
+		image.setAttribute('onclick', 'play(\''+btn.audio.id+'\')');
 		image.setAttribute('onerror', 'this.src=\'/assets/img/noimage.jpg\'');
-		audio.id = btn.audio.id;
+		audio.id = 'audio'+btn.audio.id;
+    span.innerHTML = btn.audio.id;
 
 		source.src = btn.audio.src;
 		source.type = btn.audio.type;
@@ -76,11 +77,24 @@ function switch_theme(theme) {
 function switch_version(version) {
   track('VANILLA JS: ' + 'verison is changed to ' + version);
 	document.getElementById('format_css').href = version;
+  var imgLabels = document.getElementsByTagName('span');
+
+  if (version === '/assets/css/soundboard.css') {
+    for (var i = 0; i < imgLabels.length; i++) {
+      imgLabels[i].style.display = 'none';
+    }
+  } else {
+    for (var i = 0; i < imgLabels.length; i++) {
+      imgLabels[i].style.display = 'block';
+    }
+  }
+
 }
 
-function play(audioSrc, index){
-	var audio = document.getElementById(audioSrc);
-  var image = document.getElementById('image'+index);
+function play(id){
+  console.log(id);
+	var audio = document.getElementById('audio'+id);
+  var image = document.getElementById('image'+id);
 
 	if(!audio.readyState >=2){
 		return;
@@ -158,11 +172,12 @@ function displayErrorPage() {
 }
 
 window.onload = function(){
-	getJSONConfig('https://teamair-d90e1.firebaseapp.com/assets/config/hiphop_config.json');
+	getJSONConfig('/assets/config/hiphop_config.json');
 	document.getElementById("btn-container-disney").style.display = 'none';
 	addSliderEventListeners();
 	debugger;
 	document.getElementById("loader").style.display = 'none';
+
 
   	if('serviceWorker' in navigator) {
 	    navigator.serviceWorker.register('/sw.js').then(function(registration) {
@@ -188,7 +203,8 @@ window.onload = function(){
 }
 window.addEventListener('load', function(){
 	console.log('commence lazy loading');
-	getJSONConfig('https://teamair-d90e1.firebaseapp.com/assets/config/disney_config.json');
-	
+	getJSONConfig('/assets/config/disney_config.json');
+
 }, false)
 
+//https://teamair-d90e1.firebaseapp.com
