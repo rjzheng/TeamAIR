@@ -1,4 +1,5 @@
 var CACHE_NAME = 'my-site-cache-v1';
+
 var urlsToCache = [
 	'/',
 	'/index.html',
@@ -84,7 +85,6 @@ self.addEventListener('install', function(event) {
 			return cache.addAll(urlsToCache);
 		})
 	    .catch(function(e){
-			debugger;
 			trackJs.track('Something went wrong during the fetch event');
 		})
 	);
@@ -92,20 +92,17 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('fetch', function(event) {
 	event.respondWith(
-	caches.match(event.request)
-	  .then(function(response) {
-	    // Cache hit - return response
-	    if(!response || response.status !== 200 || response.type !== 'basic') {
+		caches.match(event.request)
+		.then(function(response) {
+	    	// Cache hit - return response
+	    	if(!response || response.status !== 200 || response.type !== 'basic') {
+				return fetch(event.request);
+        	}
+			return response;
+	  	})
+	  	.catch(function(){
+			trackJs.track('Something went wrong during the fetch event');
 			return fetch(event.request);
-        }
-	    return response;
-	  }
-	)
-	.catch(function(){
-		debugger;
-		trackJs.track('Something went wrong during the fetch event');
-		return fetch(event.request);
-
-	})
+		})
 	);
 });
