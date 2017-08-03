@@ -2,40 +2,37 @@ function getJSONConfig(path){
  	var xhr = new XMLHttpRequest();
  	if(xhr && xhr != null){
 	 	xhr.open('GET', path);
-    track('VANILLA JS: ' + path + ' is fetched');
+	 	track('VANILLA JS: ' + path + ' is fetched');
 	 	xhr.onreadystatechange = function(){ handleResponse(xhr); }
 		xhr.send(null);
  	} else {
-    track('VANILLA JS: ' + 'xhr has bad value');
-    displayErrorPage();
-  }
+    	track('VANILLA JS: ' + 'xhr has bad value');
+		displayErrorPage();
+  	}
 }
 
 function handleResponse(xhr){
 	if(xhr.readyState === 4){
-    if(xhr.status === 200) {
-      if(xhr.responseText) {
-        var config = JSON.parse(xhr.responseText);
-        track('VANILLA JS: ' + 'parsing json');
-    		render(config);
-      } else {
-        track('VANILLA JS: ' + 'no json data');
-        displayErrorPage();
-      }
-
-    } else {
-      track('VANILLA JS: ' + 'error from the Ajax call')
-      displayErrorPage();
-    }
-
+	    if(xhr.status === 200) {
+	    	if(xhr.responseText) {
+	        	var config = JSON.parse(xhr.responseText);
+				track('VANILLA JS: ' + 'parsing json');
+	    		render(config);
+	      	} else {
+	        	track('VANILLA JS: ' + 'no json data');
+				displayErrorPage();
+	      	}
+		} else {
+	      track('VANILLA JS: ' + 'error from the Ajax call')
+	      displayErrorPage();
+	    }
 	}
 }
 
 function render (config) {
 	if(typeof config === 'undefined'){
 		track('VANILLA JS: ' + config + ' is undefined');
-      console.log('enter');
-    displayErrorPage();
+		displayErrorPage();
 	}
 
 	var containerId = config.name === 'hiphop_config.json' ? 'btn-container-hip-hop' : 'btn-container-disney';
@@ -44,56 +41,56 @@ function render (config) {
 	var btnContainer = document.getElementById(containerId);
 
 	for( var index in config.buttons){
+		
 		var btn = config.buttons[index];
 		var button = document.getElementById(buttonId);
 		var image = button.content.querySelector('img');
 		var audio = button.content.querySelector('audio');
 		var source = button.content.querySelector('source');
-    var span = button.content.querySelector('span');
-
+		var span = button.content.querySelector('span');
+		
 		image.src = btn.img.src;
 		image.alt = btn.img.alt;
 		image.id = 'image'+btn.audio.id;
 		image.setAttribute('onclick', 'play(\''+btn.audio.id+'\')');
 		image.setAttribute('onerror', 'this.src=\'/assets/img/noimage.jpg\'');
+		
 		audio.id = 'audio'+btn.audio.id;
-    span.innerHTML = btn.audio.id;
+		span.innerHTML = btn.audio.id;
 
 		source.src = btn.audio.src;
 		source.type = btn.audio.type;
 
 		btnContainer.appendChild(button.content.cloneNode(true));
 
-    track('VANILLA JS: ' + 'button ' + index + ' created');
-
+		track('VANILLA JS: ' + 'button ' + index + ' created');
 	}
 }
 
 function switch_theme(theme) {
-  track('VANILLA JS: ' + 'theme changed to ' + theme);
+	track('VANILLA JS: ' + 'theme changed to ' + theme);
 	document.getElementById('theme_css').href = theme;
 }
 
 function switch_version(version) {
-  track('VANILLA JS: ' + 'verison is changed to ' + version);
+	track('VANILLA JS: ' + 'verison is changed to ' + version);
 	document.getElementById('format_css').href = version;
-  var imgLabels = document.getElementsByTagName('span');
+	var imgLabels = document.getElementsByTagName('span');
 
-  if (version === '/assets/css/soundboard.css') {
-    for (var i = 0; i < imgLabels.length; i++) {
-      imgLabels[i].style.display = 'none';
-    }
-  } else {
-    for (var i = 0; i < imgLabels.length; i++) {
-      imgLabels[i].style.display = 'block';
-    }
-  }
-
+	if (version === '/assets/css/soundboard.css') {
+    	for (var i = 0; i < imgLabels.length; i++) {
+			imgLabels[i].style.display = 'none';
+    	}
+  	} else {
+    	for (var i = 0; i < imgLabels.length; i++) {
+			imgLabels[i].style.display = 'block';
+    	}
+  	}
 }
 
 function play(id){
 	var audio = document.getElementById('audio'+id);
-  var image = document.getElementById('image'+id);
+	var image = document.getElementById('image'+id);
 
 	if(!audio.readyState >=2){
 		return;
@@ -101,7 +98,7 @@ function play(id){
 
 	if (audio.paused) {
 	    if(!image.classList.contains('active')) {
-	      image.classList.add('active');
+	    	image.classList.add('active');
 	    }
 	  	audio.play();
 	}
@@ -116,7 +113,6 @@ function play(id){
 	audio.addEventListener('ended', function() {
 	    image.classList.remove('active');
 	});
-
 }
 
 function switch_beats(config){
@@ -155,13 +151,12 @@ function sliderChange(attribute, value){
 
 	for( var index in audioSrcs){
 		if(attribute === 'volume'){
-      track('VANILLA JS: ' + 'changing volume');
+			track('VANILLA JS: ' + 'changing volume');
 			audioSrcs[index].volume = value
 		}
 		else{
-      track('VANILLA JS: ' + 'changing audio speed');
+			track('VANILLA JS: ' + 'changing audio speed');
 			audioSrcs[index].playbackRate = value
-
 		}
 	}
 }
@@ -173,7 +168,7 @@ function track(message){
 }
 
 function displayErrorPage() {
-  location.replace('/assets/html/error-page.html');
+	location.replace('/assets/html/error-page.html');
 }
 
 window.onload = function(){
@@ -204,6 +199,7 @@ window.onload = function(){
   	window.addEventListener('online',  updateOnlineStatus);
   	window.addEventListener('offline', updateOnlineStatus);
 }
+
 window.addEventListener('load', function(){
 	getJSONConfig('/assets/config/disney_config.json');
 
