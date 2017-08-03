@@ -53,8 +53,8 @@ function render (config) {
 
 		image.src = btn.img.src;
 		image.alt = btn.img.alt;
-    image.id = 'image'+index;
-		image.setAttribute('onclick', 'play(\''+btn.audio.id+'\','+index+')');
+		image.id = 'image'+btn.audio.id;
+		image.setAttribute('onclick', 'play(\''+btn.audio.id+'\')');
 		image.setAttribute('onerror', 'this.src=\'/assets/img/noimage.jpg\'');
 		audio.id = btn.audio.id;
 
@@ -78,26 +78,32 @@ function switch_version(version) {
 	document.getElementById('format_css').href = version;
 }
 
-function play(audioSrc, index){
+function play(audioSrc){
 	var audio = document.getElementById(audioSrc);
-  var image = document.getElementById('image'+index);
+	var image = document.getElementById('image'+audio.id);
 
 	if(!audio.readyState >=2){
 		return;
 	}
 
 	if (audio.paused) {
-    if(!image.classList.contains('active')) {
-      image.classList.add('active');
-  		audio.play();
-      audio.onended = function() {
-        image.classList.remove('active');
-      }
-    }
-	} else {
-    image.classList.remove('active');
+	    if(!image.classList.contains('active')) {
+	      image.classList.add('active');
+	    }
+	  	audio.play();
+	}
+	else {
 		audio.pause();
 	}
+	
+	audio.addEventListener('pause', function(){
+		image.classList.remove('active');
+	});
+	
+	audio.addEventListener('ended', function() {
+	    image.classList.remove('active');
+	});
+	
 }
 
 function switch_beats(config){
@@ -161,7 +167,6 @@ window.onload = function(){
 	getJSONConfig('https://teamair-d90e1.firebaseapp.com/assets/config/hiphop_config.json');
 	document.getElementById("btn-container-disney").style.display = 'none';
 	addSliderEventListeners();
-	debugger;
 	document.getElementById("loader").style.display = 'none';
 
   	if('serviceWorker' in navigator) {
@@ -187,7 +192,6 @@ window.onload = function(){
   	window.addEventListener('offline', updateOnlineStatus);
 }
 window.addEventListener('load', function(){
-	console.log('commence lazy loading');
 	getJSONConfig('https://teamair-d90e1.firebaseapp.com/assets/config/disney_config.json');
 	
 }, false)
