@@ -13,6 +13,7 @@ var urlsToCache = [
 	'/assets/css/original-theme.css',
 	'/assets/css/soundboard.css',
 	'/assets/img/background.png',
+	'/assets/img/aladdin.png',
 	'/assets/img/cinderella.jpg',
 	'/assets/img/cruella.jpg',
 	'/assets/img/hercules.jpg',

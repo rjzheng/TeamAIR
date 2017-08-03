@@ -7,7 +7,7 @@ function getJSONConfig(path){
 		xhr.send(null);
  	} else {
     track('VANILLA JS: ' + 'xhr has bad value');
-    //displayErrorPage();
+    displayErrorPage();
   }
 }
 
@@ -20,12 +20,12 @@ function handleResponse(xhr){
     		render(config);
       } else {
         track('VANILLA JS: ' + 'no json data');
-        //displayErrorPage();
+        displayErrorPage();
       }
 
     } else {
       track('VANILLA JS: ' + 'error from the Ajax call')
-      //displayErrorPage();
+      displayErrorPage();
     }
 
 	}
@@ -35,7 +35,7 @@ function render (config) {
 	if(typeof config === 'undefined'){
 		track('VANILLA JS: ' + config + ' is undefined');
       console.log('enter');
-    //displayErrorPage();
+    displayErrorPage();
 	}
 
 	var containerId = config.name === 'hiphop_config.json' ? 'btn-container-hip-hop' : 'btn-container-disney';
@@ -53,7 +53,7 @@ function render (config) {
 
 		image.src = btn.img.src;
 		image.alt = btn.img.alt;
-    image.id = 'image'+btn.audio.id;
+		image.id = 'image'+btn.audio.id;
 		image.setAttribute('onclick', 'play(\''+btn.audio.id+'\')');
 		image.setAttribute('onerror', 'this.src=\'/assets/img/noimage.jpg\'');
 		audio.id = 'audio'+btn.audio.id;
@@ -92,7 +92,6 @@ function switch_version(version) {
 }
 
 function play(id){
-  console.log(id);
 	var audio = document.getElementById('audio'+id);
   var image = document.getElementById('image'+id);
 
@@ -101,17 +100,23 @@ function play(id){
 	}
 
 	if (audio.paused) {
-    if(!image.classList.contains('active')) {
-      image.classList.add('active');
-  		audio.play();
-      audio.onended = function() {
-        image.classList.remove('active');
-      }
-    }
-	} else {
-    image.classList.remove('active');
+	    if(!image.classList.contains('active')) {
+	      image.classList.add('active');
+	    }
+	  	audio.play();
+	}
+	else {
 		audio.pause();
 	}
+
+	audio.addEventListener('pause', function(){
+		image.classList.remove('active');
+	});
+
+	audio.addEventListener('ended', function() {
+	    image.classList.remove('active');
+	});
+
 }
 
 function switch_beats(config){
@@ -175,9 +180,7 @@ window.onload = function(){
 	getJSONConfig('/assets/config/hiphop_config.json');
 	document.getElementById("btn-container-disney").style.display = 'none';
 	addSliderEventListeners();
-	debugger;
 	document.getElementById("loader").style.display = 'none';
-
 
   	if('serviceWorker' in navigator) {
 	    navigator.serviceWorker.register('/sw.js').then(function(registration) {
@@ -202,9 +205,6 @@ window.onload = function(){
   	window.addEventListener('offline', updateOnlineStatus);
 }
 window.addEventListener('load', function(){
-	console.log('commence lazy loading');
 	getJSONConfig('/assets/config/disney_config.json');
 
 }, false)
-
-//https://teamair-d90e1.firebaseapp.com
