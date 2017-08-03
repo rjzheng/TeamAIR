@@ -22,8 +22,12 @@ function handleResponse(xhr){
 	        	track('VANILLA JS: ' + 'no json data');
 				displayErrorPage();
 	      	}
-		} else {
-	      track('VANILLA JS: ' + 'error from the Ajax call')
+		} else if(xhr.status === 400){
+	      track('VANILLA JS: ' + 'error from the Ajax call, 400 error');
+	      displayErrorPage();
+	    }
+	    else if(xhr.status === 500){
+	      track('VANILLA JS: ' + 'error from the Ajax call, 500 error');
 	      displayErrorPage();
 	    }
 	}
