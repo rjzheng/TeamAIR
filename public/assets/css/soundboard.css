@@ -280,7 +280,6 @@ img{
 
 
 img.active {
-  transform: scale(5);
   -webkit-animation-name: spin;
   -webkit-animation-duration: 3.75s;
   -webkit-animation-iteration-count: infinite;
