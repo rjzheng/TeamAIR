@@ -6,7 +6,7 @@ function getJSONConfig(path){
 	 	xhr.onreadystatechange = function(){ handleResponse(xhr); }
 		xhr.send(null);
  	} else {
-    	track('VANILLA JS: ' + 'xhr has bad value');
+  	track('VANILLA JS: ' + 'xhr has bad value');
 		displayErrorPage();
   	}
 }
@@ -45,20 +45,21 @@ function render (config) {
 	var btnContainer = document.getElementById(containerId);
 
 	for( var index in config.buttons){
-		
+
 		var btn = config.buttons[index];
 		var button = document.getElementById(buttonId);
 		var image = button.content.querySelector('img');
 		var audio = button.content.querySelector('audio');
 		var source = button.content.querySelector('source');
 		var span = button.content.querySelector('span');
-		
+
 		image.src = btn.img.src;
 		image.alt = btn.img.alt;
 		image.id = 'image'+btn.audio.id;
 		image.setAttribute('onclick', 'play(\''+btn.audio.id+'\')');
-		image.setAttribute('onerror', 'this.src=\'/assets/img/noimage.jpg\'');
-		
+    if(!(navigator.userAgent.toLowerCase().indexOf('firefox') > -1)){
+  		image.setAttribute('onerror', 'this.src=\'/assets/img/noimage.jpg\'');
+    }
 		audio.id = 'audio'+btn.audio.id;
 		span.innerHTML = btn.audio.id;
 
