@@ -85,7 +85,7 @@ self.addEventListener('install', function(event) {
 		})
 	    .catch(function(e){
 			debugger;
-			console.log('Something went wrong during the fetch event');
+			trackJs.track('Something went wrong during the fetch event');
 		})
 	);
 });
@@ -103,7 +103,7 @@ self.addEventListener('fetch', function(event) {
 	)
 	.catch(function(){
 		debugger;
-		console.log('Something went wrong during the fetch event');
+		trackJs.track('Something went wrong during the fetch event');
 		return fetch(event.request);
 
 	})
