@@ -1,0 +1,36 @@
+[debug] [2017-08-03T05:40:26.998Z] ----------------------------------------------------------------------
+[debug] [2017-08-03T05:40:27.001Z] Command:      /Users/rjzheng/.nvm/versions/node/v7.9.0/bin/node /usr/local/bin/firebase serve
+[debug] [2017-08-03T05:40:27.001Z] CLI Version:  3.9.1
+[debug] [2017-08-03T05:40:27.001Z] Platform:     darwin
+[debug] [2017-08-03T05:40:27.001Z] Node Version: v7.9.0
+[debug] [2017-08-03T05:40:27.002Z] Time:         Wed Aug 02 2017 22:40:27 GMT-0700 (PDT)
+[debug] [2017-08-03T05:40:27.002Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-08-03T05:40:27.017Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-08-03T05:40:27.017Z] > authorizing via signed-in user
+[debug] [2017-08-03T05:40:27.020Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-08-03T05:40:27.021Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/kB2LYm0sRL6WD3R4hg70cDfcKOJkfrCRQAEAf4BjDP9rQ3uDhSKaBE3AsLCBFgxK',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Aug 02 2017 22:40:27 GMT-0700 (PDT)
+[debug] [2017-08-03T05:40:27.294Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-03T05:40:27.311Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/teamair-d90e1  
+ Wed Aug 02 2017 22:40:27 GMT-0700 (PDT)
+[debug] [2017-08-03T05:40:28.087Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-03T05:40:28.088Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/teamair-d90e1/tokens  
+ Wed Aug 02 2017 22:40:28 GMT-0700 (PDT)
+[debug] [2017-08-03T05:40:28.533Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/rjzheng/Documents/TeamAIR'...
+[info] 
+[debug] [2017-08-03T05:40:28.537Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/teamair-d90e1  
+ Wed Aug 02 2017 22:40:28 GMT-0700 (PDT)
+[debug] [2017-08-03T05:40:29.110Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-03T05:40:29.111Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/125033295806/clients/_:getWebAppConfig  
+ Wed Aug 02 2017 22:40:29 GMT-0700 (PDT)
+[debug] [2017-08-03T05:40:30.845Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
